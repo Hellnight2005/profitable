@@ -1,5 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// __dirname equivalent for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 const query = `
   query GetPublication($host: String!) {
@@ -85,7 +91,7 @@ async function fetchAllHashnodePosts() {
     allPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
     // Ensure public directory exists
-    const outputDir = path.join(process.cwd(), 'public', 'blog');
+    const outputDir = path.join(PROJECT_ROOT, 'public', 'blog');
     await fs.mkdir(outputDir, { recursive: true });
 
     const outputPath = path.join(outputDir, 'posts.json');

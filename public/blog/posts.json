@@ -18,6 +18,24 @@
     ]
   },
   {
+    "title": "Cloud Native Rebuild – Week 0: Restarting Docker from the Basics",
+    "slug": "cloud-native-0",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cloud-native-0",
+    "publishedAt": "2026-02-13T15:04:44.526Z",
+    "brief": "This is Week 0 of my Cloud Native Rebuild series.\nBefore jumping into Kubernetes for LFX open source contributions, I decided to restart Docker from scratch. I already knew the basics — but this time, I want depth, not just familiarity.\nFor this rese...",
+    "category": "Weekly Updates",
+    "series": "Cloud Native Rebuild: From Docker to Kubernetes",
+    "tags": [
+      "Docker",
+      "cloud native",
+      "docker images",
+      "Docker compose",
+      "virtual machine",
+      "docker-workflow"
+    ]
+  },
+  {
     "title": "#Week 0 — Introduction & Vision",
     "slug": "ir-week-0",
     "domain": "projectlog.hashnode.dev",
@@ -205,6 +223,24 @@
     ]
   },
   {
+    "title": "CS50 #week 4  — Memory, Files, and a Hard-Earned Comeback",
+    "slug": "cs50-week-4-memory-files-and-a-hard-earned-comeback",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cs50-week-4-memory-files-and-a-hard-earned-comeback",
+    "publishedAt": "2025-12-24T11:38:56.210Z",
+    "brief": "CS50 Week 4 was one of the most challenging weeks so far — not just technically, but personally as well. This was the week where concepts like memory management, pointers, file handling, and low-level data representation all came together, and it dem...",
+    "category": "Weekly Updates",
+    "series": "My CS50 Journey: From Curiosity to Code",
+    "tags": [
+      "cs50",
+      "C",
+      "memory-management",
+      "memory",
+      "pointers in c",
+      "File handling in c"
+    ]
+  },
+  {
     "title": "#week 3 — Diving Into GitHub APIs, Visualizing Logs in Grafana & Adding Repo File Processing",
     "slug": "code-atlas-week-3",
     "domain": "projectlog.hashnode.dev",
@@ -271,6 +307,97 @@
       "Open Source",
       "Abstract Syntax Tree",
       "projects"
+    ]
+  },
+  {
+    "title": "CS50 #Week 3 —  A Clear Guide to Algorithms",
+    "slug": "cs50-week-3-a-clear-guide-to-algorithms",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cs50-week-3-a-clear-guide-to-algorithms",
+    "publishedAt": "2025-11-23T18:31:33.870Z",
+    "brief": "This week of CS50 honestly hit different.\nEven though I come from a computer science background — and I’ve already studied searching, sorting, and Big-O — Week 3 felt like that moment when you clean your room and suddenly find things you forgot you e...",
+    "category": "Weekly Updates",
+    "series": "My CS50 Journey: From Curiosity to Code",
+    "tags": [
+      "cs50",
+      "algorithms",
+      "sorting",
+      "sorting algorithms",
+      "#SortingTechniques",
+      "search",
+      "Binary Search Algorithm",
+      "linearsearch",
+      "selection sort"
+    ]
+  },
+  {
+    "title": "CS50 #Week 2 — Cracking Arrays, Ciphers, and the Logic Behind C",
+    "slug": "cs50-week-2-cracking-arrays-ciphers-and-the-logic-behind-c",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cs50-week-2-cracking-arrays-ciphers-and-the-logic-behind-c",
+    "publishedAt": "2025-11-17T06:30:08.205Z",
+    "brief": "Week 2 felt like the moment CS50 truly shifted gears.After learning the basics of C in Week 1 — variables, loops, conditions, and simple logic — this week pushed me deeper into how computers handle data internally.\nArrays, functions, scope, debugging...",
+    "category": "Weekly Updates",
+    "series": "My CS50 Journey: From Curiosity to Code",
+    "tags": [
+      "C",
+      "cs50",
+      "Programming Blogs",
+      "array",
+      "Cryptography",
+      "Computer Science",
+      "learning",
+      "debugging"
+    ]
+  },
+  {
+    "title": "CS50 #Week 1 Overview: Mastering C Basics with Variables, Loops, and Logic",
+    "slug": "cs50-week-1-overview-mastering-c-basics-with-variables-loops-and-logic",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cs50-week-1-overview-mastering-c-basics-with-variables-loops-and-logic",
+    "publishedAt": "2025-11-13T18:30:17.301Z",
+    "brief": "After completing Week 0 with Scratch, Week 1 was like entering a more authentic programming experience the world of C. This week, I began learning how to “talk” to the computer through text-based coding instead of visual blocks. It was exciting, chal...",
+    "category": "Weekly Updates",
+    "series": "My CS50 Journey: From Curiosity to Code",
+    "tags": [
+      "cs50",
+      "Learning Journey",
+      "#CProgrammingLanguage",
+      "Computer Science",
+      "develpoment"
+    ]
+  },
+  {
+    "title": "CS50 #Week 0 — Understanding Scratch and Logic",
+    "slug": "cs50-week-0-understanding-scratch-and-logic",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/cs50-week-0-understanding-scratch-and-logic",
+    "publishedAt": "2025-11-10T07:30:37.643Z",
+    "brief": "“From basics to a mind-blowing visual logic experience.”\n\nThis week marks the beginning of my CS50 journey, and it’s safe to say — even as someone from a computer background, I didn’t expect Week 0 to be this interesting.\nAt first, it felt like a rep...",
+    "category": "Weekly Updates",
+    "series": "My CS50 Journey: From Curiosity to Code",
+    "tags": [
+      "#LearninPublic",
+      "cs50",
+      "cs50x",
+      "Computer Science",
+      "scratch",
+      "personal development",
+      "#growth",
+      "Education & Skill Development"
+    ]
+  },
+  {
+    "title": "Why I Realized Discord Beats Docs \n(My Ollama Story)",
+    "slug": "why-i-realized-discord-beats-docs-my-ollama-story",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/why-i-realized-discord-beats-docs-my-ollama-story",
+    "publishedAt": "2025-09-09T18:34:50.506Z",
+    "brief": "When we think of product documentation, we imagine official pages: clean, structured, and reliable. But recently, while running Ollama locally, I discovered something surprising—the real “docs” often live on Discord.\n\nThe Problem\nI downloaded the LLa...",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "#Discord – main platform discussed  #Documentation – comparing docs vs Discord  #Startups – audience insight, why startups prefer Discord  #AI – Ollama and LLaMA models context  #DeveloperExperience – for devs facing similar problems  #Community – community-driven knowledge theme  #Productivity – optimizing workflows via Discord    #OpenSource – if Ollama context fits  #KnowledgeManagement – emphasizes living docs vs static docs  #TechTools – general tech audience"
     ]
   }
 ]
