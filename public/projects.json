@@ -1,0 +1,86 @@
+[
+  {
+    "id": 2,
+    "name": "Cognidesk",
+    "description": "Cognidesk is an experimental knowledge organization platform built to explore Retrieval-Augmented Generation (RAG), vector databases, and microservice-based AI systems. The goal of the project is to help users organize and retrieve knowledge efficiently without spending time searching through scattered resources.",
+    "html_url": "https://github.com/Hellnight2005/Cognidesk",
+    "live_url": null,
+    "is_live": false,
+    "why_not_live": "The project is not deployed because the architecture follows a microservice approach and I am still learning how to properly deploy and orchestrate distributed services.",
+    "tech_used": [
+      "Next.js",
+      "Node",
+      "GitHub API",
+      "Google Cloud Console",
+      "Docker",
+      "Qdrant"
+    ],
+    "learned_tools": [
+      "Kafka",
+      "Docker file",
+      "Retrieval-Augmented Generation (RAG)",
+      "Ollama",
+      "Vector Databases"
+    ],
+    "what_learned": "Through this project I learned the importance of proper logging in distributed systems and how LLMs connect to external data sources using retrieval pipelines. I explored how embeddings, vector databases, and RAG workflows enable AI systems to retrieve context-specific information from knowledge sources.",
+    "reason_for_making": "I often explore topics deeply and collect ideas across many tools such as Notepad, Workflowy, Notion, Obsidian, and GitHub. Over time this created fragmented knowledge across platforms, making it difficult to revisit or reconstruct previous research. Cognidesk was built to experiment with a unified knowledge system using RAG and vector search to organize and retrieve ideas more intelligently.",
+    "cover_image": "/Image/cognidesk-cover.png",
+    "project_images": [
+      "/Image/Cognidesk-1.png",
+      "/Image/cognidesk-2.png",
+      "/Image/cognidesk-3.png",
+      "/Image/cognidesk-4.png"
+    ],
+    "language": "javascript",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2025-09-19T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "CodeAtlas",
+    "description": "CodeAtlas is a static AST-powered platform designed to help developers understand and visualize large repositories. It parses source code, analyzes relationships between files, functions, classes, and modules, and presents them through an interactive graph interface.",
+    "html_url": "https://github.com/Hellnight2005/CodeAtlas",
+    "live_url": null,
+    "blog_url": "https://projectlog.hashnode.dev/series/code-atlas",
+    "is_live": false,
+    "why_not_live": "The project relies on multiple Docker-based services and distributed components. I have not yet fully figured out how to properly deploy and orchestrate these services in a production environment.",
+    "tech_used": [
+      "Next.js",
+      "Node.js",
+      "GitHub API",
+      "Docker",
+      "Grafana",
+      "Loki",
+      "Kafka",
+      "Redis",
+      "SQL",
+      "MongoDB",
+      "Neo4j"
+    ],
+    "learned_tools": [
+      "Logging Systems",
+      "AST (Abstract Syntax Tree)",
+      "Polyglot Databases",
+      "Neo4j Graph Databases",
+      "Static Code Analysis",
+      "Dynamic Code Analysis",
+      "GitHub API Rate Limits and Secondary Limits"
+    ],
+    "what_learned": "While building CodeAtlas I explored how modern IDEs provide intelligent code suggestions by analyzing program structure. I learned how static analysis and dynamic analysis work, how ASTs represent source code internally, and how relationships between files, classes, and functions can be extracted to build a structural graph of a repository.",
+    "reason_for_making": "Navigating large codebases can be overwhelming. CodeAtlas parses a repository, extracts relationships between files, classes, and functions using AST analysis, and visualizes them as an interactive graph so developers can understand project architecture faster.",
+    "cover_image": "/Image/codeatlas-cover.png",
+    "project_images": [
+      "/Image/codeatlas-1.png",
+      "/Image/codeatlas-2.png",
+      "/Image/codeatlas-3.png",
+      "/Image/codeatlas-4.png"
+    ],
+    "language": "TypeScript",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-02-07T00:00:00Z"
+  }
+]

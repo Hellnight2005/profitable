@@ -1,0 +1,276 @@
+[
+  {
+    "title": "Building an AI-Powered Hospital Infection Intelligence System in 24 Hours",
+    "slug": "building-an-ai-powered-hospital-infection-intelligence-system-in-24-hours",
+    "domain": "hackathon-diaries.hashnode.dev",
+    "url": "https://hackathon-diaries.hashnode.dev/building-an-ai-powered-hospital-infection-intelligence-system-in-24-hours",
+    "publishedAt": "2026-03-04T15:56:34.991Z",
+    "brief": "A Case Study from CODE:AUTOMATA Ver 2.1 Hackathon\nDuring the 24-hour offline round of CODE:AUTOMATA Ver 2.1 at CSMIT, our team worked on a high-impact healthcare challenge:\n\nHC-2: Digital Contact Trac",
+    "category": "Hackathon Diaries",
+    "series": null,
+    "tags": [
+      "AI",
+      "SQL",
+      "MongoDB",
+      "Neo4j",
+      "hospitals",
+      "hackathon"
+    ]
+  },
+  {
+    "title": "#Week 0 — Introduction & Vision",
+    "slug": "ir-week-0",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/ir-week-0",
+    "publishedAt": "2026-02-13T14:26:44.704Z",
+    "brief": "Why I’m Building a Web Search Engine While Studying Information Retrieval\nI’m currently in Semester 6, and one of the subjects in my curriculum is Information Retrieval (IR).\nAt first, I thought it would be just another theoretical course — definitio...",
+    "category": "Project Logs",
+    "series": "Search Engines from Scratch (IR Journey)",
+    "tags": [
+      "web search engine",
+      "search",
+      "Search Engines",
+      "Information Retrieval "
+    ]
+  },
+  {
+    "title": "SetFiles : An AI-Based File Organizer (Week 0)",
+    "slug": "setfilesweek0",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/setfilesweek0",
+    "publishedAt": "2026-02-02T18:42:33.950Z",
+    "brief": "In today’s digital world, files pile up very quickly. Documents, notes, reports, and text files often end up mixed together in one folder. After some time, finding the right file becomes frustrating and wastes a lot of time.\nManually sorting files in...",
+    "category": "Project Logs",
+    "series": "Building SetFiles: Learning AI-Powered File Organization",
+    "tags": [
+      "file organization",
+      "AI",
+      "SVM",
+      "automation",
+      "setfile "
+    ]
+  },
+  {
+    "title": "#week 9 — Correctness, Change Detection & Graph Integrity (Final CodeAtlas Blog)",
+    "slug": "code-atlas-week-9",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-9",
+    "publishedAt": "2026-02-02T18:30:30.413Z",
+    "brief": "Week 9 was not about adding new features to CodeAtlas.It was about making the system trustworthy.\nThis week focused on correctness — the kind of engineering work users never see, but that prevents silent data corruption, infinite loops, and 3:00 AM p...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "Notebook LLm",
+      "Graph Explosion B",
+      "setfile ",
+      "CodeAtlas",
+      "Bugs and Errors",
+      "documentation",
+      "lingo",
+      "lingo.dev"
+    ]
+  },
+  {
+    "title": "From Broken Subtitles to a Universal Video Script Platform",
+    "slug": "universal-video-script-platform-1",
+    "domain": "hackathon-diaries.hashnode.dev",
+    "url": "https://hackathon-diaries.hashnode.dev/universal-video-script-platform-1",
+    "publishedAt": "2026-02-01T18:30:52.289Z",
+    "brief": "My Hackathon Journey at the Lingo.dev Hackathon\nHave you ever downloaded a movie, only to find it’s in a language you don’t understand? You sit down to watch, excited—but there are no subtitles in your language. Suddenly, the whole movie is ruined, a...",
+    "category": "Hackathon Diaries",
+    "series": "Lingo.dev Hackathon Build",
+    "tags": [
+      "lingo.dev",
+      "universal video script platform",
+      "Uniscript",
+      "subtitle generator",
+      "audio-to-text",
+      "hackathon",
+      "journey",
+      "lingo"
+    ]
+  },
+  {
+    "title": "#week 8 — UML Diagrams, Pipeline Integration & Lessons from Real Full-Stack Problems",
+    "slug": "code-atlas-week-5-1",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-5-1",
+    "publishedAt": "2026-01-27T18:30:50.092Z",
+    "brief": "Week 8 was not about adding new features to CodeAtlas. Instead, it was about understanding the system as a whole and turning separate pieces into a truly connected full-stack application.\nThis week focused on architecture visualization, integrating t...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "Pipeline",
+      "CodeAtlas",
+      "UML Diagrams",
+      "Full Stack Development",
+      "Google Antigravity",
+      "cores"
+    ]
+  },
+  {
+    "title": "#week 7 —  File Exploration, AI Intelligence & Preparing for the Final Stretch",
+    "slug": "code-atlas-week-7",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-7",
+    "publishedAt": "2026-01-21T23:30:06.788Z",
+    "brief": "After solving frontend graph consistency and Neo4j data battles in Week 6, Week 7 focused on making CodeAtlas more interactive, more intelligent, and more user-focused.\nThis week wasn’t about massive visual changes—it was about how users interact wit...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "CodeAtlas",
+      "React",
+      "code analysis",
+      "AI",
+      "GitHub"
+    ]
+  },
+  {
+    "title": "Our First UIDAI Hackathon Experience: Pressure, Problems, and Persistence",
+    "slug": "uidai-hackathon",
+    "domain": "hackathon-diaries.hashnode.dev",
+    "url": "https://hackathon-diaries.hashnode.dev/uidai-hackathon",
+    "publishedAt": "2026-01-21T16:32:36.854Z",
+    "brief": "Participating in the UIDAI Hackathon was our first-ever hackathon experience, and it turned out to be both challenging and deeply educational. Although the journey was stressful at times, it taught us valuable lessons about teamwork, problem-solving,...",
+    "category": "Hackathon Diaries",
+    "series": "UIDAI Data Hackathon 2026 – From Data to Governance Insights",
+    "tags": [
+      "hackathon",
+      "uidai"
+    ]
+  },
+  {
+    "title": "#week 6  — Frontend Graphs, Visual Clarity & Data Consistency Battles",
+    "slug": "code-atlas-week-6",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-6",
+    "publishedAt": "2026-01-16T11:41:29.519Z",
+    "brief": "Week 6 was all about bringing CodeAtlas to life on the frontend. After stabilizing the backend and data pipelines last week, I finally started visualizing the data—turning raw Neo4j relationships into an interactive graph UI.\nThis week had some satis...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "Neo4j",
+      "data-consistency",
+      "search",
+      "visualization",
+      "legend",
+      "learning",
+      "learn in public",
+      "Bugs and Errors",
+      "Frontend Development"
+    ]
+  },
+  {
+    "title": "#week 5  — Scaling, Stability & Production Reality Checks",
+    "slug": "code-atlas-week-5",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-5",
+    "publishedAt": "2026-01-07T11:38:48.363Z",
+    "brief": "This week in CodeAtlas was about moving from “it works” to “it survives real-world usage.” I focused on GitHub rate limits, backend graph exploration, logging, data integrity, and—most importantly—running a hard production readiness review that expos...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "Google",
+      "antigravity,IDE",
+      "AI",
+      "security checklist",
+      "logging",
+      "scalability",
+      "BottleNeck"
+    ]
+  },
+  {
+    "title": "#week 4  —  Taming Logs, ASTs, and Graphs",
+    "slug": "code-atlas-week-4",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-4",
+    "publishedAt": "2025-12-26T11:40:40.709Z",
+    "brief": "This week in CodeAtlas was all about building the repo_parser, normalizing ASTs, wrangling Neo4j graphs, and surviving Node.js quirks. Lots of learning, debugging loops, and small victories!\n\n1. Repo Parser: Building the Core Route\nI started implemen...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "logging",
+      "event loop in js",
+      "nodemon",
+      "Node.js Event Loop",
+      "Graph",
+      "Neo4j",
+      "chatgpt",
+      "api",
+      "Abstract Syntax Tree",
+      "GitHub",
+      "GithubApi",
+      "RateLimting",
+      "codebase"
+    ]
+  },
+  {
+    "title": "#week 3 — Diving Into GitHub APIs, Visualizing Logs in Grafana & Adding Repo File Processing",
+    "slug": "code-atlas-week-3",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-3",
+    "publishedAt": "2025-12-22T11:42:08.153Z",
+    "brief": "This week was full of learning, confusion 😅, breakthroughs, and new features for CodeAtlas.I continued building on last week’s logging system and started working with GitHub APIs for the first time — which was not easy at all.\nHere’s everything I ac...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "logging",
+      "Grafana",
+      "file-processing",
+      "GitHub API",
+      "Logs"
+    ]
+  },
+  {
+    "title": "#week 2 — Building a Simple but Powerful Logging System for CodeAtlas",
+    "slug": "code-atlas-week-2",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-2",
+    "publishedAt": "2025-12-15T11:40:39.484Z",
+    "brief": "This week, I worked on something very important for CodeAtlas:👉 a logging system that is clean, stable, and easy to understand.\nAt first, I tried many different methods.Some ideas worked, some failed, some broke the logs completely.But after testing...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "logging system",
+      "real-time logs",
+      "logging",
+      "SQL",
+      "structure",
+      "Logs"
+    ]
+  },
+  {
+    "title": "#Week 1 — GitHub Authentication & Service Monitoring in CodeAtlas",
+    "slug": "code-atlas-week-1",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/code-atlas-week-1",
+    "publishedAt": "2025-12-09T18:30:38.990Z",
+    "brief": "This week, I focused on two major milestones in the CodeAtlas project: implementing GitHub authentication and setting up monitoring for the key services. While I initially considered monitoring all services, I decided to start with a more practical a...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "projects",
+      "learning",
+      "#learning-in-public",
+      "Self Improvement ",
+      "GitHub",
+      "monitoring"
+    ]
+  },
+  {
+    "title": "CodeAtlas: Enhance Your Repository with Static AST Visualization",
+    "slug": "codeatlas",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/codeatlas",
+    "publishedAt": "2025-11-30T18:30:15.087Z",
+    "brief": "Understanding a large or unfamiliar codebase is one of the hardest challenges for developers, students, and open-source contributors. Modern applications often span hundreds of files, multiple languages, and deeply intertwined module dependencies. Ma...",
+    "category": "Project Logs",
+    "series": "CodeAtlas",
+    "tags": [
+      "static ast",
+      "Open Source",
+      "Abstract Syntax Tree",
+      "projects"
+    ]
+  }
+]
