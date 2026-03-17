@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 export default function Cursor() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [hovering, setHovering] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -38,6 +43,8 @@ export default function Cursor() {
             document.removeEventListener("mouseout", handleMouseOut);
         };
     }, []);
+
+    if (isTouchDevice) return null;
 
     return (
         <div
