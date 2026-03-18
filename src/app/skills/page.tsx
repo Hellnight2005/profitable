@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/Button";
+import Image from "next/image";
 
 const SKILLS = [
     {
@@ -170,7 +171,7 @@ export default function Skills() {
                         <div key={tool.name} className="interactive" style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", padding: "24px", textAlign: "center", borderRadius: "2px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px" }}
                             onMouseOver={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; e.currentTarget.style.transform = "scale(1.04)"; }}
                             onMouseOut={(e) => { e.currentTarget.style.borderColor = "var(--color-border)"; e.currentTarget.style.transform = "scale(1)"; }}>
-                            <img src={tool.logo} alt={tool.name} style={{ width: "32px", height: "32px", objectFit: "contain", filter: "invert(0.8)" }} />
+                            <Image src={tool.logo} alt={tool.name} width={32} height={32} style={{ objectFit: "contain", filter: "invert(0.8)" }} unoptimized />
                             <span className="type-ui" style={{ color: "var(--color-text-primary)" }}>{tool.name}</span>
                         </div>
                     ))}

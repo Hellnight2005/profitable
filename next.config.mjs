@@ -14,6 +14,14 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "i.pinimg.com",
             },
+            {
+                protocol: "https",
+                hostname: "cdn.simpleicons.org",
+            },
+            {
+                protocol: "https",
+                hostname: "imgs.search.brave.com",
+            },
         ],
     },
 };

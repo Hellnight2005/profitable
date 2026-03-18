@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+// eslint-disable-next-line @next/next/no-img-element
 
 interface GithubRepo {
     id: number;
@@ -432,6 +433,7 @@ export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
                                         onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--color-accent)")}
                                         onMouseLeave={e => (e.currentTarget.style.borderColor = "var(--color-border)")}
                                     >
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img
                                             src={img}
                                             alt={`${repo.name} screenshot ${(i % repo.project_images.length) + 1}`}
