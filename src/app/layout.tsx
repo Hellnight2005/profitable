@@ -5,6 +5,7 @@ import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import Script from "next/script";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -48,6 +49,19 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LWESM1V5Q0"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LWESM1V5Q0');
+          `}
+        </Script>
       </body>
     </html>
   );
