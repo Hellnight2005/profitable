@@ -205,7 +205,7 @@ export default function Home() {
 
             {/* Latest Blog Posts */}
             <section className="reveal" style={{ padding: "var(--space-8) 24px", maxWidth: "1280px", margin: "0 auto" }}>
-                <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>LATEST WRITING</h4>
+                <h2 className="type-display" style={{ fontSize: "24px", color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>LATEST WRITING</h2>
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
                     {latestPosts.length > 0 ? latestPosts.map((post) => {

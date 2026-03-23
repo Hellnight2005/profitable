@@ -1,6 +1,21 @@
 import fs from 'fs';
 import path from 'path';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Button } from '@/components/Button';
 import { ProjectsClient } from "./ProjectsClient";
+
+export const metadata: Metadata = {
+  title: "Engineering Portfolio | Abhijeet Shinde",
+  description: "Explore the technical portfolio and open-source contributions of Abhijeet Shinde. Focused on backend engineering, cloud architecture, and modern web apps.",
+  keywords: ["Software Engineering Portfolio", "Abhijeet Shinde Projects", "Open Source Developer", "Backend Developer Portfolio", "Next.js Projects"],
+  openGraph: {
+    title: "Engineering Portfolio | Abhijeet Shinde",
+    description: "Explore the technical portfolio and open-source contributions of Abhijeet Shinde.",
+    url: "https://profitable-azure.vercel.app/projects",
+    siteName: "Abhijeet Shinde",
+  }
+};
 
 export interface GithubRepo {
     id: number;
@@ -49,6 +64,16 @@ export default async function Projects() {
             </header>
 
             <ProjectsClient initialRepos={repos} />
+
+            {/* Bottom CTA */}
+            <section className="reveal" style={{ background: "var(--color-surface)", padding: "128px 24px", textAlign: "center", marginTop: "128px", borderTop: "1px solid var(--color-border)" }}>
+                <h2 style={{ fontSize: "48px", color: "var(--color-text-primary)", marginBottom: "16px" }}>START A PROJECT</h2>
+                <p className="body-text" style={{ maxWidth: "480px", margin: "0 auto", marginBottom: "48px" }}>Interested in building something similar? Let&apos;s discuss how I can help bring your ideas to life.</p>
+                <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap", marginTop: "32px" }}>
+                    <Link href="/contact"><Button variant="primary">HIRE ME</Button></Link>
+                    <Link href="/skills"><Button variant="secondary">VIEW SERVICES</Button></Link>
+                </div>
+            </section>
         </div>
     );
 }
