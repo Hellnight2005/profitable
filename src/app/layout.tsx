@@ -28,6 +28,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: "Personal Portfolio",
   description: "Maker. Writer. Builder.",
+  verification: {
+    google: "xzapu7V0XUQkAi0kmCM7xfMSaFxoOL0zRc5GRu3766I",
+  },
 };
 
 export default function RootLayout({
