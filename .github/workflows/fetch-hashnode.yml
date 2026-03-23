@@ -33,5 +33,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add public/blog/posts.json
-          git commit -m "chore: auto-update hashnode posts via cron job" || echo "No changes to commit"
+          if git diff --staged --quiet; then
+            echo "No changes to commit. Skipping."
+            exit 0
+          fi
+          git commit -m "chore: auto-update hashnode posts"
           git push
