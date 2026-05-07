@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     url: "https://profitable-azure.vercel.app/blog",
     type: "website",
     siteName: "Abhijeet Shinde",
-    updatedTime: new Date().toISOString(),
   },
   twitter: {
     card: "summary_large_image",
