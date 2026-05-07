@@ -1,0 +1,20 @@
+# Abhijeet Shinde - Web Developer
+
+Abhijeet Shinde is an experienced Web Developer based in Mumbai, specializing in backend architecture, DevOps, and scalable systems.
+
+## Key Services
+- Backend Development & Architecture
+- DevOps & Cloud Infrastructure
+- Scalable Web Applications
+- React & Next.js Development
+
+## Main Sections
+- Homepage: https://profitable-azure.vercel.app/ - Overview of services and portfolio.
+- About: https://profitable-azure.vercel.app/about - Background and professional experience.
+- Blog: https://profitable-azure.vercel.app/blog - Articles on web development, Hackathon Diaries, and Project Logs.
+
+## Contact
+- Twitter/X: @abhijeet2005
+- Hashnode: https://hashnode.com/@abhijeet2005
+
+This website is designed to showcase projects, share insights on modern web development, and offer freelance services.

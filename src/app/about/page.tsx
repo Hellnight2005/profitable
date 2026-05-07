@@ -10,9 +10,38 @@ export const metadata: Metadata = {
     description: "Learn more about Abhijeet Shinde, a web developer from Mumbai focusing on scalable systems and backend architecture.",
     url: "https://profitable-azure.vercel.app/about",
     siteName: "Abhijeet Shinde",
+    type: "profile",
+    updatedTime: new Date().toISOString(),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Web Developer Abhijeet Shinde",
+    description: "Learn more about Abhijeet Shinde, a web developer from Mumbai focusing on scalable systems and backend architecture.",
   }
 };
 
 export default function Page() {
-  return <AboutClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Abhijeet Shinde",
+    "url": "https://profitable-azure.vercel.app/about",
+    "dateModified": new Date().toISOString(),
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Abhijeet Shinde",
+      "jobTitle": "Systems Engineer & Web Developer",
+      "url": "https://profitable-azure.vercel.app"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AboutClient />
+    </>
+  );
 }

@@ -11,9 +11,42 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://profitable-azure.vercel.app",
     siteName: "Abhijeet Shinde",
+    updatedTime: new Date().toISOString(),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhijeet Shinde | Web Developer in Mumbai",
+    description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
   },
 };
 
 export default function Page() {
-  return <HomeClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": new Date().toISOString(),
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Abhijeet Shinde",
+      "url": "https://profitable-azure.vercel.app",
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "sameAs": [
+        "https://hashnode.com/@abhijeet2005"
+      ]
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeClient />
+    </>
+  );
 }
