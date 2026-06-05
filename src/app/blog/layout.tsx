@@ -17,24 +17,24 @@ export const metadata: Metadata = {
   }
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Abhijeet Shinde's Blog",
+  "url": "https://profitable-azure.vercel.app/blog",
+  "description": "Writings on web development, systems engineering, and more.",
+  "dateModified": new Date().toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Abhijeet Shinde"
+  }
+};
+
 export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Abhijeet Shinde's Blog",
-    "url": "https://profitable-azure.vercel.app/blog",
-    "description": "Writings on web development, systems engineering, and more.",
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": "Abhijeet Shinde"
-    }
-  };
-
   return (
     <>
       <script

@@ -33,20 +33,10 @@ export default function Loader() {
 
     return (
         <div
+            className="loader-overlay"
             style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                background: "#0A0A0A",
-                zIndex: 9999,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 opacity: stage === 2 ? 0 : 1,
                 pointerEvents: stage === 2 ? "none" : "auto",
-                transition: "opacity 300ms ease",
             }}
         >
             <div
@@ -57,16 +47,16 @@ export default function Loader() {
                     transition: "clip-path 500ms cubic-bezier(0.76,0,0.24,1)",
                 }}
             >
-                {characters.map((char, index) => (
+                {characters.map((char) => (
                     <span
-                        key={index}
+                        key={char}
                         style={{
                             fontFamily: "var(--font-bebas-neue)",
                             fontSize: "48px",
                             color: "var(--color-text-primary)",
                             opacity: 0,
                             transform: "translateY(20px)",
-                            animation: `char-reveal 300ms ease-out forwards ${index * 60 + 100}ms`,
+                            animation: `char-reveal 300ms ease-out forwards ${characters.indexOf(char) * 60 + 100}ms`,
                         }}
                     >
                         {char}
@@ -74,6 +64,19 @@ export default function Loader() {
                 ))}
             </div>
             <style>{`
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0A0A0A;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 300ms ease;
+        }
         @keyframes char-reveal {
           to {
             opacity: 1;

@@ -15,6 +15,8 @@ interface BlogPost {
     tags: string[];
 }
 
+const CATEGORIES = ["All", "Weekly Updates", "Hackathon Diaries", "Project Logs"];
+
 export default function BlogClient() {
     const [posts, setPosts] = useState<BlogPost[]>([]);
     const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -73,8 +75,6 @@ export default function BlogClient() {
         };
     }, [posts, activeCategory, activeSeries]);
 
-    const categories = ["All", "Weekly Updates", "Hackathon Diaries", "Project Logs"];
-
     return (
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "var(--space-8) 24px" }}>
             <style>{`
@@ -82,6 +82,45 @@ export default function BlogClient() {
                 .post-card { background: var(--color-bg); }
                 .post-card:hover { background: var(--color-surface); }
                 .post-card:hover .post-title { color: var(--color-accent); }
+                .category-filter-btn {
+                    background: transparent;
+                    border: 1px solid var(--color-border);
+                    padding: 12px 24px;
+                    border-radius: 0;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    font-size: 14px;
+                }
+                .category-filter-btn.active {
+                    background: var(--color-text-primary);
+                    color: #000;
+                    border-color: var(--color-text-primary);
+                }
+                .series-filter-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 48px;
+                    background: rgba(255,255,255,0.02);
+                    padding: 16px;
+                    border-radius: 0;
+                    border: 1px dashed var(--color-border);
+                }
+                .series-filter-btn {
+                    background: transparent;
+                    border: 1px solid var(--color-accent);
+                    padding: 4px 12px;
+                    border-radius: 0;
+                    cursor: pointer;
+                    font-size: 12px;
+                    transition: opacity 0.2s ease;
+                }
+                .series-filter-btn.active {
+                    background: var(--color-accent);
+                    color: #000;
+                }
             `}</style>
 
             {/* Header */}
@@ -92,24 +131,17 @@ export default function BlogClient() {
 
             {/* Category Primary Filters */}
             <div className="reveal" style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: "16px", marginBottom: "40px" }}>
-                {categories.map(cat => (
+                {CATEGORIES.map(cat => (
                     <button
                         key={cat}
                         onClick={() => {
                             setActiveCategory(cat);
                             setActiveSeries(null); // Reset series when category changes
                         }}
+                        className={`type-mono category-filter-btn${activeCategory === cat ? " active" : ""}`}
                         style={{
-                            background: activeCategory === cat ? "var(--color-text-primary)" : "transparent",
-                            color: activeCategory === cat ? "#000" : "var(--color-text-secondary)",
-                            border: `1px solid ${activeCategory === cat ? "var(--color-text-primary)" : "var(--color-border)"}`,
-                            padding: "12px 24px",
-                            borderRadius: "0",
-                            cursor: "pointer",
-                            transition: "all 0.2s ease",
-                            fontSize: "14px"
+                            color: activeCategory === cat ? "#000" : "var(--color-text-secondary)"
                         }}
-                        className="type-mono"
                     >
                         {cat}
                     </button>
@@ -118,22 +150,16 @@ export default function BlogClient() {
 
             {/* Internal Series / Service Sub-Filters */}
             {activeCategory !== "All" && availableSeries.length > 0 && (
-                <div className="reveal" style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", alignItems: "center", gap: "8px", marginBottom: "48px", background: "rgba(255,255,255,0.02)", padding: "16px", borderRadius: "0", border: "1px dashed var(--color-border)" }}>
+                <div className="reveal series-filter-container">
                     <span className="type-micro" style={{ color: "var(--color-text-tertiary)", marginRight: "8px" }}>INTERNAL SERVICE SERIES:</span>
 
                     <button
                         onClick={() => setActiveSeries(null)}
+                        className={`type-mono series-filter-btn${activeSeries === null ? " active" : ""}`}
                         style={{
-                            background: activeSeries === null ? "var(--color-accent)" : "transparent",
                             color: activeSeries === null ? "#000" : "var(--color-text-secondary)",
-                            border: "1px solid var(--color-accent)",
-                            padding: "4px 12px",
-                            borderRadius: "0",
-                            cursor: "pointer",
-                            fontSize: "12px",
                             opacity: activeSeries === null ? 1 : 0.6
                         }}
-                        className="type-mono"
                     >
                         ALL {activeCategory.toUpperCase()}
                     </button>
@@ -142,17 +168,11 @@ export default function BlogClient() {
                         <button
                             key={seriesName}
                             onClick={() => setActiveSeries(seriesName)}
+                            className={`type-mono series-filter-btn${activeSeries === seriesName ? " active" : ""}`}
                             style={{
-                                background: activeSeries === seriesName ? "var(--color-accent)" : "transparent",
                                 color: activeSeries === seriesName ? "#000" : "var(--color-text-secondary)",
-                                border: "1px solid var(--color-accent)",
-                                padding: "4px 12px",
-                                borderRadius: "0",
-                                cursor: "pointer",
-                                fontSize: "12px",
                                 opacity: activeSeries === seriesName ? 1 : 0.6
                             }}
-                            className="type-mono"
                         >
                             {seriesName}
                         </button>

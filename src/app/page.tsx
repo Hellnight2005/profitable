@@ -19,26 +19,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "dateModified": new Date().toISOString(),
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Abhijeet Shinde",
-      "url": "https://profitable-azure.vercel.app",
-      "jobTitle": "Web Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      },
-      "sameAs": [
-        "https://hashnode.com/@abhijeet2005"
-      ]
-    }
-  };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": new Date().toISOString(),
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Abhijeet Shinde",
+    "url": "https://profitable-azure.vercel.app",
+    "jobTitle": "Web Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "sameAs": [
+      "https://hashnode.com/@abhijeet2005"
+    ]
+  }
+};
 
+export default function Page() {
   return (
     <>
       <script

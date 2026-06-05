@@ -135,24 +135,173 @@ export default function Skills() {
     }, []);
 
     return (
-        <div style={{ padding: "var(--space-8) 24px" }}>
-            <header className="reveal" style={{ maxWidth: "1280px", margin: "0 auto", marginBottom: "64px" }}>
-                <h1 className="type-display" style={{ color: "var(--color-text-primary)" }}>SKILLS & SERVICES</h1>
+        <div className="skills-container">
+            <style>{`
+                .skills-container {
+                    padding: var(--space-8) 24px;
+                }
+                .skills-section {
+                    max-width: 1280px;
+                    margin: 0 auto;
+                    margin-bottom: 96px;
+                }
+                .skills-header {
+                    max-width: 1280px;
+                    margin: 0 auto 64px;
+                }
+                .skills-title {
+                    color: var(--color-text-primary);
+                }
+                .skills-section-label {
+                    color: var(--color-text-tertiary);
+                    letter-spacing: 0.16em;
+                    margin-bottom: 48px;
+                }
+                .skills-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 48px;
+                }
+                .skills-cat-title {
+                    color: var(--color-text-primary);
+                    margin-bottom: 16px;
+                }
+                .skills-cat-hr {
+                    border: none;
+                    border-top: 1px solid var(--color-border);
+                    margin-bottom: 24px;
+                }
+                .skills-list {
+                    list-style: none;
+                    padding: 0;
+                }
+                .skills-item {
+                    margin-bottom: 12px;
+                    display: flex;
+                    gap: 12px;
+                }
+                .skills-item-arrow {
+                    color: var(--color-accent);
+                }
+                .tools-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    gap: 24px;
+                }
+                .tool-card {
+                    background: var(--color-surface);
+                    border: 1px solid var(--color-border);
+                    padding: 24px;
+                    text-align: center;
+                    border-radius: 2px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 16px;
+                    transition: border-color 0.2s, transform 0.2s;
+                }
+                .tool-card:hover {
+                    border-color: var(--color-accent);
+                    transform: scale(1.04);
+                }
+                .tool-logo-img {
+                    object-fit: contain;
+                    filter: invert(0.8);
+                }
+                .tool-name {
+                    color: var(--color-text-primary);
+                }
+                .service-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 24px;
+                    border-bottom: 2px solid var(--color-border);
+                    padding: 32px 16px;
+                    cursor: pointer;
+                    transition: background 0.2s, border-left 0.2s, padding-left 0.2s;
+                }
+                .service-row:hover {
+                    background: var(--color-surface);
+                    border-left: 4px solid var(--color-accent);
+                    padding-left: 28px;
+                }
+                .service-row-main {
+                    flex: 1 1 50%;
+                    min-width: 300px;
+                }
+                .service-title {
+                    color: var(--color-text-primary);
+                    margin-bottom: 8px;
+                    transition: color 0.2s;
+                }
+                .service-row:hover .service-title {
+                    color: var(--color-accent);
+                }
+                .service-desc {
+                    margin: 0;
+                }
+                .service-price-container {
+                    min-width: 150px;
+                    text-align: right;
+                }
+                .service-price {
+                    color: var(--color-accent);
+                }
+                .engagement-section {
+                    max-width: 1280px;
+                    margin: 0 auto;
+                }
+                .engagement-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 24px;
+                }
+                .engagement-card {
+                    background: var(--color-surface-alt);
+                    border: 1px solid var(--color-border);
+                    padding: 32px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                .engagement-tag {
+                    border: 1px solid var(--color-border);
+                    padding: 4px 10px;
+                    margin-bottom: 24px;
+                    display: inline-block;
+                }
+                .engagement-title {
+                    color: var(--color-text-primary);
+                    margin-bottom: 16px;
+                }
+                .engagement-desc {
+                    margin-bottom: 32px;
+                }
+                .engagement-btn {
+                    width: 100%;
+                }
+            `}</style>
+
+            <header className="reveal skills-header">
+                <h1 className="type-display skills-title">SKILLS & SERVICES</h1>
             </header>
 
             {/* Skills */}
-            <section className="reveal" style={{ maxWidth: "1280px", margin: "0 auto", marginBottom: "96px" }}>
-                <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>CAPABILITIES</h4>
+            <section className="reveal skills-section">
+                <h4 className="type-ui skills-section-label">CAPABILITIES</h4>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px" }}>
+                <div className="skills-grid">
                     {SKILLS.map((skill) => (
                         <div key={skill.cat}>
-                            <h3 style={{ color: "var(--color-text-primary)", marginBottom: "16px" }}>{skill.cat}</h3>
-                            <hr style={{ border: "none", borderTop: "1px solid var(--color-border)", marginBottom: "24px" }} />
-                            <ul style={{ listStyle: "none", padding: 0 }}>
-                                {skill.items.map((item, i) => (
-                                    <li key={i} className="body-text" style={{ marginBottom: "12px", display: "flex", gap: "12px" }}>
-                                        <span style={{ color: "var(--color-accent)" }}>→</span>
+                            <h3 className="skills-cat-title">{skill.cat}</h3>
+                            <hr className="skills-cat-hr" />
+                            <ul className="skills-list">
+                                {skill.items.map((item) => (
+                                    <li key={item} className="body-text skills-item">
+                                        <span className="skills-item-arrow">→</span>
                                         {item}
                                     </li>
                                 ))}
@@ -163,48 +312,54 @@ export default function Skills() {
             </section>
 
             {/* Tools */}
-            <section className="reveal" style={{ maxWidth: "1280px", margin: "0 auto", marginBottom: "96px" }}>
-                <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>TOOLS</h4>
+            <section className="reveal skills-section">
+                <h4 className="type-ui skills-section-label">TOOLS</h4>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "24px" }}>
+                <div className="tools-grid">
                     {TOOLS.map((tool) => (
-                        <div key={tool.name} className="interactive" style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", padding: "24px", textAlign: "center", borderRadius: "2px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px" }}
-                            onMouseOver={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; e.currentTarget.style.transform = "scale(1.04)"; }}
-                            onMouseOut={(e) => { e.currentTarget.style.borderColor = "var(--color-border)"; e.currentTarget.style.transform = "scale(1)"; }}>
-                            <Image src={tool.logo} alt={tool.name} width={32} height={32} style={{ objectFit: "contain", filter: "invert(0.8)" }} unoptimized />
-                            <span className="type-ui" style={{ color: "var(--color-text-primary)" }}>{tool.name}</span>
+                        <div key={tool.name} className="interactive tool-card">
+                            <Image
+                                src={tool.logo}
+                                alt={tool.name}
+                                width={32}
+                                height={32}
+                                className="tool-logo-img"
+                                unoptimized
+                            />
+                            <span className="type-ui tool-name">{tool.name}</span>
                         </div>
                     ))}
                 </div>
             </section>
 
             {/* Services */}
-            <section className="reveal" style={{ maxWidth: "1280px", margin: "0 auto", marginBottom: "96px" }}>
-                <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>SERVICES</h4>
+            <section className="reveal skills-section">
+                <h4 className="type-ui skills-section-label">SERVICES</h4>
 
                 <div>
-                    {SERVICES.map((s, i) => (
-                        <div key={i} onClick={() => router.push(`/contact?subject=${encodeURIComponent(s.name)}`)} className="interactive service-row" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "24px", borderBottom: "2px solid var(--color-border)", padding: "32px 16px", cursor: "pointer" }}>
-                            <div style={{ flex: "1 1 50%", minWidth: "300px" }}>
-                                <h3 className="service-title" style={{ color: "var(--color-text-primary)", marginBottom: "8px", transition: "color 0.2s" }}>{s.name}</h3>
-                                <p className="body-text" style={{ margin: 0 }}>{s.desc}</p>
+                    {SERVICES.map((s) => (
+                        <div
+                            key={s.name}
+                            onClick={() => router.push(`/contact?subject=${encodeURIComponent(s.name)}`)}
+                            className="interactive service-row"
+                        >
+                            <div className="service-row-main">
+                                <h3 className="service-title">{s.name}</h3>
+                                <p className="body-text service-desc">{s.desc}</p>
                             </div>
-                            <div style={{ minWidth: "150px", textAlign: "right" }}>
-                                <span className="type-ui" style={{ color: "var(--color-accent)" }}>{s.price}</span>
+                            <div className="service-price-container">
+                                <span className="type-ui service-price">{s.price}</span>
                             </div>
                         </div>
                     ))}
                 </div>
-                <style jsx>{`
-          .service-row:hover { background: var(--color-surface); border-left: 4px solid var(--color-accent); padding-left: 28px !important; }
-        `}</style>
             </section>
 
             {/* Engagement */}
-            <section className="reveal" style={{ maxWidth: "1280px", margin: "0 auto" }}>
-                <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>ENGAGEMENT MODEL</h4>
+            <section className="reveal engagement-section">
+                <h4 className="type-ui skills-section-label">ENGAGEMENT MODEL</h4>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+                <div className="engagement-grid">
                     {[
                         {
                             tag: "FREELANCE",
@@ -222,13 +377,19 @@ export default function Skills() {
                             desc: "Helping startups and founders build MVPs, prototypes, and technical foundations.",
                         },
                     ].map((m) => (
-                        <div key={m.tag} className="card interactive" style={{ background: "var(--color-surface-alt)", border: "1px solid var(--color-border)", padding: "32px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                        <div key={m.tag} className="card interactive engagement-card">
                             <div>
-                                <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", marginBottom: "24px", display: "inline-block" }}>{m.tag}</span>
-                                <h3 style={{ color: "var(--color-text-primary)", marginBottom: "16px" }}>{m.title}</h3>
-                                <p className="body-text" style={{ marginBottom: "32px" }}>{m.desc}</p>
+                                <span className="tag engagement-tag">{m.tag}</span>
+                                <h3 className="engagement-title">{m.title}</h3>
+                                <p className="body-text engagement-desc">{m.desc}</p>
                             </div>
-                            <Button onClick={() => router.push(`/contact?subject=${encodeURIComponent(m.tag + " - " + m.title)}`)} variant="primary" style={{ width: "100%" }}>LET&apos;S TALK</Button>
+                            <Button
+                                onClick={() => router.push(`/contact?subject=${encodeURIComponent(m.tag + " - " + m.title)}`)}
+                                variant="primary"
+                                className="engagement-btn"
+                            >
+                                LET&apos;S TALK
+                            </Button>
                         </div>
                     ))}
                 </div>

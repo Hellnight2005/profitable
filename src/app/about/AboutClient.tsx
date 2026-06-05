@@ -5,6 +5,81 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 
+const INTERESTS_LIST = [
+    {
+        id: "system-design",
+        src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200",
+        title: "System Design",
+        desc: "Designing scalable systems by understanding how everything connects."
+    },
+    {
+        id: "tech-explorer",
+        src: "https://i.pinimg.com/736x/04/45/2e/04452ee9b50e1db5ed174f1d260ca5d1.jpg",
+        title: "Tech Explorer",
+        desc: "Exploring emerging technologies and testing new ideas."
+    },
+    {
+        id: "builder-mindset",
+        src: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1200",
+        title: "Builder Mindset",
+        desc: "Creating from scratch to understand how things actually work."
+    },
+    {
+        id: "problem-solver",
+        src: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200",
+        title: "Problem Solver",
+        desc: "Breaking complex problems into simple, logical steps."
+    },
+    {
+        id: "first-principles",
+        src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200",
+        title: "First Principles",
+        desc: "Understanding systems by questioning assumptions and basics."
+    },
+    {
+        id: "music-listener",
+        src: "https://i.pinimg.com/736x/96/d7/cd/96d7cd12dd797ab37c113787bd9bdfb2.jpg",
+        title: "Music Listener",
+        desc: "Listening to music to relax, focus, and stay in the flow."
+    },
+    {
+        id: "systems-thinking",
+        src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
+        title: "Systems Thinking",
+        desc: "Seeing patterns and connections across complex environments."
+    },
+    {
+        id: "hardware-curiosity",
+        src: "https://i.pinimg.com/736x/af/15/13/af1513343b64c79360f6b1376d75970f.jpg",
+        title: "Hardware Curiosity",
+        desc: "Exploring how physical systems and components function."
+    },
+    {
+        id: "deep-focus",
+        src: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=1200",
+        title: "Deep Focus",
+        desc: "Working with intense concentration for long problem-solving sessions."
+    },
+    {
+        id: "curious-mind",
+        src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
+        title: "Curious Mind",
+        desc: "Driven to explore, question, and understand things deeply."
+    },
+    {
+        id: "movie-enthusiast",
+        src: "https://i.pinimg.com/1200x/3d/31/ef/3d31ef975700b3d9c15bbc30f46be45a.jpg",
+        title: "Movie Enthusiast",
+        desc: "Interested in storytelling, ideas, and cinematic perspectives."
+    },
+    {
+        id: "anime-lover",
+        src: "https://i.pinimg.com/avif/736x/74/56/43/7456432bd045d1f74bed6265fa0b51c6.avf",
+        title: "Anime Lover",
+        desc: "Drawn to creativity, world-building, and unique narratives."
+    }
+];
+
 export default function AboutClient() {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [rotation, setRotation] = useState(0);
@@ -136,81 +211,11 @@ export default function AboutClient() {
                         onTouchEnd={handleMouseUp}
                     >
                         {/* Huge Invisible Rotating Arc */}
-                        <div className="carousel-orbit" style={{
-                            position: "absolute",
-                            width: "3000px",
-                            height: "3000px",
-                            borderRadius: "50%",
-                            border: "1px solid var(--color-border)",
-                            opacity: 0.5,
-                            left: "50%",
-                            top: "1800px",
-                            zIndex: 1,
+                        <div className="carousel-orbit carousel-orbit-custom" style={{
                             transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
                             transition: isDragging ? "none" : "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)"
                         }}>
-                            {[
-                                {
-                                    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200",
-                                    title: "System Design",
-                                    desc: "Designing scalable systems by understanding how everything connects."
-                                },
-                                {
-                                    src: "https://i.pinimg.com/736x/04/45/2e/04452ee9b50e1db5ed174f1d260ca5d1.jpg",
-                                    title: "Tech Explorer",
-                                    desc: "Exploring emerging technologies and testing new ideas."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1200",
-                                    title: "Builder Mindset",
-                                    desc: "Creating from scratch to understand how things actually work."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200",
-                                    title: "Problem Solver",
-                                    desc: "Breaking complex problems into simple, logical steps."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200",
-                                    title: "First Principles",
-                                    desc: "Understanding systems by questioning assumptions and basics."
-                                },
-                                {
-                                    src: "https://i.pinimg.com/736x/96/d7/cd/96d7cd12dd797ab37c113787bd9bdfb2.jpg",
-                                    title: "Music Listener",
-                                    desc: "Listening to music to relax, focus, and stay in the flow."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
-                                    title: "Systems Thinking",
-                                    desc: "Seeing patterns and connections across complex environments."
-                                },
-                                {
-                                    src: "https://i.pinimg.com/736x/af/15/13/af1513343b64c79360f6b1376d75970f.jpg",
-                                    title: "Hardware Curiosity",
-                                    desc: "Exploring how physical systems and components function."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=1200",
-                                    title: "Deep Focus",
-                                    desc: "Working with intense concentration for long problem-solving sessions."
-                                },
-                                {
-                                    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
-                                    title: "Curious Mind",
-                                    desc: "Driven to explore, question, and understand things deeply."
-                                },
-                                {
-                                    src: "https://i.pinimg.com/1200x/3d/31/ef/3d31ef975700b3d9c15bbc30f46be45a.jpg",
-                                    title: "Movie Enthusiast",
-                                    desc: "Interested in storytelling, ideas, and cinematic perspectives."
-                                },
-                                {
-                                    src: "https://i.pinimg.com/avif/736x/74/56/43/7456432bd045d1f74bed6265fa0b51c6.avf",
-                                    title: "Anime Lover",
-                                    desc: "Drawn to creativity, world-building, and unique narratives."
-                                }
-                            ].map((item, i) => {
+                            {INTERESTS_LIST.map((item, i) => {
                                 const baseAngle = i * 30; // Closer spacing of 30deg
                                 // Calculate the absolute effective angle to determine if it's currently at the top dead center
                                 // The top of the circle relative to the DOM is at 0 degrees.
@@ -221,30 +226,12 @@ export default function AboutClient() {
                                 const isActive = Math.abs(normalizedAngle) < 15;
 
                                 return (
-                                    <div key={i} className="group" style={{
-                                        position: "absolute",
-                                        top: "50%",
-                                        left: "50%",
+                                    <div key={item.id} className="group carousel-item-container" style={{
                                         transform: `translate(-50%, -50%) rotate(${baseAngle}deg) translateY(-1500px)`,
-                                        transformOrigin: "center center",
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        alignItems: "center",
-                                        gap: "32px",
-                                        width: "360px",
-                                        pointerEvents: "none", // Allow drag events to pass through
                                         opacity: isActive ? 1 : 0.4,
-                                        transition: "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
                                     }}>
-                                        <div style={{
-                                            width: "360px",
-                                            height: "480px",
-                                            position: "relative",
-                                            borderRadius: "32px",
-                                            overflow: "hidden",
-                                            border: "1px solid var(--color-border)",
+                                        <div className="carousel-card-inner" style={{
                                             transform: `scale(${isActive ? 1 : 0.85})`,
-                                            transition: "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
                                         }}>
                                             <Image src={item.src} alt={item.title} fill style={{ objectFit: "cover", transition: "transform 0.7s ease", filter: isActive ? "brightness(1.25)" : "grayscale(100%) brightness(1.25)" }} />
                                             <div style={{ position: "absolute", inset: 0, background: "var(--color-bg)", opacity: isActive ? 0 : 0.4, transition: "opacity 0.6s ease" }} />
@@ -303,8 +290,8 @@ export default function AboutClient() {
                             { num: "01", title: "HONEST UTILITY", desc: "Function is the highest form of beauty. We remove the unnecessary until only the essential logic remains—clear, purposeful, and unapologetic." },
                             { num: "02", title: "DIGITAL TACTILITY", desc: "Software should feel as deliberate as a crafted tool. Weight, friction, and response are not merely physical qualities—they are fundamental to digital experience." },
                             { num: "03", title: "SYSTEMIC RIGOR", desc: "Design is not a moment of inspiration but a disciplined system. We create frameworks where complexity can emerge from clear rules and precise structure." }
-                        ].map((ethos, i) => (
-                            <div key={i} style={{ position: "relative" }}>
+                        ].map((ethos) => (
+                            <div key={ethos.title} style={{ position: "relative" }}>
                                 <span className="type-display" style={{ position: "absolute", top: "-40px", left: "0", fontSize: "120px", color: "var(--color-text-primary)", opacity: 0.03, userSelect: "none" }}>{ethos.num}</span>
                                 <h3 className="type-display" style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "16px", letterSpacing: "-0.02em", position: "relative", zIndex: 1 }}>{ethos.title}</h3>
                                 <p className="type-mono" style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, paddingLeft: "24px", borderLeft: "1px solid var(--color-accent)", position: "relative", zIndex: 1 }}>{ethos.desc}</p>
@@ -351,6 +338,39 @@ export default function AboutClient() {
                 /* IMAGE CAROUSEL CSS */
                 .group:hover .group-hover-opacity {
                     opacity: 0 !important;
+                }
+                .carousel-orbit-custom {
+                    position: absolute;
+                    width: 3000px;
+                    height: 3000px;
+                    border-radius: 50%;
+                    border: 1px solid var(--color-border);
+                    opacity: 0.5;
+                    left: 50%;
+                    top: 1800px;
+                    z-index: 1;
+                }
+                .carousel-item-container {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform-origin: center center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 32px;
+                    width: 360px;
+                    pointer-events: none; /* Allow drag events to pass through */
+                    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                }
+                .carousel-card-inner {
+                    width: 360px;
+                    height: 480px;
+                    position: relative;
+                    border-radius: 32px;
+                    overflow: hidden;
+                    border: 1px solid var(--color-border);
+                    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
                 }
             `}} />
         </div>

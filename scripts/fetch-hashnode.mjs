@@ -90,6 +90,11 @@ async function fetchAllHashnodePosts() {
     // Sort all posts by date descending
     allPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
+    if (allPosts.length === 0) {
+        console.error("Error: Fetch compiled 0 posts. Skipping write to prevent overwriting existing data with an empty array.");
+        process.exit(1);
+    }
+
     // Ensure public directory exists
     const outputDir = path.join(PROJECT_ROOT, 'public', 'blog');
     await fs.mkdir(outputDir, { recursive: true });
@@ -101,3 +106,4 @@ async function fetchAllHashnodePosts() {
 }
 
 fetchAllHashnodePosts();
+

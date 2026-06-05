@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
+const MORE_POSTS = [
+    { id: "typographic-scales", tag: "DESIGN", title: "Typographic Scales for Dark Interfaces", date: "FEB 14, 2026", time: "5 MIN READ" },
+    { id: "slow-execution", tag: "THOUGHTS", title: "The Value of Slow Execution", date: "JAN 28, 2026", time: "4 MIN READ" },
+    { id: "asymmetric-grids", tag: "TUTORIALS", title: "Mastering Asymmetric CSS Grids", date: "JAN 12, 2026", time: "6 MIN READ" },
+];
+
 export default function ArticleDetail() {
     const params = useParams();
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -32,6 +38,20 @@ export default function ArticleDetail() {
 
     return (
         <div>
+            <style>{`
+                .more-writing-card {
+                    background: var(--color-surface);
+                    border: 1px solid var(--color-border);
+                    border-top: 2px solid var(--color-border);
+                    border-radius: 2px;
+                    padding: 32px 24px;
+                    transition: border-color 0.2s ease, transform 0.2s ease;
+                }
+                .more-writing-card:hover {
+                    border-top-color: var(--color-accent) !important;
+                    transform: translateY(-4px);
+                }
+            `}</style>
             {/* Progress Bar */}
             <div style={{ position: "fixed", top: "64px", left: 0, height: "2px", background: "var(--color-accent)", width: `${scrollProgress}%`, zIndex: 99, transition: "width 0.1s" }} />
 
@@ -104,15 +124,8 @@ export default function ArticleDetail() {
                     <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>MORE WRITING</h4>
 
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
-                        {[
-                            { tag: "DESIGN", title: "Typographic Scales for Dark Interfaces", date: "FEB 14, 2026", time: "5 MIN READ" },
-                            { tag: "THOUGHTS", title: "The Value of Slow Execution", date: "JAN 28, 2026", time: "4 MIN READ" },
-                            { tag: "TUTORIALS", title: "Mastering Asymmetric CSS Grids", date: "JAN 12, 2026", time: "6 MIN READ" },
-                        ].map((post, i) => (
-                            <div key={i} className="card interactive" style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderTop: "2px solid var(--color-border)", borderRadius: "2px", padding: "32px 24px" }}
-                                onMouseOver={(e) => { e.currentTarget.style.borderTopColor = "var(--color-accent)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                                onMouseOut={(e) => { e.currentTarget.style.borderTopColor = "var(--color-border)"; e.currentTarget.style.transform = "translateY(0)"; }}
-                            >
+                        {MORE_POSTS.map((post) => (
+                            <div key={post.id} className="card interactive more-writing-card">
                                 <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", borderRadius: "2px", marginBottom: "24px", display: "inline-block" }}>{post.tag}</span>
                                 <h4 style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px" }}>{post.title}</h4>
                                 <div style={{ display: "flex", justifyContent: "space-between" }}>

@@ -19,21 +19,21 @@ export const metadata: Metadata = {
   }
 };
 
-export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Abhijeet Shinde",
-    "url": "https://profitable-azure.vercel.app/about",
-    "dateModified": new Date().toISOString(),
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Abhijeet Shinde",
-      "jobTitle": "Systems Engineer & Web Developer",
-      "url": "https://profitable-azure.vercel.app"
-    }
-  };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Abhijeet Shinde",
+  "url": "https://profitable-azure.vercel.app/about",
+  "dateModified": new Date().toISOString(),
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Abhijeet Shinde",
+    "jobTitle": "Systems Engineer & Web Developer",
+    "url": "https://profitable-azure.vercel.app"
+  }
+};
 
+export default function Page() {
   return (
     <>
       <script

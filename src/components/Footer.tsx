@@ -34,7 +34,7 @@ export default function Footer() {
                         PORTFOLIO.
                     </h4>
                     <p style={{ fontSize: "var(--type-ui)" }}>
-                        Maker. Writer. Builder.
+                        Maker. Builder. Writer.
                     </p>
                 </div>
 
