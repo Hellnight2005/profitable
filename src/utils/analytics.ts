@@ -45,11 +45,11 @@ export function trackPageView(pageName: string): void {
 }
 
 /**
- * Tracks when a user clicks the button to download the professional resume.
+ * Tracks when a user clicks the button to view the professional resume.
  * Category: Resume
  */
-export function trackResumeDownload(): void {
-    trackEvent("resume_download", {
+export function trackResumeView(): void {
+    trackEvent("resume_view", {
         file_name: "Abhijeet_Shinde_Resume.pdf"
     });
 }

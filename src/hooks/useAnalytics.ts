@@ -77,24 +77,56 @@ export function useAnalytics(): void {
         cleanupFns.push(() => window.removeEventListener("error", handleJsError));
 
         // ==========================================
-        // 4. Automatic External Link Tracking
+        // 4. Automatic Link Tracking (Social, Email, Resume, Outbound)
         // ==========================================
-        const handleExternalLinkClick = (e: MouseEvent) => {
+        const handleLinkClick = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             const anchor = target.closest("a");
 
             if (anchor && anchor.href) {
                 try {
-                    const url = new URL(anchor.href);
-                    // Check if it's external (different hostname) and not mailto/tel links
-                    if (
-                        url.hostname !== window.location.hostname &&
-                        !anchor.href.startsWith("mailto:") &&
-                        !anchor.href.startsWith("tel:")
-                    ) {
-                        trackEvent("external_link_click", {
+                    // 1. Direct Email Link Tracking
+                    if (anchor.href.startsWith("mailto:")) {
+                        trackEvent("email_click", {
                             destination: anchor.href
                         });
+                        return;
+                    }
+
+                    // 2. Resume View Tracking
+                    if (anchor.href.includes("Resume.pdf")) {
+                        trackEvent("resume_view", {
+                            file_name: "Abhijeet_Shinde_Resume.pdf",
+                            destination: anchor.href
+                        });
+                        return;
+                    }
+
+                    const url = new URL(anchor.href);
+
+                    // Check if it's external (different hostname) and not tel links
+                    if (
+                        url.hostname !== window.location.hostname &&
+                        !anchor.href.startsWith("tel:")
+                    ) {
+                        // 3. GitHub Outbound Click
+                        if (url.hostname.includes("github.com")) {
+                            trackEvent("github_click", {
+                                destination: anchor.href
+                            });
+                        }
+                        // 4. LinkedIn Outbound Click
+                        else if (url.hostname.includes("linkedin.com")) {
+                            trackEvent("linkedin_click", {
+                                destination: anchor.href
+                            });
+                        }
+                        // 5. Generic Outbound Click
+                        else {
+                            trackEvent("external_link_click", {
+                                destination: anchor.href
+                            });
+                        }
                     }
                 } catch {
                     // Invalid URL structure, ignore
@@ -102,8 +134,8 @@ export function useAnalytics(): void {
             }
         };
 
-        document.addEventListener("click", handleExternalLinkClick);
-        cleanupFns.push(() => document.removeEventListener("click", handleExternalLinkClick));
+        document.addEventListener("click", handleLinkClick);
+        cleanupFns.push(() => document.removeEventListener("click", handleLinkClick));
 
         // ==========================================
         // 5. Performance Web Vitals Tracking
