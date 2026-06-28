@@ -61,7 +61,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-LWESM1V5Q0', { 'debug_mode': true });
+            gtag('config', 'G-LWESM1V5Q0');
           `}
         </Script>
       </body>
