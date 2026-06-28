@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import {
+    trackContactFormSubmit,
+    trackEmailClick,
+    trackGitHubClick,
+    trackLinkedInClick,
+    trackResumeDownload
+} from "@/utils/analytics";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -65,6 +72,7 @@ export default function ContactClient() {
             
             if (res.ok) {
                 setStatus("success");
+                trackContactFormSubmit();
                 setForm({ name: "", email: "", subject: "", message: "" });
             } else {
                 setStatus("error");
@@ -88,15 +96,15 @@ export default function ContactClient() {
                     </p>
                     <div style={{ marginBottom: "64px" }}>
                         <span className="type-micro" style={{ color: "var(--color-text-tertiary)", display: "block", marginBottom: "8px" }}>DIRECT EMAIL</span>
-                        <a href="mailto:abhijeet2005shinde@gmail.com" style={{ fontFamily: "var(--font-dm-mono)", fontSize: "24px", color: "var(--color-accent)", textDecoration: "none" }}>abhijeet2005shinde@gmail.com</a>
+                        <a href="mailto:abhijeet2005shinde@gmail.com" onClick={trackEmailClick} style={{ fontFamily: "var(--font-dm-mono)", fontSize: "24px", color: "var(--color-accent)", textDecoration: "none" }}>abhijeet2005shinde@gmail.com</a>
                         <span className="type-micro" style={{ color: "var(--color-text-tertiary)", display: "block", marginTop: "16px" }}>I typically respond within 24–48 hours.</span>
                     </div>
 
                     <span className="type-micro" style={{ color: "var(--color-text-tertiary)", display: "block", marginBottom: "16px" }}>CONNECT ON</span>
                     <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", marginBottom: "48px" }}>
-                        <a href="https://github.com/Hellnight2005" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>GitHub</a>
-                        <a href="https://www.linkedin.com/in/abhi2005jeet/" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>LinkedIn</a>
-                        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>Resume</a>
+                        <a href="https://github.com/Hellnight2005" target="_blank" rel="noopener noreferrer" onClick={trackGitHubClick} className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>GitHub</a>
+                        <a href="https://www.linkedin.com/in/abhi2005jeet/" target="_blank" rel="noopener noreferrer" onClick={trackLinkedInClick} className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>LinkedIn</a>
+                        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" onClick={trackResumeDownload} className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>Resume</a>
                     </div>
                 </section>
 

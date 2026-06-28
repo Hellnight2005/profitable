@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/Button";
+import { trackBlogClick } from "@/utils/analytics";
 
 interface BlogPost {
     title: string;
@@ -307,7 +308,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                     <>
                         {/* 1. Featured Post (First Post in list) */}
                         {featuredPost && !activeTag && searchQuery === "" && (
-                            <a href={featuredPost.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                            <a href={featuredPost.url} target="_blank" rel="noopener noreferrer" onClick={() => trackBlogClick(featuredPost.title)} style={{ textDecoration: "none" }}>
                                 <article className="reveal interactive post-card featured-card" style={{ padding: "40px" }}>
                                     <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "20px", alignItems: "center" }}>
                                         <span className="type-micro" style={{ color: "var(--color-accent)", fontWeight: "600", letterSpacing: "0.1em" }}>FEATURED ARTICLE</span>
@@ -354,7 +355,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
 
                                 return (
                                     <article key={post.slug} className="reveal interactive post-card" style={{ padding: "28px 24px" }}>
-                                        <a href={post.url} target="_blank" rel="noopener noreferrer" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+                                        <a href={post.url} target="_blank" rel="noopener noreferrer" onClick={() => trackBlogClick(post.title)} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
                                             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "12px", alignItems: "center" }}>
                                                 <span className="type-micro" style={{ color: "var(--color-text-tertiary)" }}>{formattedDate}</span>
                                                 <span className="tag" style={{ border: "1px solid var(--color-primary)", color: "var(--color-primary)", padding: "1px 6px", fontSize: "9px" }}>

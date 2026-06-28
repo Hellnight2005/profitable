@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { trackEvent } from "@/utils/analytics";
 
 const LINKS = [
     { name: "Home", path: "/" },
@@ -20,7 +21,7 @@ export default function Navbar() {
         <>
             <nav className="nav-container">
                 <div style={{ paddingLeft: "24px" }} className="desktop-nav-pad">
-                    <Link href="/">
+                    <Link href="/" onClick={() => trackEvent("navigation_click", { destination: "/" })}>
                         <h4
                             style={{
                                 fontFamily: "var(--font-bebas-neue)",
@@ -107,6 +108,7 @@ export default function Navbar() {
                             <Link
                                 key={link.path}
                                 href={link.path}
+                                onClick={() => trackEvent("navigation_click", { destination: link.path })}
                                 className={`nav-link type-ui`}
                                 style={{
                                     fontFamily: "var(--font-dm-mono)",
@@ -123,7 +125,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="desktop-nav" style={{ paddingRight: "24px" }}>
-                    <Link href="/contact" style={{ display: "none" }} className="desktop-nav">
+                    <Link href="/contact" style={{ display: "none" }} className="desktop-nav" onClick={() => trackEvent("navigation_click", { destination: "/contact" })}>
                         <button className="nav-contact-btn">
                             GET IN TOUCH
                         </button>
@@ -153,7 +155,10 @@ export default function Navbar() {
                         <Link
                             key={link.path}
                             href={link.path}
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={() => {
+                                setMobileMenuOpen(false);
+                                trackEvent("navigation_click", { destination: link.path });
+                            }}
                             style={{
                                 fontFamily: "var(--font-bebas-neue)",
                                 fontSize: "var(--type-h1)",
@@ -165,7 +170,10 @@ export default function Navbar() {
                     ))}
                     <Link
                         href="/contact"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => {
+                            setMobileMenuOpen(false);
+                            trackEvent("navigation_click", { destination: "/contact" });
+                        }}
                         style={{
                             fontFamily: "var(--font-bebas-neue)",
                             fontSize: "var(--type-h1)",

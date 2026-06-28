@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import Script from "next/script";
+import AnalyticsTracker from "@/hooks/useAnalytics";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${dmMono.variable} ${playfairDisplay.variable}`}>
       <body>
+        <AnalyticsTracker />
         <Loader />
         <Cursor />
         <Navbar />

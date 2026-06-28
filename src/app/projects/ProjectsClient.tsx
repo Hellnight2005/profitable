@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { GithubRepo } from "./page";
+import { trackProjectClick } from "@/utils/analytics";
 interface ClientProps {
     initialRepos: GithubRepo[];
 }
@@ -20,7 +21,7 @@ export function ProjectsClient({ initialRepos }: ClientProps) {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
             {initialRepos.map((proj) => (
-                <a href={`/projects/${proj.name}`} key={proj.id} className="reveal interactive" style={{ display: "block", textDecoration: "none", borderBottom: "1px solid var(--color-border)", paddingBottom: "24px", transition: "border-color 0.2s ease" }}
+                <a href={`/projects/${proj.name}`} key={proj.id} onClick={() => trackProjectClick(proj.name)} className="reveal interactive" style={{ display: "block", textDecoration: "none", borderBottom: "1px solid var(--color-border)", paddingBottom: "24px", transition: "border-color 0.2s ease" }}
                     onMouseOver={(e) => { e.currentTarget.style.borderBottomColor = "var(--color-accent)"; }}
                     onMouseOut={(e) => { e.currentTarget.style.borderBottomColor = "var(--color-border)"; }}
                 >
