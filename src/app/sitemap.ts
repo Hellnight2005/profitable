@@ -69,5 +69,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error reading projects.json for sitemap:", error);
   }
 
-  return [...staticRoutes, ...dynamicRoutes];
+  // Dynamic blog routes
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const blogFilePath = path.join(process.cwd(), 'public', 'blog', 'posts.json');
+    if (fs.existsSync(blogFilePath)) {
+      const fileContents = await fs.promises.readFile(blogFilePath, 'utf8');
+      const posts = JSON.parse(fileContents);
+      
+      blogRoutes = posts.map((post: { slug: string; publishedAt: string }) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.publishedAt),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+      }));
+    }
+  } catch (error) {
+    console.error("Error reading posts.json for sitemap:", error);
+  }
+
+  return [...staticRoutes, ...dynamicRoutes, ...blogRoutes];
 }
