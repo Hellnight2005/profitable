@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackGitHubClick, trackLinkedInClick } from "@/utils/analytics";
 
 export default function Footer() {
     return (
@@ -51,8 +54,8 @@ export default function Footer() {
                 {/* Right */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                     <p className="type-micro" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em" }}>SOCIALS</p>
-                    <a href="https://github.com/Hellnight2005" className="nav-link" style={{ width: "fit-content", fontSize: "var(--type-ui)" }}>GitHub</a>
-                    <a href="https://www.linkedin.com/in/abhi2005jeet/" className="nav-link" style={{ width: "fit-content", fontSize: "var(--type-ui)" }}>LinkedIn</a>
+                    <a href="https://github.com/Hellnight2005" onClick={trackGitHubClick} className="nav-link" style={{ width: "fit-content", fontSize: "var(--type-ui)" }}>GitHub</a>
+                    <a href="https://www.linkedin.com/in/abhi2005jeet/" onClick={trackLinkedInClick} className="nav-link" style={{ width: "fit-content", fontSize: "var(--type-ui)" }}>LinkedIn</a>
                     <a href="https://hashnode.com/@abhijeet2005" className="nav-link" style={{ width: "fit-content", fontSize: "var(--type-ui)" }}>Hashnode</a>
                 </div>
             </div>

@@ -109,24 +109,15 @@ export function useAnalytics(): void {
                         url.hostname !== window.location.hostname &&
                         !anchor.href.startsWith("tel:")
                     ) {
-                        // 3. GitHub Outbound Click
-                        if (url.hostname.includes("github.com")) {
-                            trackEvent("github_click", {
-                                destination: anchor.href
-                            });
+                        // Skip github and linkedin outbound clicks in the global listener
+                        // to prevent duplicate events from inline handlers
+                        if (url.hostname.includes("github.com") || url.hostname.includes("linkedin.com")) {
+                            return;
                         }
-                        // 4. LinkedIn Outbound Click
-                        else if (url.hostname.includes("linkedin.com")) {
-                            trackEvent("linkedin_click", {
-                                destination: anchor.href
-                            });
-                        }
-                        // 5. Generic Outbound Click
-                        else {
-                            trackEvent("external_link_click", {
-                                destination: anchor.href
-                            });
-                        }
+
+                        trackEvent("external_link_click", {
+                            destination: anchor.href
+                        });
                     }
                 } catch {
                     // Invalid URL structure, ignore

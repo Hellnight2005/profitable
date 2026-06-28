@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/Button";
-import { trackContactFormSubmit } from "@/utils/analytics";
+import {
+    trackContactFormSubmit,
+    trackGitHubClick,
+    trackLinkedInClick
+} from "@/utils/analytics";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -55,7 +59,7 @@ export default function ContactClient() {
         e.preventDefault();
         setStatus("loading");
         setErrorMsg("");
-        
+
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
@@ -63,7 +67,7 @@ export default function ContactClient() {
                 body: JSON.stringify(form),
             });
             const data = await res.json();
-            
+
             if (res.ok) {
                 setStatus("success");
                 trackContactFormSubmit();
@@ -96,8 +100,27 @@ export default function ContactClient() {
 
                     <span className="type-micro" style={{ color: "var(--color-text-tertiary)", display: "block", marginBottom: "16px" }}>CONNECT ON</span>
                     <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", marginBottom: "48px" }}>
-                        <a href="https://github.com/Hellnight2005" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>GitHub</a>
-                        <a href="https://www.linkedin.com/in/abhi2005jeet/" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>LinkedIn</a>
+                        <a
+                            href="https://github.com/Hellnight2005"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nav-link type-ui"
+                            style={{ color: "var(--color-text-primary)" }}
+                            onClick={trackGitHubClick}
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/abhi2005jeet/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nav-link type-ui"
+                            style={{ color: "var(--color-text-primary)" }}
+                            onClick={trackLinkedInClick}
+                        >
+                            LinkedIn
+                        </a>
                         <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-link type-ui" style={{ color: "var(--color-text-primary)" }}>Resume</a>
                     </div>
                 </section>
@@ -113,7 +136,7 @@ export default function ContactClient() {
                         </div>
                     ) : (
                         <form style={{ display: "flex", flexDirection: "column", gap: "32px" }} onSubmit={handleSubmit}>
-                            
+
                             {status === "error" && (
                                 <div style={{ color: "#f87171", fontFamily: "var(--font-dm-mono)", fontSize: "12px", border: "1px solid rgba(248,113,113,0.3)", padding: "12px", background: "rgba(248,113,113,0.05)" }}>
                                     Error: {errorMsg}
@@ -123,64 +146,64 @@ export default function ContactClient() {
                             <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
                                 <div style={{ flex: "1 1 calc(50% - 16px)", minWidth: "200px", position: "relative" }}>
                                     <span className="type-micro" style={{ position: "absolute", top: focus === "name" || form.name ? "-16px" : "16px", color: focus === "name" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "name" || form.name ? "NAME" : ""}</span>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         required
-                                        placeholder={focus === "name" ? "" : "NAME"} 
+                                        placeholder={focus === "name" ? "" : "NAME"}
                                         value={form.name}
                                         onChange={setField("name")}
-                                        onFocus={() => setFocus("name")} 
-                                        onBlur={() => setFocus(null)} 
-                                        style={inputStyle("name")} 
+                                        onFocus={() => setFocus("name")}
+                                        onBlur={() => setFocus(null)}
+                                        style={inputStyle("name")}
                                     />
                                 </div>
                                 <div style={{ flex: "1 1 calc(50% - 16px)", minWidth: "200px", position: "relative" }}>
                                     <span className="type-micro" style={{ position: "absolute", top: focus === "email" || form.email ? "-16px" : "16px", color: focus === "email" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "email" || form.email ? "EMAIL" : ""}</span>
-                                    <input 
-                                        type="email" 
+                                    <input
+                                        type="email"
                                         required
-                                        placeholder={focus === "email" ? "" : "EMAIL"} 
+                                        placeholder={focus === "email" ? "" : "EMAIL"}
                                         value={form.email}
                                         onChange={setField("email")}
-                                        onFocus={() => setFocus("email")} 
-                                        onBlur={() => setFocus(null)} 
-                                        style={inputStyle("email")} 
+                                        onFocus={() => setFocus("email")}
+                                        onBlur={() => setFocus(null)}
+                                        style={inputStyle("email")}
                                     />
                                 </div>
                             </div>
 
                             <div style={{ position: "relative" }}>
                                 <span className="type-micro" style={{ position: "absolute", top: focus === "subject" || form.subject ? "-16px" : "16px", color: focus === "subject" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "subject" || form.subject ? "SUBJECT" : ""}</span>
-                                <input 
+                                <input
                                     type="text"
                                     required
                                     placeholder={focus === "subject" ? "" : "SUBJECT"}
                                     value={form.subject}
                                     onChange={setField("subject")}
-                                    onFocus={() => setFocus("subject")} 
-                                    onBlur={() => setFocus(null)} 
+                                    onFocus={() => setFocus("subject")}
+                                    onBlur={() => setFocus(null)}
                                     style={inputStyle("subject")}
                                 />
                             </div>
 
                             <div style={{ position: "relative" }}>
                                 <span className="type-micro" style={{ position: "absolute", top: focus === "message" || form.message ? "-16px" : "16px", color: focus === "message" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "message" || form.message ? "MESSAGE" : ""}</span>
-                                <textarea 
+                                <textarea
                                     required
                                     value={form.message}
                                     onChange={setField("message")}
-                                    placeholder={focus === "message" ? "" : "MESSAGE"} 
-                                    onFocus={() => setFocus("message")} 
-                                    onBlur={() => setFocus(null)} 
-                                    rows={5} 
-                                    style={{ ...inputStyle("message"), resize: "none" }} 
+                                    placeholder={focus === "message" ? "" : "MESSAGE"}
+                                    onFocus={() => setFocus("message")}
+                                    onBlur={() => setFocus(null)}
+                                    rows={5}
+                                    style={{ ...inputStyle("message"), resize: "none" }}
                                 />
                             </div>
 
-                            <Button 
+                            <Button
                                 type="submit"
                                 disabled={status === "loading"}
-                                variant="primary" 
+                                variant="primary"
                                 style={{ width: "100%", marginTop: "16px", opacity: status === "loading" ? 0.7 : 1, cursor: status === "loading" ? "wait" : "pointer" }}
                             >
                                 {status === "loading" ? "SENDING..." : "SEND MESSAGE"}
