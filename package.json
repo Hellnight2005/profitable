@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch-blog": "node scripts/fetch-hashnode.mjs",
+    "fetch-blog": "node public/scripts/fetch-hashnode.mjs",
     "doctor": "npx react-doctor@latest"
   },
   "dependencies": {
