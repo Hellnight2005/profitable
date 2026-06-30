@@ -57,12 +57,12 @@ export default function Cursor() {
                 pointerEvents: "none",
                 zIndex: 9999,
                 mixBlendMode: "difference",
-                transform: `translate(${position.x}px, ${position.y}px) translate(-50%, -50%)`,
-                width: hovering ? "40px" : "8px",
-                height: hovering ? "40px" : "8px",
+                transform: `translate(${position.x}px, ${position.y}px) translate(-50%, -50%) scale(${hovering ? 5 : 1})`,
+                width: "8px",
+                height: "8px",
                 backgroundColor: "var(--color-accent)",
                 borderRadius: "50%",
-                transition: "width 200ms ease, height 200ms ease, opacity 200ms ease",
+                transition: "transform 200ms ease, opacity 200ms ease",
                 opacity: hovering ? 0.6 : 1,
             }}
         />

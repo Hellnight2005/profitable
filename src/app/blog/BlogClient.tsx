@@ -102,7 +102,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                 .post-card {
                     background: var(--color-bg);
                     border: 1px solid var(--color-border);
-                    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
                     cursor: pointer;
                     display: block;
                     text-decoration: none;
@@ -121,7 +121,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                     padding: 10px 20px;
                     font-size: 13px;
                     cursor: pointer;
-                    transition: all 0.2s ease;
+                    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
                 }
                 .category-filter-btn:hover {
                     border-color: var(--color-text-primary);
@@ -146,7 +146,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                     padding: 4px 12px;
                     cursor: pointer;
                     font-size: 11px;
-                    transition: all 0.2s ease;
+                    transition: background 0.2s ease, color 0.2s ease;
                 }
                 .series-filter-btn:hover {
                     background: rgba(var(--color-accent-rgb), 0.1);
@@ -163,7 +163,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                     font-size: 14px;
                     width: 100%;
                     outline: none;
-                    transition: all 0.2s ease;
+                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
                 }
                 .search-input:focus {
                     border-color: var(--color-accent);
@@ -176,7 +176,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                     border: 1px solid var(--color-border);
                     color: var(--color-text-secondary);
                     cursor: pointer;
-                    transition: all 0.2s ease;
+                    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
                 }
                 .tag-badge:hover {
                     border-color: var(--color-accent);
@@ -226,6 +226,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                         <button
                             onClick={() => setSearchQuery("")}
                             style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "var(--color-text-secondary)", cursor: "pointer", fontSize: "12px" }}
+                            aria-label="Clear search query"
                         >
                             ✕
                         </button>

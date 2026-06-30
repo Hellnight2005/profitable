@@ -219,18 +219,22 @@ export default function Skills() {
                     flex-wrap: wrap;
                     gap: 24px;
                     border-bottom: 2px solid var(--color-border);
+                    border-left: 4px solid transparent;
                     padding: 32px 16px;
                     cursor: pointer;
-                    transition: background 0.2s, border-left 0.2s, padding-left 0.2s;
+                    transition: background 0.2s, border-color 0.2s;
                 }
                 .service-row:hover {
                     background: var(--color-surface);
-                    border-left: 4px solid var(--color-accent);
-                    padding-left: 28px;
+                    border-left-color: var(--color-accent);
                 }
                 .service-row-main {
                     flex: 1 1 50%;
                     min-width: 300px;
+                    transition: transform 0.2s ease;
+                }
+                .service-row:hover .service-row-main {
+                    transform: translateX(12px);
                 }
                 .service-title {
                     color: var(--color-text-primary);
@@ -291,7 +295,7 @@ export default function Skills() {
 
             {/* Skills */}
             <section className="reveal skills-section">
-                <h4 className="type-ui skills-section-label">CAPABILITIES</h4>
+                <h2 className="type-ui skills-section-label">CAPABILITIES</h2>
 
                 <div className="skills-grid">
                     {SKILLS.map((skill) => (
@@ -313,7 +317,7 @@ export default function Skills() {
 
             {/* Tools */}
             <section className="reveal skills-section">
-                <h4 className="type-ui skills-section-label">TOOLS</h4>
+                <h2 className="type-ui skills-section-label">TOOLS</h2>
 
                 <div className="tools-grid">
                     {TOOLS.map((tool) => (
@@ -334,7 +338,7 @@ export default function Skills() {
 
             {/* Services */}
             <section className="reveal skills-section">
-                <h4 className="type-ui skills-section-label">SERVICES</h4>
+                <h2 className="type-ui skills-section-label">SERVICES</h2>
 
                 <div>
                     {SERVICES.map((s) => (
@@ -357,7 +361,7 @@ export default function Skills() {
 
             {/* Engagement */}
             <section className="reveal engagement-section">
-                <h4 className="type-ui skills-section-label">ENGAGEMENT MODEL</h4>
+                <h2 className="type-ui skills-section-label">ENGAGEMENT MODEL</h2>
 
                 <div className="engagement-grid">
                     {[

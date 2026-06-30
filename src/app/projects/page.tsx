@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectsClient } from "./ProjectsClient";
 
@@ -70,8 +69,8 @@ export default async function Projects() {
                 <h2 style={{ fontSize: "48px", color: "var(--color-text-primary)", marginBottom: "16px" }}>START A PROJECT</h2>
                 <p className="body-text" style={{ maxWidth: "480px", margin: "0 auto", marginBottom: "48px" }}>Interested in building something similar? Let&apos;s discuss how I can help bring your ideas to life.</p>
                 <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap", marginTop: "32px" }}>
-                    <Link href="/contact"><Button variant="primary">HIRE ME</Button></Link>
-                    <Link href="/skills"><Button variant="secondary">VIEW SERVICES</Button></Link>
+                    <Button href="/contact" variant="primary">HIRE ME</Button>
+                    <Button href="/skills" variant="secondary">VIEW SERVICES</Button>
                 </div>
             </section>
         </div>

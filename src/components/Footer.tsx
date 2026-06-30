@@ -25,7 +25,7 @@ export default function Footer() {
             >
                 {/* Left */}
                 <div>
-                    <h4
+                    <div
                         style={{
                             fontFamily: "var(--font-bebas-neue)",
                             color: "var(--color-text-primary)",
@@ -35,7 +35,7 @@ export default function Footer() {
                         }}
                     >
                         PORTFOLIO.
-                    </h4>
+                    </div>
                     <p style={{ fontSize: "var(--type-ui)" }}>
                         Maker. Builder. Writer.
                     </p>

@@ -1,6 +1,5 @@
 # Abhijeet Shinde - Web Developer
-
-Abhijeet Shinde is an experienced Web Developer based in Mumbai, specializing in backend architecture, DevOps, and scalable systems.
+> Personal portfolio and blog of Abhijeet Shinde, a web developer specializing in backend architecture, DevOps, and scalable systems.
 
 ## Key Services
 - Backend Development & Architecture
@@ -9,12 +8,15 @@ Abhijeet Shinde is an experienced Web Developer based in Mumbai, specializing in
 - React & Next.js Development
 
 ## Main Sections
-- Homepage: https://profitable-azure.vercel.app/ - Overview of services and portfolio.
-- About: https://profitable-azure.vercel.app/about - Background and professional experience.
-- Blog: https://profitable-azure.vercel.app/blog - Articles on web development, Hackathon Diaries, and Project Logs.
+- [Homepage](https://profitable-azure.vercel.app/): Overview of services and portfolio.
+- [About](https://profitable-azure.vercel.app/about): Background and professional experience.
+- [Blog](https://profitable-azure.vercel.app/blog): Articles on web development, Hackathon Diaries, and Project Logs.
+- [Projects](https://profitable-azure.vercel.app/projects): Showcase of completed web applications and experiments.
+- [Skills](https://profitable-azure.vercel.app/skills): Detailed list of capabilities, tools, and services.
+- [Contact](https://profitable-azure.vercel.app/contact): Contact form to hire or collaborate.
 
-## Contact
-- Twitter/X: @abhijeet2005
-- Hashnode: https://hashnode.com/@abhijeet2005
-
-This website is designed to showcase projects, share insights on modern web development, and offer freelance services.
+## Contact Info
+- [Twitter/X](https://x.com/abhijeet2005): Twitter profile for quick updates and contact.
+- [Hashnode Blog](https://hashnode.com/@abhijeet2005): Technical blog hosting on Hashnode.
+- [GitHub](https://github.com/Hellnight2005): Portfolio source code and other open source work.
+- [LinkedIn](https://www.linkedin.com/in/abhi2005jeet/): LinkedIn professional profile.

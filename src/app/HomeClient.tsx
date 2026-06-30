@@ -329,7 +329,7 @@ export default function Home() {
                             <a key={post.slug} href={post.url} target="_blank" rel="noopener noreferrer" style={{ display: "block", textDecoration: "none" }}>
                                 <div className="card interactive group post-card home-writing-card">
                                     <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", borderRadius: "2px", marginBottom: "24px", display: "inline-block", color: "var(--color-text-primary)" }}>{post.category.toUpperCase()}</span>
-                                    <h4 className="post-title" style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px", transition: "color 0.2s" }}>{post.title}</h4>
+                                    <h3 className="post-title" style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px", transition: "color 0.2s", fontSize: "20px", fontWeight: "normal" }}>{post.title}</h3>
                                     <div style={{ display: "flex", justifyContent: "space-between" }}>
                                         <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>{formattedDate}</span>
                                     </div>
@@ -374,11 +374,11 @@ export default function Home() {
 
             {/* CTA */}
             <section className="reveal home-cta-section">
-                <h1 className="type-display" style={{ marginBottom: "16px", color: "var(--color-text-primary)" }}>LET&apos;S BUILD SOMETHING.</h1>
+                <h2 className="type-display" style={{ marginBottom: "16px", color: "var(--color-text-primary)" }}>LET&apos;S BUILD SOMETHING.</h2>
                 <p className="body-text" style={{ marginBottom: "48px" }}>Open to collaborations and interesting projects.</p>
                 <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap" }}>
-                    <Link href="/contact"><Button variant="primary">GET IN TOUCH</Button></Link>
-                    <Link href="/projects"><Button variant="secondary">VIEW WORK</Button></Link>
+                    <Button href="/contact" variant="primary">GET IN TOUCH</Button>
+                    <Button href="/projects" variant="secondary">VIEW WORK</Button>
                 </div>
             </section>
         </div>

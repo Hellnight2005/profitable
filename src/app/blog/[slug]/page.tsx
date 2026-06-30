@@ -112,7 +112,7 @@ export default function ArticleDetail() {
                         <Image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Author" width={80} height={80} style={{ objectFit: "cover" }} className="grayscale-hover" />
                     </div>
                     <div>
-                        <h4 style={{ color: "var(--color-text-primary)", marginBottom: "8px" }}>ABOUT THE AUTHOR</h4>
+                        <h3 style={{ color: "var(--color-text-primary)", marginBottom: "8px", fontSize: "20px", fontWeight: "normal" }}>ABOUT THE AUTHOR</h3>
                         <p className="body-text" style={{ fontSize: "14px", margin: 0 }}>Maker Builder is a software engineer focused on design systems, performance, and the intersection of code and aesthetics.</p>
                     </div>
                 </section>
@@ -121,13 +121,13 @@ export default function ArticleDetail() {
             {/* More Writing */}
             <section className="reveal" style={{ borderTop: "1px solid var(--color-border)", padding: "var(--space-8) 24px", background: "var(--color-surface-alt)" }}>
                 <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-                    <h4 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>MORE WRITING</h4>
+                    <h2 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>MORE WRITING</h2>
 
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
                         {MORE_POSTS.map((post) => (
                             <div key={post.id} className="card interactive more-writing-card">
                                 <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", borderRadius: "2px", marginBottom: "24px", display: "inline-block" }}>{post.tag}</span>
-                                <h4 style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px" }}>{post.title}</h4>
+                                <h3 style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px", fontSize: "18px", fontWeight: "normal" }}>{post.title}</h3>
                                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                                     <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>{post.date}</span>
                                     <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>{post.time}</span>

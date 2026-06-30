@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/Button";
 import {
     trackContactFormSubmit,
@@ -145,7 +144,7 @@ export default function ContactClient() {
 
                             <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
                                 <div style={{ flex: "1 1 calc(50% - 16px)", minWidth: "200px", position: "relative" }}>
-                                    <span className="type-micro" style={{ position: "absolute", top: focus === "name" || form.name ? "-16px" : "16px", color: focus === "name" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "name" || form.name ? "NAME" : ""}</span>
+                                    <span className="type-micro" style={{ position: "absolute", top: "16px", left: 0, color: focus === "name" ? "var(--color-accent)" : "var(--color-text-secondary)", transform: focus === "name" || form.name ? "translateY(-32px)" : "translateY(0)", opacity: focus === "name" || form.name ? 1 : 0, transition: "transform 0.2s ease, opacity 0.2s ease, color 0.2s ease", pointerEvents: "none" }}>NAME</span>
                                     <input
                                         type="text"
                                         required
@@ -158,7 +157,7 @@ export default function ContactClient() {
                                     />
                                 </div>
                                 <div style={{ flex: "1 1 calc(50% - 16px)", minWidth: "200px", position: "relative" }}>
-                                    <span className="type-micro" style={{ position: "absolute", top: focus === "email" || form.email ? "-16px" : "16px", color: focus === "email" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "email" || form.email ? "EMAIL" : ""}</span>
+                                    <span className="type-micro" style={{ position: "absolute", top: "16px", left: 0, color: focus === "email" ? "var(--color-accent)" : "var(--color-text-secondary)", transform: focus === "email" || form.email ? "translateY(-32px)" : "translateY(0)", opacity: focus === "email" || form.email ? 1 : 0, transition: "transform 0.2s ease, opacity 0.2s ease, color 0.2s ease", pointerEvents: "none" }}>EMAIL</span>
                                     <input
                                         type="email"
                                         required
@@ -173,7 +172,7 @@ export default function ContactClient() {
                             </div>
 
                             <div style={{ position: "relative" }}>
-                                <span className="type-micro" style={{ position: "absolute", top: focus === "subject" || form.subject ? "-16px" : "16px", color: focus === "subject" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "subject" || form.subject ? "SUBJECT" : ""}</span>
+                                <span className="type-micro" style={{ position: "absolute", top: "16px", left: 0, color: focus === "subject" ? "var(--color-accent)" : "var(--color-text-secondary)", transform: focus === "subject" || form.subject ? "translateY(-32px)" : "translateY(0)", opacity: focus === "subject" || form.subject ? 1 : 0, transition: "transform 0.2s ease, opacity 0.2s ease, color 0.2s ease", pointerEvents: "none" }}>SUBJECT</span>
                                 <input
                                     type="text"
                                     required
@@ -187,7 +186,7 @@ export default function ContactClient() {
                             </div>
 
                             <div style={{ position: "relative" }}>
-                                <span className="type-micro" style={{ position: "absolute", top: focus === "message" || form.message ? "-16px" : "16px", color: focus === "message" ? "var(--color-accent)" : "var(--color-text-secondary)", transition: "all 0.2s" }}>{focus === "message" || form.message ? "MESSAGE" : ""}</span>
+                                <span className="type-micro" style={{ position: "absolute", top: "16px", left: 0, color: focus === "message" ? "var(--color-accent)" : "var(--color-text-secondary)", transform: focus === "message" || form.message ? "translateY(-32px)" : "translateY(0)", opacity: focus === "message" || form.message ? 1 : 0, transition: "transform 0.2s ease, opacity 0.2s ease, color 0.2s ease", pointerEvents: "none" }}>MESSAGE</span>
                                 <textarea
                                     required
                                     value={form.message}
@@ -218,8 +217,8 @@ export default function ContactClient() {
                 <h2 style={{ fontSize: "48px", color: "var(--color-text-primary)", marginBottom: "16px" }}>EXPLORE MORE</h2>
                 <p className="body-text" style={{ maxWidth: "400px", margin: "0 auto", marginBottom: "48px" }}>Not ready to talk? Check out my past projects or explore my technical services.</p>
                 <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap", marginTop: "32px" }}>
-                    <Link href="/skills"><Button variant="secondary">MY SERVICES</Button></Link>
-                    <Link href="/projects"><Button variant="secondary">VIEW PORTFOLIO</Button></Link>
+                    <Button href="/skills" variant="secondary">MY SERVICES</Button>
+                    <Button href="/projects" variant="secondary">VIEW PORTFOLIO</Button>
                 </div>
             </section>
         </div>

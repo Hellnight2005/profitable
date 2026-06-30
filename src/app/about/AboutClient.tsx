@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/Button";
 
 const INTERESTS_LIST = [
@@ -244,7 +243,7 @@ export default function AboutClient() {
                                             textAlign: "center",
                                             opacity: isActive ? 1 : 0,
                                             transform: `translateY(${isActive ? 0 : 20}px)`,
-                                            transition: "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
+                                            transition: "opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
                                         }}>
                                             <h3 className="type-display" style={{ fontSize: "28px", color: "var(--color-text-primary)", margin: 0 }}>{item.title}</h3>
                                             <p className="type-mono" style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6, maxWidth: "280px" }}>{item.desc}</p>
@@ -306,8 +305,8 @@ export default function AboutClient() {
                 <h2 className="type-display" style={{ fontSize: "48px", marginBottom: "16px", color: "var(--color-text-primary)" }}>LET&apos;S WORK TOGETHER.</h2>
                 <p className="body-text" style={{ marginBottom: "48px" }}>Looking for backend architecture or dedicated web development?</p>
                 <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap" }}>
-                    <Link href="/contact"><Button variant="primary">CONTACT ME</Button></Link>
-                    <Link href="/skills"><Button variant="secondary">VIEW SERVICES</Button></Link>
+                    <Button href="/contact" variant="primary">CONTACT ME</Button>
+                    <Button href="/skills" variant="secondary">VIEW SERVICES</Button>
                 </div>
             </section>
 
@@ -327,12 +326,24 @@ export default function AboutClient() {
                     filter: grayscale(100%);
                 }
                 @keyframes nodePulse {
-                    0% { box-shadow: 0 0 0 0 rgba(236, 160, 19, 0.4); }
-                    70% { box-shadow: 0 0 0 10px rgba(236, 160, 19, 0); }
-                    100% { box-shadow: 0 0 0 0 rgba(236, 160, 19, 0); }
+                    0% { transform: scale(1); opacity: 0.8; }
+                    100% { transform: scale(4); opacity: 0; }
                 }
                 .pulse-node {
-                    animation: nodePulse 2s infinite;
+                    position: relative;
+                }
+                .pulse-node::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(236, 160, 19, 0.4);
+                    border-radius: inherit;
+                    animation: nodePulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+                    pointer-events: none;
+                    transform-origin: center;
                 }
 
                 /* IMAGE CAROUSEL CSS */
@@ -361,7 +372,7 @@ export default function AboutClient() {
                     gap: 32px;
                     width: 360px;
                     pointer-events: none; /* Allow drag events to pass through */
-                    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
                 }
                 .carousel-card-inner {
                     width: 360px;
@@ -370,7 +381,7 @@ export default function AboutClient() {
                     border-radius: 32px;
                     overflow: hidden;
                     border: 1px solid var(--color-border);
-                    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
                 }
             `}} />
         </div>

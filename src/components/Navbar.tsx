@@ -22,17 +22,18 @@ export default function Navbar() {
             <nav className="nav-container">
                 <div style={{ paddingLeft: "24px" }} className="desktop-nav-pad">
                     <Link href="/" onClick={() => trackEvent("navigation_click", { destination: "/" })}>
-                        <h4
+                        <span
                             style={{
                                 fontFamily: "var(--font-bebas-neue)",
                                 color: "var(--color-text-primary)",
                                 margin: 0,
                                 letterSpacing: "0.04em",
                                 fontSize: "24px",
+                                display: "block",
                             }}
                         >
                             PORTFOLIO.
-                        </h4>
+                        </span>
                     </Link>
                 </div>
 
@@ -64,6 +65,9 @@ export default function Navbar() {
                 border: 1px solid var(--color-border);
                 cursor: pointer;
                 transition: all 200ms ease;
+                display: inline-block;
+                text-decoration: none;
+                text-align: center;
             }
             .nav-contact-btn:hover {
                 border-color: var(--color-accent) !important;
@@ -125,10 +129,13 @@ export default function Navbar() {
                 </div>
 
                 <div className="desktop-nav" style={{ paddingRight: "24px" }}>
-                    <Link href="/contact" style={{ display: "none" }} className="desktop-nav" onClick={() => trackEvent("navigation_click", { destination: "/contact" })}>
-                        <button className="nav-contact-btn">
-                            GET IN TOUCH
-                        </button>
+                    <Link
+                        href="/contact"
+                        style={{ display: "none" }}
+                        className="desktop-nav nav-contact-btn"
+                        onClick={() => trackEvent("navigation_click", { destination: "/contact" })}
+                    >
+                        GET IN TOUCH
                     </Link>
                 </div>
 
@@ -136,6 +143,7 @@ export default function Navbar() {
                 <button
                     className="mobile-toggle mobile-toggle-btn"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle navigation menu"
                 >
                     <div style={{ width: "100%", height: "2px", background: "currentColor", transition: "all 0.3s", transform: mobileMenuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
                     <div style={{ width: "100%", height: "2px", background: "currentColor", opacity: mobileMenuOpen ? 0 : 1, transition: "all 0.3s" }} />

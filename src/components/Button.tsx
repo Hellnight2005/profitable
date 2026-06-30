@@ -1,13 +1,15 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary";
+    href?: string;
     children: React.ReactNode;
 }
 
-export function Button({ variant = "primary", children, style, ...props }: ButtonProps) {
+export function Button({ variant = "primary", children, style, href, ...props }: ButtonProps) {
     const isPrimary = variant === "primary";
 
     const baseStyle: React.CSSProperties = {
@@ -21,6 +23,9 @@ export function Button({ variant = "primary", children, style, ...props }: Butto
         position: "relative",
         overflow: "hidden",
         zIndex: 1,
+        display: "inline-block",
+        textDecoration: "none",
+        textAlign: "center",
         ...style,
     };
 
@@ -38,9 +43,24 @@ export function Button({ variant = "primary", children, style, ...props }: Butto
         ...baseStyle,
     };
 
+    const buttonStyle = isPrimary ? primaryStyle : secondaryStyle;
+
+    if (href) {
+        return (
+            <Link
+                href={href}
+                style={buttonStyle}
+                className={`btn-${variant}`}
+                {...(props as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+            >
+                <span style={{ position: "relative", zIndex: 2 }}>{children}</span>
+            </Link>
+        );
+    }
+
     return (
         <button
-            style={isPrimary ? primaryStyle : secondaryStyle}
+            style={buttonStyle}
             className={`btn-${variant}`}
             {...props}
         >
