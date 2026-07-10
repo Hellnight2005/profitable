@@ -80,8 +80,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       blogRoutes = posts.map((post: { slug: string; publishedAt: string }) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.publishedAt),
-        changeFrequency: 'weekly',
-        priority: 0.7,
       }));
     }
   } catch (error) {

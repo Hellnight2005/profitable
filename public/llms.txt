@@ -16,7 +16,6 @@
 - [Contact](https://profitable-azure.vercel.app/contact): Contact form to hire or collaborate.
 
 ## Contact Info
-- [Twitter/X](https://x.com/abhijeet2005): Twitter profile for quick updates and contact.
 - [Hashnode Blog](https://hashnode.com/@abhijeet2005): Technical blog hosting on Hashnode.
 - [GitHub](https://github.com/Hellnight2005): Portfolio source code and other open source work.
 - [LinkedIn](https://www.linkedin.com/in/abhi2005jeet/): LinkedIn professional profile.
