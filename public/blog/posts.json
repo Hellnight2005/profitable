@@ -1,5 +1,24 @@
 [
   {
+    "title": "How a Simple Question Took Me to Building a Media Platform",
+    "slug": "how-a-simple-question-took-me-to-building-a-media-platform",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/how-a-simple-question-took-me-to-building-a-media-platform",
+    "publishedAt": "2026-07-07T08:45:34.000Z",
+    "brief": "How do you build a platform for managing all of your movies and anime?\nThis is the question that sparked off this entire project.\n\nThe Challenge: All Over the Place\nMy movies and anime were scattered",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "telegram bot",
+      "telegram",
+      "backend",
+      "System Design",
+      "System Architecture",
+      "Build In Public",
+      "Learning Journey"
+    ]
+  },
+  {
     "title": "Building an AI-Powered Hospital Infection Intelligence System in 24 Hours",
     "slug": "building-an-ai-powered-hospital-infection-intelligence-system-in-24-hours",
     "domain": "hackathon-diaries.hashnode.dev",
