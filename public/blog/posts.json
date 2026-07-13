@@ -1,5 +1,26 @@
 [
   {
+    "title": "From Bot to Backend: Turning a Video Upload into an Adaptive Stream",
+    "slug": "bot-to-backend-video-upload-adaptive-stream",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/bot-to-backend-video-upload-adaptive-stream",
+    "publishedAt": "2026-07-13T09:06:16.000Z",
+    "brief": "In Part 1, I wrote about how a simple question — \"how do I access all my movies and anime from one place?\" — turned into a full-blown media platform project. I ended that post promising to get into th",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "telegram",
+      "media server",
+      "video streaming",
+      "video transcoding architecture",
+      "System Design",
+      "Docker",
+      "FFmpeg",
+      "#HLSStreaming",
+      "video transcoding service"
+    ]
+  },
+  {
     "title": "What Really Happens When You Make an HTTP Request?",
     "slug": "what-really-happens-when-you-make-an-http-request",
     "domain": "weeklyupdate.hashnode.dev",
