@@ -1,5 +1,23 @@
 [
   {
+    "title": "What Really Happens When You Make an HTTP Request?",
+    "slug": "what-really-happens-when-you-make-an-http-request",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/what-really-happens-when-you-make-an-http-request",
+    "publishedAt": "2026-07-10T07:30:26.000Z",
+    "brief": "1. Why This Topic Matters\nBefore this topic, I already knew many of the individual concepts involved in networking:\n\nDNS converts domains into IP addresses.\n\nTCP is responsible for reliable communicat",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "networking",
+      "http requests",
+      "http",
+      "TCP",
+      "tcp-ip",
+      "learn in public"
+    ]
+  },
+  {
     "title": "How a Simple Question Took Me to Building a Media Platform",
     "slug": "how-a-simple-question-took-me-to-building-a-media-platform",
     "domain": "projectlog.hashnode.dev",
