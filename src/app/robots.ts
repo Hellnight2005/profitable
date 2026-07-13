@@ -1,12 +1,51 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
-    },
-    sitemap: 'https://profitable-azure.vercel.app/sitemap.xml',
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://profitable-azure.vercel.app';
+  
+  // Detect if this is a production environment.
+  const isProduction = 
+    process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' || 
+    process.env.NODE_ENV === 'production';
+
+  // If this is a preview or local development site, disallow all crawling
+  if (!isProduction) {
+    return {
+      rules: {
+        userAgent: '*',
+        disallow: '/',
+      },
+    };
   }
+
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',       // Exclude backend APIs
+          '/private/',   // Exclude private folder
+          '/_next/',     // Exclude Next.js build outputs/chunks
+          '/*?*',        // Exclude query parameters to prevent infinite URL crawling
+        ],
+      },
+      {
+        // Disallow AI scrapers/crawlers to save bandwidth and prevent scraping
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-Web',
+          'CCBot',
+          'Google-Extended',
+          'Anthropic-AI',
+          'Omgilibot',
+          'FacebookBot',
+        ],
+        disallow: '/',
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+  };
 }

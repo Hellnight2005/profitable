@@ -8,7 +8,7 @@ interface GithubRepo {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://profitable-azure.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://profitable-azure.vercel.app';
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [
