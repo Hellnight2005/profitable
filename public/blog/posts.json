@@ -1,5 +1,26 @@
 [
   {
+    "title": "IP Addressing, CIDR & Subnet Masks — How Devices Know They're on the Same Network",
+    "slug": "ip-addressing-cidr-and-subnet-masks-explained",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/ip-addressing-cidr-and-subnet-masks-explained",
+    "publishedAt": "2026-07-14T05:00:00.000Z",
+    "brief": "1. Why This Topic Matters\nIn the last post, I mapped out what happens when you call fetch() — the browser hands off to the OS, DNS resolves a domain, TCP shakes hands, and the request eventually gets",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "networking",
+      "IP",
+      "subnet",
+      "lan",
+      "network",
+      "CIDR",
+      "communication",
+      "IP Addressing",
+      "Local Area Network"
+    ]
+  },
+  {
     "title": "From Bot to Backend: Turning a Video Upload into an Adaptive Stream",
     "slug": "bot-to-backend-video-upload-adaptive-stream",
     "domain": "projectlog.hashnode.dev",
