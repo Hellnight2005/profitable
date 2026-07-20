@@ -1,5 +1,24 @@
 [
   {
+    "title": "Default Gateways, MAC Addresses & IP vs MAC — How Data Actually Finds Its Way Home",
+    "slug": "default-gateways-mac-addresses-ip-vs-mac",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/default-gateways-mac-addresses-ip-vs-mac",
+    "publishedAt": "2026-07-19T08:35:45.000Z",
+    "brief": "1. Why This Topic Matters\nLast post I figured out how a device checks if another device is on its own network — AND the IP against the subnet mask, compare the result. But I stopped right at the edge",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "default-gateway",
+      "IP",
+      "mac",
+      "ip-vs-mac",
+      "computer networking",
+      "routing",
+      "networking"
+    ]
+  },
+  {
     "title": "IP Addressing, CIDR & Subnet Masks — How Devices Know They're on the Same Network",
     "slug": "ip-addressing-cidr-and-subnet-masks-explained",
     "domain": "weeklyupdate.hashnode.dev",
