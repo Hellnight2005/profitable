@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "fetch-blog": "node public/scripts/fetch-hashnode.mjs",
+    "indexnow": "node public/scripts/submit-indexnow.mjs",
     "doctor": "npx react-doctor@latest"
   },
   "dependencies": {
