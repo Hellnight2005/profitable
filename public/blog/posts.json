@@ -1,5 +1,23 @@
 [
   {
+    "title": "From Filenames to Metadata: Teaching the Platform What It's Actually Streaming",
+    "slug": "from-filenames-to-metadata-teaching-the-platform-what-it-s-actually-streaming",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/from-filenames-to-metadata-teaching-the-platform-what-it-s-actually-streaming",
+    "publishedAt": "2026-07-20T18:22:28.000Z",
+    "brief": "In Part 2, I got the transcoding pipeline down to a single Docker pass and closed out with a list of things still sitting on the table — metadata, duplicate detection, storage, and security. This blog",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "metadata",
+      "mongo",
+      "FFmpeg",
+      "Docker",
+      "Backend Development",
+      "System Design"
+    ]
+  },
+  {
     "title": "Default Gateways, MAC Addresses & IP vs MAC — How Data Actually Finds Its Way Home",
     "slug": "default-gateways-mac-addresses-ip-vs-mac",
     "domain": "weeklyupdate.hashnode.dev",
