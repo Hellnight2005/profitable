@@ -1,5 +1,42 @@
 [
   {
+    "title": "Coming from Node.js to Go : What Week  Actually Taught Me",
+    "slug": "coming-from-nodejs-to-go-week-1-learning",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/coming-from-nodejs-to-go-week-1-learning",
+    "publishedAt": "2026-07-23T20:54:58.000Z",
+    "brief": "I've been working mostly with JavaScript and Node.js on the backend, and I wanted to learn a language that is commonly used for backend systems, cloud infrastructure, networking, and distributed syste",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "golang",
+      "node",
+      "gtools",
+      "#GOPATH",
+      "Learning Journey",
+      "#LearninPublic"
+    ]
+  },
+  {
+    "title": "How ARP Works & What Makes OSI and TCP/IP Models Different",
+    "slug": "how-arp-works-osi-vs-tcpip-model",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/how-arp-works-osi-vs-tcpip-model",
+    "publishedAt": "2026-07-23T14:51:42.000Z",
+    "brief": "1. Why This Topic Matters\nLast post I ended on a confession — I'd been treating \"ARP resolves the MAC address\" as a black box the entire time. Same network, cross network, didn't matter, I just waved",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "networking",
+      "ARP",
+      "OSI Model",
+      "TCP",
+      "computer networking",
+      "Learning Journey",
+      "#learning-in-public"
+    ]
+  },
+  {
     "title": "From Filenames to Metadata: Teaching the Platform What It's Actually Streaming",
     "slug": "from-filenames-to-metadata-teaching-the-platform-what-it-s-actually-streaming",
     "domain": "projectlog.hashnode.dev",
