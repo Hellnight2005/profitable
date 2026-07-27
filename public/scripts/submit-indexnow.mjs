@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '../..');
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://profitable-azure.vercel.app';
-const KEY = process.env.INDEXNOW_KEY || '8b016aaef66f439898e5fc7f404f7285';
+const KEY = process.env.INDEXNOW_KEY || 'ac00088a39ba46708c9572f6d8fa9260';
 
 async function main() {
   console.log(`🚀 Starting IndexNow submission for ${SITE_URL}...`);

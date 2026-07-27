@@ -13,7 +13,7 @@ export interface IndexNowResponse {
 }
 
 const INDEXNOW_API_ENDPOINT = 'https://api.indexnow.org/IndexNow';
-const DEFAULT_KEY = process.env.INDEXNOW_KEY || '8b016aaef66f439898e5fc7f404f7285';
+const DEFAULT_KEY = process.env.INDEXNOW_KEY || 'ac00088a39ba46708c9572f6d8fa9260';
 const DEFAULT_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://profitable-azure.vercel.app';
 
 /**
