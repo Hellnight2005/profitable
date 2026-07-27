@@ -1,5 +1,24 @@
 [
   {
+    "title": "Tests, Trust, and Shows: Hardening the Pipeline and Teaching It About Series/Anime and Movies",
+    "slug": "tests-trust-and-shows-hardening-pipeline-part-4",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/tests-trust-and-shows-hardening-pipeline-part-4",
+    "publishedAt": "2026-07-27T10:21:09.000Z",
+    "brief": "Part 3 ended with the library looking like something you'd actually want to browse — real titles, posters, language-labeled tracks — and a plan to go distributed next. Before touching the architecture",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "Pipeline",
+      "CICDPipeline",
+      "hls",
+      "IMDb data Scraper",
+      "Node.js",
+      "MongoDB",
+      "playwright"
+    ]
+  },
+  {
     "title": "Routing, ICMP & the UDP Datagram — How Data Travels, Gets Diagnosed, and Moves Fast",
     "slug": "routing-icmp-udp-and-the-udp-datagram-explained",
     "domain": "weeklyupdate.hashnode.dev",
