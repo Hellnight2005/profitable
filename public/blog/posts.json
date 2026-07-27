@@ -1,5 +1,28 @@
 [
   {
+    "title": "Routing, ICMP & the UDP Datagram — How Data Travels, Gets Diagnosed, and Moves Fast",
+    "slug": "routing-icmp-udp-and-the-udp-datagram-explained",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/routing-icmp-udp-and-the-udp-datagram-explained",
+    "publishedAt": "2026-07-26T13:40:52.000Z",
+    "brief": "1. Why This Topic Matters\nI'd been saying \"the router forwards it\" for several posts now without ever explaining what that forwarding decision actually looks like — so that's where this one starts, br",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "routing",
+      "icmp",
+      "traceroute",
+      "UDP",
+      "Datagram",
+      "ping",
+      "tcp/ip-model",
+      "netwroking",
+      "computer networking",
+      "Learning Journey",
+      "#learning-in-public"
+    ]
+  },
+  {
     "title": "Coming from Node.js to Go : What Week  Actually Taught Me",
     "slug": "coming-from-nodejs-to-go-week-1-learning",
     "domain": "weeklyupdate.hashnode.dev",
