@@ -1,7 +1,39 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import ProjectDetailClient from './ProjectDetailClient';
+
+// 1. Generate Dynamic Metadata for each project page
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const { slug } = params;
+    try {
+        const filePath = path.join(process.cwd(), 'public', 'projects.json');
+        const fileContents = await fs.promises.readFile(filePath, 'utf8');
+        const repos: GithubRepo[] = JSON.parse(fileContents);
+        const decodedSlug = decodeURIComponent(slug).toLowerCase();
+        const repo = repos.find((r) => r.name.toLowerCase() === decodedSlug);
+
+        if (repo) {
+            return {
+                title: `${repo.name} | Abhijeet Shinde`,
+                description: repo.description,
+                openGraph: {
+                    title: `${repo.name} | Abhijeet Shinde`,
+                    description: repo.description,
+                    type: 'website',
+                }
+            };
+        }
+    } catch (error) {
+        console.error("Error generating metadata for project:", error);
+    }
+
+    return {
+        title: "Project Detail | Abhijeet Shinde",
+    };
+}
+
 
 interface GithubRepo {
     id: number;

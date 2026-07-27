@@ -1,142 +1,35 @@
-"use client";
+import fs from 'fs/promises';
+import path from 'path';
+import { redirect } from 'next/navigation';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { useParams } from "next/navigation";
+interface BlogPost {
+  title: string;
+  slug: string;
+  domain: string;
+  url: string;
+  publishedAt: string;
+  brief: string;
+  category: string;
+  series: string | null;
+  tags: string[];
+}
 
-const MORE_POSTS = [
-    { id: "typographic-scales", tag: "DESIGN", title: "Typographic Scales for Dark Interfaces", date: "FEB 14, 2026", time: "5 MIN READ" },
-    { id: "slow-execution", tag: "THOUGHTS", title: "The Value of Slow Execution", date: "JAN 28, 2026", time: "4 MIN READ" },
-    { id: "asymmetric-grids", tag: "TUTORIALS", title: "Mastering Asymmetric CSS Grids", date: "JAN 12, 2026", time: "6 MIN READ" },
-];
+export default async function BlogRedirectPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
 
-export default function ArticleDetail() {
-    const params = useParams();
-    const [scrollProgress, setScrollProgress] = useState(0);
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'blog', 'posts.json');
+    const fileContent = await fs.readFile(filePath, 'utf8');
+    const posts: BlogPost[] = JSON.parse(fileContent);
+    const post = posts.find((p) => p.slug === slug);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPos = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            setScrollProgress((scrollPos / docHeight) * 100);
-        };
+    if (post && post.url) {
+      redirect(post.url);
+    }
+  } catch (error) {
+    console.error("Failed to redirect blog post:", error);
+  }
 
-        window.addEventListener("scroll", handleScroll);
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((e) => {
-                if (e.isIntersecting) e.target.classList.add("visible");
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            observer.disconnect();
-        };
-    }, []);
-
-    return (
-        <div>
-            <style>{`
-                .more-writing-card {
-                    background: var(--color-surface);
-                    border: 1px solid var(--color-border);
-                    border-top: 2px solid var(--color-border);
-                    border-radius: 2px;
-                    padding: 32px 24px;
-                    transition: border-color 0.2s ease, transform 0.2s ease;
-                }
-                .more-writing-card:hover {
-                    border-top-color: var(--color-accent) !important;
-                    transform: translateY(-4px);
-                }
-            `}</style>
-            {/* Progress Bar */}
-            <div style={{ position: "fixed", top: "64px", left: 0, height: "2px", background: "var(--color-accent)", width: `${scrollProgress}%`, zIndex: 99, transition: "width 0.1s" }} />
-
-            <main style={{ maxWidth: "680px", margin: "0 auto", padding: "var(--space-8) 24px" }}>
-                <header className="reveal" style={{ marginBottom: "64px" }}>
-                    <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", marginBottom: "24px", display: "inline-block" }}>ENGINEERING</span>
-                    <h1 className="type-h1" style={{ color: "var(--color-text-primary)", marginBottom: "24px" }}>{params.slug?.toString().replace(/-/g, " ").toUpperCase() || "ARTICLE TITLE"}</h1>
-                    <p className="body-text" style={{ fontSize: "18px", marginBottom: "32px", color: "var(--color-text-secondary)" }}>
-                        A deep dive into creating robust, scalable frontend architectures that stand the test of time and traffic spikes.
-                    </p>
-                    <div style={{ display: "flex", gap: "24px", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)", padding: "16px 0" }}>
-                        <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>AUTHOR: MAKER</span>
-                        <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>MAR 02, 2026</span>
-                        <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>8 MIN READ</span>
-                    </div>
-                </header>
-
-                <article className="reveal body-text article" style={{ color: "var(--color-text-primary)" }}>
-                    <p className="drop-cap" style={{ marginBottom: "24px" }}>
-                        The complexities of modern web development have pushed us toward increasingly intricate patterns. But complexity is not a goal—it is a tax. In this article, we explore how reducing abstractions can ironically lead to more resilient systems.
-                    </p>
-                    <p style={{ marginBottom: "24px" }}>
-                        When building the foundation of any large-scale application, the very first decision you usually make is how to structure your boundaries. Boundaries dictate communication overhead.
-                    </p>
-
-                    <blockquote style={{ margin: "48px 0", paddingLeft: "24px", borderLeft: "3px solid var(--color-accent)", color: "var(--color-text-primary)" }}>
-                        &quot;Abstraction is not about hiding complexity, it is about establishing firewalls between disparate domains.&quot;
-                    </blockquote>
-
-                    <h2 style={{ fontSize: "var(--type-h3)", marginBottom: "24px", marginTop: "48px" }}>The Implementation Detail</h2>
-                    <p style={{ marginBottom: "24px" }}>
-                        Below is an example of a simple but highly effective caching pattern using native web APIs.
-                    </p>
-
-                    <pre style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", padding: "16px", borderRadius: "2px", overflowX: "auto", marginBottom: "32px" }}>
-                        <code style={{ fontFamily: "var(--font-dm-mono)", fontSize: "14px", color: "var(--color-text-primary)" }}>
-                            {`async function fetchWithCache(url) {
-  const cached = await caches.match(url);
-  if (cached) return cached.json();
-
-  const response = await fetch(url);
-  const cache = await caches.open('v1');
-  cache.put(url, response.clone());
-  
-  return response.json();
-}`}
-                        </code>
-                    </pre>
-
-                    <p style={{ marginBottom: "24px" }}>
-                        Notice that we aren&apos;t relying on heavy external state managers. We empower the browser&apos;s native capabilities.
-                    </p>
-                </article>
-
-                {/* Bio Card */}
-                <section className="reveal card" style={{ marginTop: "96px", background: "var(--color-surface)", border: "1px solid var(--color-border)", padding: "32px", display: "flex", gap: "24px", alignItems: "center", flexWrap: "wrap" }}>
-                    <div style={{ width: "80px", height: "80px", borderRadius: "50%", background: "#222", overflow: "hidden", flexShrink: 0 }}>
-                        <Image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Author" width={80} height={80} style={{ objectFit: "cover" }} className="grayscale-hover" />
-                    </div>
-                    <div>
-                        <h3 style={{ color: "var(--color-text-primary)", marginBottom: "8px", fontSize: "20px", fontWeight: "normal" }}>ABOUT THE AUTHOR</h3>
-                        <p className="body-text" style={{ fontSize: "14px", margin: 0 }}>Maker Builder is a software engineer focused on design systems, performance, and the intersection of code and aesthetics.</p>
-                    </div>
-                </section>
-            </main>
-
-            {/* More Writing */}
-            <section className="reveal" style={{ borderTop: "1px solid var(--color-border)", padding: "var(--space-8) 24px", background: "var(--color-surface-alt)" }}>
-                <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-                    <h2 className="type-ui" style={{ color: "var(--color-text-tertiary)", letterSpacing: "0.16em", marginBottom: "48px" }}>MORE WRITING</h2>
-
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
-                        {MORE_POSTS.map((post) => (
-                            <div key={post.id} className="card interactive more-writing-card">
-                                <span className="tag" style={{ border: "1px solid var(--color-border)", padding: "4px 10px", borderRadius: "2px", marginBottom: "24px", display: "inline-block" }}>{post.tag}</span>
-                                <h3 style={{ color: "var(--color-text-primary)", marginBottom: "48px", minHeight: "48px", fontSize: "18px", fontWeight: "normal" }}>{post.title}</h3>
-                                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                                    <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>{post.date}</span>
-                                    <span className="type-micro" style={{ color: "var(--color-text-secondary)" }}>{post.time}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+  // Fallback: redirect to main blog list page if post not found
+  redirect('/blog');
 }
