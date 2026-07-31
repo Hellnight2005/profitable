@@ -1,5 +1,24 @@
 [
   {
+    "title": "Learning Go, Week 2: Time, Memory Management, Pointers, and Slices",
+    "slug": "learning-go-week-2-time-memory-pointers-slices",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/learning-go-week-2-time-memory-pointers-slices",
+    "publishedAt": "2026-07-30T12:08:23.000Z",
+    "brief": "Last week I wrote about starting Go from the fundamentals — the toolchain, the type system, zero values, and why the language is strict about things like unused variables.\nThis week I moved from synta",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "Go Language",
+      "golang",
+      "backend developments",
+      "program",
+      "learn in public",
+      "memory-management",
+      "pointer"
+    ]
+  },
+  {
     "title": "Tests, Trust, and Shows: Hardening the Pipeline and Teaching It About Series/Anime and Movies",
     "slug": "tests-trust-and-shows-hardening-pipeline-part-4",
     "domain": "projectlog.hashnode.dev",
