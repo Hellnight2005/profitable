@@ -1,5 +1,24 @@
 [
   {
+    "title": "Understanding TCP — Segments, Sequence Numbers & Connection Termination",
+    "slug": "understanding-tcp-segments-sequence-numbers-termination",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/understanding-tcp-segments-sequence-numbers-termination",
+    "publishedAt": "2026-08-02T07:59:29.000Z",
+    "brief": "1. Why This Topic Matters\nEvery post so far in this series that mentioned TCP treated it like a black box that \"just works\" — reliable, ordered, handles retransmission somehow. After spending this muc",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "computer networking",
+      "TCP/IP",
+      "networking",
+      "TCP Handshake",
+      "tcp header",
+      "Learning Journey",
+      "Build In Public"
+    ]
+  },
+  {
     "title": "Learning Go, Week 2: Time, Memory Management, Pointers, and Slices",
     "slug": "learning-go-week-2-time-memory-pointers-slices",
     "domain": "weeklyupdate.hashnode.dev",
