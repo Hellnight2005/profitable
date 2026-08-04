@@ -1,5 +1,26 @@
 [
   {
+    "title": "The Blueprint As It Stood: Hosting, CDN, and Security Decisions",
+    "slug": "distributed-media-platform-architecture-hosting-cdn-security",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/distributed-media-platform-architecture-hosting-cdn-security",
+    "publishedAt": "2026-08-03T14:07:34.000Z",
+    "brief": "The $0/Month Blueprint: Hosting, CDN, and Security Decisions Behind the Media Platform Part 5 of Building a Distributed Media Platform from Scratch\nThat's the last of the code-level groundwork for thi",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "System Design",
+      "distributed system",
+      "cloud architecture",
+      "Docker",
+      "CDN",
+      "mongo",
+      "kafka",
+      "message queue",
+      "#Pods "
+    ]
+  },
+  {
     "title": "Understanding TCP — Segments, Sequence Numbers & Connection Termination",
     "slug": "understanding-tcp-segments-sequence-numbers-termination",
     "domain": "weeklyupdate.hashnode.dev",
