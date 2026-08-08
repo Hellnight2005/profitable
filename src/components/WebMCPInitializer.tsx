@@ -2,12 +2,26 @@
 
 import { useEffect } from "react";
 
+interface ModelContextTool {
+  name: string;
+  description: string;
+  inputSchema: Record<string, unknown>;
+  execute: (params: unknown) => Promise<{ type: string; text: string }>;
+}
+
+interface ModelContext {
+  registerTool: (tool: ModelContextTool) => Promise<void>;
+}
+
 export default function WebMCPInitializer() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     // Detect browser implementation of WebMCP (document or navigator namespace)
-    const modelContext = (document as any).modelContext || (navigator as any).modelContext;
+    const docWithContext = document as unknown as { modelContext?: ModelContext };
+    const navWithContext = navigator as unknown as { modelContext?: ModelContext };
+    const modelContext = docWithContext.modelContext || navWithContext.modelContext;
+
     if (!modelContext || typeof modelContext.registerTool !== "function") {
       console.log("WebMCP: document.modelContext or navigator.modelContext not available in this browser.");
       return;
@@ -36,7 +50,7 @@ export default function WebMCPInitializer() {
           })
         };
       }
-    }).catch((err: any) => console.error("WebMCP error registering get_profile_summary:", err));
+    }).catch((err: unknown) => console.error("WebMCP error registering get_profile_summary:", err));
 
     // 2. Register list_projects
     modelContext.registerTool({
@@ -51,14 +65,14 @@ export default function WebMCPInitializer() {
             type: "text",
             text: JSON.stringify(projects)
           };
-        } catch (error) {
+        } catch {
           return {
             type: "text",
             text: "Error loading projects data."
           };
         }
       }
-    }).catch((err: any) => console.error("WebMCP error registering list_projects:", err));
+    }).catch((err: unknown) => console.error("WebMCP error registering list_projects:", err));
 
     // 3. Register list_skills_and_services
     modelContext.registerTool({
@@ -84,7 +98,7 @@ export default function WebMCPInitializer() {
           })
         };
       }
-    }).catch((err: any) => console.error("WebMCP error registering list_skills_and_services:", err));
+    }).catch((err: unknown) => console.error("WebMCP error registering list_skills_and_services:", err));
 
     // 4. Register list_blog_posts
     modelContext.registerTool({
@@ -101,7 +115,7 @@ export default function WebMCPInitializer() {
           })
         };
       }
-    }).catch((err: any) => console.error("WebMCP error registering list_blog_posts:", err));
+    }).catch((err: unknown) => console.error("WebMCP error registering list_blog_posts:", err));
 
     // 5. Register send_contact_message
     modelContext.registerTool({
@@ -117,7 +131,7 @@ export default function WebMCPInitializer() {
         },
         required: ["name", "email", "subject", "message"]
       },
-      execute: async (params: any) => {
+      execute: async (params: unknown) => {
         try {
           const res = await fetch("/api/contact", {
             method: "POST",
@@ -138,14 +152,15 @@ export default function WebMCPInitializer() {
               text: `Failed to send message: ${result.error || "Unknown error"}`
             };
           }
-        } catch (error: any) {
+        } catch (error) {
+          const message = error instanceof Error ? error.message : "Unknown error";
           return {
             type: "text",
-            text: `Network or server error while sending message: ${error.message}`
+            text: `Network or server error while sending message: ${message}`
           };
         }
       }
-    }).catch((err: any) => console.error("WebMCP error registering send_contact_message:", err));
+    }).catch((err: unknown) => console.error("WebMCP error registering send_contact_message:", err));
 
   }, []);
 
