@@ -24,25 +24,6 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
     const [activeTag, setActiveTag] = useState<string | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>("");
 
-    // Setup intersection observer for scroll animations
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((e) => {
-                if (e.isIntersecting) e.target.classList.add("visible");
-            });
-        }, { threshold: 0.05 });
-
-        // Small delay to attach after React render
-        const timeout = setTimeout(() => {
-            document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-        }, 100);
-
-        return () => {
-            clearTimeout(timeout);
-            observer.disconnect();
-        };
-    }, [initialPosts, activeCategory, activeSeries, activeTag, searchQuery]);
-
     // Filtering logic
     const { filteredPosts, availableSeries } = useMemo(() => {
         let results = initialPosts;
@@ -85,6 +66,23 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
             availableSeries: currentAvailableSeries
         };
     }, [initialPosts, activeCategory, activeSeries, activeTag, searchQuery]);
+
+    // Setup intersection observer for scroll animations
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) e.target.classList.add("visible");
+            });
+        }, { threshold: 0.05 });
+
+        const elements = document.querySelectorAll(".reveal");
+        elements.forEach((el) => observer.observe(el));
+
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+            observer.disconnect();
+        };
+    }, [filteredPosts]);
 
     // The first post in the filtered list will be featured (wider, more premium layout)
     const featuredPost = filteredPosts[0];

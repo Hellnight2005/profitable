@@ -19,8 +19,6 @@ export function useAnalytics(): void {
     useEffect(() => {
         if (typeof window === "undefined") return;
 
-        const cleanupFns: Array<() => void> = [];
-
         // ==========================================
         // 1. Scroll Depth Tracking
         // ==========================================
@@ -43,7 +41,6 @@ export function useAnalytics(): void {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        cleanupFns.push(() => window.removeEventListener("scroll", handleScroll));
 
         // ==========================================
         // 2. Time on Page (Engagement Dwell Time)
@@ -54,10 +51,6 @@ export function useAnalytics(): void {
                 trackEvent("time_on_page", { seconds });
             }, seconds * 1000)
         );
-
-        cleanupFns.push(() => {
-            timers.forEach((t) => clearTimeout(t));
-        });
 
         // ==========================================
         // 3. Global JavaScript Error Tracking
@@ -74,7 +67,6 @@ export function useAnalytics(): void {
         };
 
         window.addEventListener("error", handleJsError);
-        cleanupFns.push(() => window.removeEventListener("error", handleJsError));
 
         // ==========================================
         // 4. Automatic Link Tracking (Social, Email, Resume, Outbound)
@@ -126,14 +118,26 @@ export function useAnalytics(): void {
         };
 
         document.addEventListener("click", handleLinkClick);
-        cleanupFns.push(() => document.removeEventListener("click", handleLinkClick));
 
         // ==========================================
         // 5. Performance Web Vitals Tracking
         // ==========================================
+        let lcpObserver: PerformanceObserver | null = null;
+        let fidObserver: PerformanceObserver | null = null;
+        let clsObserver: PerformanceObserver | null = null;
+        let clsValue = 0;
+
+        const reportCls = () => {
+            if (document.visibilityState === "hidden" && clsValue > 0) {
+                trackEvent("performance_cls", {
+                    value: parseFloat(clsValue.toFixed(4))
+                });
+            }
+        };
+
         try {
             // LCP (Largest Contentful Paint)
-            const lcpObserver = new PerformanceObserver((entryList) => {
+            lcpObserver = new PerformanceObserver((entryList) => {
                 const entries = entryList.getEntries();
                 const lastEntry = entries[entries.length - 1];
                 trackEvent("performance_lcp", {
@@ -142,10 +146,9 @@ export function useAnalytics(): void {
                 });
             });
             lcpObserver.observe({ type: "largest-contentful-paint", buffered: true });
-            cleanupFns.push(() => lcpObserver.disconnect());
 
             // FID (First Input Delay)
-            const fidObserver = new PerformanceObserver((entryList) => {
+            fidObserver = new PerformanceObserver((entryList) => {
                 const entries = entryList.getEntries();
                 entries.forEach((entry) => {
                     const delay = Math.round(
@@ -158,11 +161,9 @@ export function useAnalytics(): void {
                 });
             });
             fidObserver.observe({ type: "first-input", buffered: true });
-            cleanupFns.push(() => fidObserver.disconnect());
 
             // CLS (Cumulative Layout Shift)
-            let clsValue = 0;
-            const clsObserver = new PerformanceObserver((entryList) => {
+            clsObserver = new PerformanceObserver((entryList) => {
                 for (const entry of entryList.getEntries()) {
                     if (!(entry as PerformanceObserverEntry).hadRecentInput) {
                         clsValue += (entry as PerformanceObserverEntry).value || 0;
@@ -170,18 +171,8 @@ export function useAnalytics(): void {
                 }
             });
             clsObserver.observe({ type: "layout-shift", buffered: true });
-            cleanupFns.push(() => clsObserver.disconnect());
 
-            // Report CLS when page changes/visibility changes
-            const reportCls = () => {
-                if (document.visibilityState === "hidden" && clsValue > 0) {
-                    trackEvent("performance_cls", {
-                        value: parseFloat(clsValue.toFixed(4))
-                    });
-                }
-            };
             window.addEventListener("visibilitychange", reportCls);
-            cleanupFns.push(() => window.removeEventListener("visibilitychange", reportCls));
         } catch {
             // Older browser support fallback
             if (process.env.NODE_ENV === "development") {
@@ -190,7 +181,21 @@ export function useAnalytics(): void {
         }
 
         return () => {
-            cleanupFns.forEach((cleanup) => cleanup());
+            window.removeEventListener("scroll", handleScroll);
+            timers.forEach((t) => clearTimeout(t));
+            window.removeEventListener("error", handleJsError);
+            document.removeEventListener("click", handleLinkClick);
+            window.removeEventListener("visibilitychange", reportCls);
+
+            if (lcpObserver) {
+                lcpObserver.disconnect();
+            }
+            if (fidObserver) {
+                fidObserver.disconnect();
+            }
+            if (clsObserver) {
+                clsObserver.disconnect();
+            }
         };
     }, []);
 }

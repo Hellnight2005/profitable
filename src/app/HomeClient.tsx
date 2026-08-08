@@ -68,9 +68,16 @@ export default function Home() {
         );
 
         const elements = document.querySelectorAll(".reveal");
-        elements.forEach((el) => observer.observe(el));
+        elements.forEach((el) => {
+            observer.observe(el);
+        });
 
-        return () => observer.disconnect();
+        return () => {
+            elements.forEach((el) => {
+                observer.unobserve(el);
+            });
+            observer.disconnect();
+        };
     }, [repos, latestPosts]);
 
     return (

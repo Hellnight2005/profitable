@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "dateModified": new Date().toISOString(),
   "mainEntity": {
     "@type": "Person",
     "name": "Abhijeet Shinde",
@@ -43,7 +42,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <HomeClient />
     </>

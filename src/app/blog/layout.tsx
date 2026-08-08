@@ -23,7 +23,6 @@ const jsonLd = {
   "name": "Abhijeet Shinde's Blog",
   "url": "https://profitable-azure.vercel.app/blog",
   "description": "Writings on web development, systems engineering, and more.",
-  "dateModified": new Date().toISOString(),
   "author": {
     "@type": "Person",
     "name": "Abhijeet Shinde"
@@ -39,7 +38,7 @@ export default function BlogLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       {children}
     </>

@@ -232,7 +232,7 @@ export default function AboutClient() {
                                         <div className="carousel-card-inner" style={{
                                             transform: `scale(${isActive ? 1 : 0.85})`,
                                         }}>
-                                            <Image src={item.src} alt={item.title} fill style={{ objectFit: "cover", transition: "transform 0.7s ease", filter: isActive ? "brightness(1.25)" : "grayscale(100%) brightness(1.25)" }} />
+                                            <Image src={item.src} alt={item.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "cover", transition: "transform 0.7s ease", filter: isActive ? "brightness(1.25)" : "grayscale(100%) brightness(1.25)" }} />
                                             <div style={{ position: "absolute", inset: 0, background: "var(--color-bg)", opacity: isActive ? 0 : 0.4, transition: "opacity 0.6s ease" }} />
                                         </div>
                                         <div style={{
@@ -267,8 +267,8 @@ export default function AboutClient() {
                             { dates: "2023 — CURRENT", title: "Founder, Synthetic Artifacts", desc: "Pioneering the application of neural networks in high-precision hardware manufacturing and procedural design systems.", active: true },
                             { dates: "2020 — 2022", title: "Sr. Product Lead, Velocity", desc: "Architected the cockpit interface and flight-management systems for next-gen electric aerospace platforms.", active: false },
                             { dates: "2017 — 2020", title: "Design Engineer, Kinetic", desc: "Focused on parametric modeling and CNC-optimized construction methodologies for modular architecture.", active: false }
-                        ].map((item, i) => (
-                            <div key={i} className="group" style={{ position: "relative" }}>
+                        ].map((item) => (
+                            <div key={item.title} className="group" style={{ position: "relative" }}>
                                 
                                 <div style={{ position: "absolute", left: "-43px", top: "4px", width: "7px", height: "7px", background: item.active ? "var(--color-accent)" : "var(--color-text-tertiary)", transform: "rotate(45deg)", transition: "background 0.3s" }} className={item.active ? "pulse-node" : "group-hover-active"} />
 

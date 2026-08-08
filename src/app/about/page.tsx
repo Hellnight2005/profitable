@@ -24,7 +24,6 @@ const jsonLd = {
   "@type": "AboutPage",
   "name": "About Abhijeet Shinde",
   "url": "https://profitable-azure.vercel.app/about",
-  "dateModified": new Date().toISOString(),
   "mainEntity": {
     "@type": "Person",
     "name": "Abhijeet Shinde",
@@ -38,7 +37,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <AboutClient />
     </>

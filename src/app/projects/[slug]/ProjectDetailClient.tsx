@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-// eslint-disable-next-line @next/next/no-img-element
+import Image from 'next/image';
 
 interface GithubRepo {
     id: number;
@@ -599,16 +599,23 @@ export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
 
                             {/* Track — duplicated for seamless loop */}
                             <div className={`proj-gallery-track${marqueesPaused ? " paused" : ""}`}>
-                                {[...repo.project_images, ...repo.project_images].map((img, i) => (
-                                    <div key={`gallery-img-${img}-${i}`} className="proj-gallery-card">
-                                        <img
-                                            src={img}
-                                            alt={`${repo.name} screenshot ${(i % repo.project_images.length) + 1}`}
+                                {[
+                                    ...repo.project_images.map((img, idx) => ({ img, key: `gallery-img-first-${idx}-${img}`, index: idx })),
+                                    ...repo.project_images.map((img, idx) => ({ img, key: `gallery-img-second-${idx}-${img}`, index: idx }))
+                                ].map((item) => (
+                                    <div key={item.key} className="proj-gallery-card">
+                                        <Image
+                                            src={item.img}
+                                            alt={`${repo.name} screenshot ${item.index + 1}`}
+                                            width={400}
+                                            height={250}
+                                            style={{ objectFit: "cover" }}
                                             draggable={false}
                                             className="proj-gallery-img"
+                                            unoptimized
                                         />
                                         <span className="proj-gallery-badge">
-                                            {String((i % repo.project_images.length) + 1).padStart(2, "0")} / {String(repo.project_images.length).padStart(2, "0")}
+                                            {String(item.index + 1).padStart(2, "0")} / {String(repo.project_images.length).padStart(2, "0")}
                                         </span>
                                     </div>
                                 ))}
