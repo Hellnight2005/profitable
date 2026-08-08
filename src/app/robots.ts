@@ -30,26 +30,6 @@ export default function robots(): MetadataRoute.Robots {
           '/*?*',        // Exclude query parameters to prevent infinite URL crawling
         ],
       },
-      {
-        // Disallow AI scrapers/crawlers to save bandwidth and prevent scraping, but allow metadata discovery
-        userAgent: [
-          'GPTBot',
-          'ChatGPT-User',
-          'ClaudeBot',
-          'Claude-Web',
-          'CCBot',
-          'Google-Extended',
-          'Anthropic-AI',
-          'Omgilibot',
-          'FacebookBot',
-        ],
-        allow: [
-          '/.well-known/webmcp.json',
-          '/webmcp.json',
-          '/llms.txt',
-        ],
-        disallow: '/',
-      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
