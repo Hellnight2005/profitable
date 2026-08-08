@@ -31,7 +31,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        // Disallow AI scrapers/crawlers to save bandwidth and prevent scraping
+        // Disallow AI scrapers/crawlers to save bandwidth and prevent scraping, but allow metadata discovery
         userAgent: [
           'GPTBot',
           'ChatGPT-User',
@@ -42,6 +42,11 @@ export default function robots(): MetadataRoute.Robots {
           'Anthropic-AI',
           'Omgilibot',
           'FacebookBot',
+        ],
+        allow: [
+          '/.well-known/webmcp.json',
+          '/webmcp.json',
+          '/llms.txt',
         ],
         disallow: '/',
       },

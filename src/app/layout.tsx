@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import Script from "next/script";
 import AnalyticsTracker from "@/hooks/useAnalytics";
+import WebMCPInitializer from "@/components/WebMCPInitializer";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -42,8 +43,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bebasNeue.variable} ${dmMono.variable} ${playfairDisplay.variable}`}>
+      <head>
+        <link rel="webmcp-manifest" href="/.well-known/webmcp.json" />
+      </head>
       <body>
         <AnalyticsTracker />
+        <WebMCPInitializer />
         <Loader />
         <Cursor />
         <Navbar />

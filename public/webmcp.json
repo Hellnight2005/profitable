@@ -1,0 +1,71 @@
+{
+  "name": "Abhijeet Shinde Portfolio",
+  "description": "Personal portfolio and blog of Abhijeet Shinde, Web Developer in Mumbai specializing in backend architecture, DevOps, and systems.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "get_profile_summary",
+      "description": "Retrieve Abhijeet Shinde's professional bio, job title, location, and links to professional profiles (GitHub, LinkedIn, Blog).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_projects",
+      "description": "Retrieve the list of completed and ongoing development projects, including description, tech stacks, repositories, and learning outcomes.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_skills_and_services",
+      "description": "Retrieve categories of technical expertise (Frontend, Backend, DevOps, Data & Messaging, AI & Automation), developer tools, and client services offered.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_blog_posts",
+      "description": "Retrieve blog topics, Hackathon Diaries, and Project Log index details.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "send_contact_message",
+      "description": "Send a message or work inquiry directly to Abhijeet Shinde.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The sender's name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "The sender's email address"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Subject of the message or goal of collaboration"
+          },
+          "message": {
+            "type": "string",
+            "description": "The detailed message or inquiry content"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "subject",
+          "message"
+        ]
+      }
+    }
+  ]
+}
