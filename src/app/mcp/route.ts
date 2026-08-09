@@ -3,6 +3,68 @@ import fs from "fs/promises";
 import path from "path";
 import nodemailer from "nodemailer";
 
+const skillsData = {
+  skills: {
+    FRONTEND: ["React", "Next.js", "Vite", "TypeScript", "Modern CSS"],
+    BACKEND: ["Node.js", "REST API Design", "GraphQL", "Microservices Architecture"],
+    DATA_MESSAGING: ["PostgreSQL", "Redis", "Kafka", "Neo4j", "Qdrant", "MongoDB"],
+    DEVOPS_TOOLS: ["Docker", "Git", "GitHub", "Linux", "VS Code", "Grafana", "Loki"],
+    AI_AUTOMATION: ["LLM Application Development", "RAG (Retrieval-Augmented Generation)", "n8n Workflow Automation", "AI Agents & Chatbots"]
+  },
+  services: [
+    { name: "FULL-STACK WEB DEVELOPMENT", desc: "Building modern web applications using React, Next.js, and Node.js." },
+    { name: "BACKEND & API ARCHITECTURE", desc: "Designing robust, scalable, and secure API layers and backend services." },
+    { name: "DEVOPS & SCALING", desc: "Setting up CI/CD pipelines, Docker containerization, and configuring servers for scaling." }
+  ]
+};
+
+const experienceData = {
+  title: "Systems Engineer & Freelance Web Developer",
+  years_of_experience: "3+ years focused on backend architecture, DevOps, and automation.",
+  roles: [
+    {
+      role: "Freelance Software Engineer & Tech Consultant",
+      period: "2023 - Present",
+      responsibilities: [
+        "Architecting and building full-stack applications with React, Next.js, and Node.",
+        "Designing scalable databases (SQL/NoSQL) and vector search pipelines.",
+        "Containerizing and deploying microservices using Docker and local registries."
+      ]
+    }
+  ],
+  highlights: {
+    postgresql_experience: "Used PostgreSQL for structural schema design, relational modeling, and polyglot indexing alongside NoSQL and Graph databases (Neo4j).",
+    system_design: "Experienced with Kafka for stream processing, Loki/Grafana for distributed logging, and Qdrant for vector retrieval systems."
+  }
+};
+
+const socialLinks = {
+  github: "https://github.com/Hellnight2005",
+  linkedin: "https://www.linkedin.com/in/abhi2005jeet/",
+  blog: "https://hashnode.com/@abhijeet2005",
+  portfolio: "https://profitable-azure.vercel.app"
+};
+
+interface Project {
+  name: string;
+  description: string;
+  tech_used: string[];
+  learned_tools: string[];
+  what_learned: string;
+  why_not_live: string | null;
+}
+
+// Helper to fetch projects safely
+const getProjectsList = async (): Promise<Project[]> => {
+  try {
+    const filePath = path.join(process.cwd(), "public", "projects.json");
+    const fileContent = await fs.readFile(filePath, "utf8");
+    return JSON.parse(fileContent);
+  } catch {
+    return [];
+  }
+};
+
 export async function POST(req: NextRequest) {
   let reqId: string | number | null = null;
   try {
@@ -47,51 +109,113 @@ export async function POST(req: NextRequest) {
             name: "Abhijeet Shinde",
             title: "Web Developer",
             location: "Mumbai",
-            bio: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems. Available for hire or website audits.",
-            socials: {
-              github: "https://github.com/Hellnight2005",
-              linkedin: "https://www.linkedin.com/in/abhi2005jeet/",
-              blog: "https://hashnode.com/@abhijeet2005",
-            },
+            bio: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
+            socials: socialLinks,
           });
           break;
 
-        case "list_projects": {
-          const filePath = path.join(process.cwd(), "public", "projects.json");
-          resultText = await fs.readFile(filePath, "utf8");
+        case "get_skills":
+          resultText = JSON.stringify(skillsData);
+          break;
+
+        case "get_projects": {
+          const projects = await getProjectsList();
+          resultText = JSON.stringify(projects);
           break;
         }
 
-        case "list_skills_and_services":
-          resultText = JSON.stringify({
-            skills: {
-              FRONTEND: ["React", "Next.js", "Vite", "TypeScript", "Modern CSS"],
-              BACKEND: ["Node.js", "REST API Design", "GraphQL", "Microservices Architecture"],
-              DATA_MESSAGING: ["PostgreSQL", "Redis", "Kafka", "Neo4j"],
-              DEVOPS_TOOLS: ["Docker", "Git", "GitHub", "Linux", "VS Code"],
-              AI_AUTOMATION: [
-                "LLM Application Development",
-                "RAG (Retrieval-Augmented Generation)",
-                "n8n Workflow Automation",
-                "AI Agents & Chatbots",
-              ],
-            },
-            services: [
-              {
-                name: "FULL-STACK WEB DEVELOPMENT",
-                desc: "Building modern web applications using React, Next.js, and Node.js.",
-              },
-              {
-                name: "BACKEND & API ARCHITECTURE",
-                desc: "Designing robust, scalable, and secure API layers and backend services.",
-              },
-              {
-                name: "DEVOPS & SCALING",
-                desc: "Setting up CI/CD pipelines, Docker containerization, and configuring servers for scaling.",
-              },
-            ],
-          });
+        case "get_project": {
+          const { name: projName } = args || {};
+          if (!projName) {
+            return NextResponse.json(
+              { jsonrpc: "2.0", error: { code: -32602, message: "Missing required argument 'name'" }, id: reqId },
+              { headers: getCorsHeaders() }
+            );
+          }
+          const projects = await getProjectsList();
+          const project = projects.find(
+            (p: Project) => p.name.toLowerCase().includes(projName.toLowerCase())
+          );
+          resultText = project ? JSON.stringify(project) : `Project "${projName}" not found.`;
           break;
+        }
+
+        case "get_experience":
+          resultText = JSON.stringify(experienceData);
+          break;
+
+        case "get_social_links":
+          resultText = JSON.stringify(socialLinks);
+          break;
+
+        case "find_projects_by_technology": {
+          const { tech } = args || {};
+          if (!tech) {
+            return NextResponse.json(
+              { jsonrpc: "2.0", error: { code: -32602, message: "Missing required argument 'tech'" }, id: reqId },
+              { headers: getCorsHeaders() }
+            );
+          }
+          const projects = await getProjectsList();
+          const filtered = projects.filter((p: Project) =>
+            p.tech_used.some((t: string) => t.toLowerCase().includes(tech.toLowerCase()))
+          );
+          resultText = JSON.stringify(filtered);
+          break;
+        }
+
+        case "find_projects_by_skill": {
+          const { skill } = args || {};
+          if (!skill) {
+            return NextResponse.json(
+              { jsonrpc: "2.0", error: { code: -32602, message: "Missing required argument 'skill'" }, id: reqId },
+              { headers: getCorsHeaders() }
+            );
+          }
+          const projects = await getProjectsList();
+          const filtered = projects.filter((p: Project) =>
+            p.learned_tools.some((s: string) => s.toLowerCase().includes(skill.toLowerCase()))
+          );
+          resultText = JSON.stringify(filtered);
+          break;
+        }
+
+        case "find_projects_by_domain": {
+          const { domain } = args || {};
+          if (!domain) {
+            return NextResponse.json(
+              { jsonrpc: "2.0", error: { code: -32602, message: "Missing required argument 'domain'" }, id: reqId },
+              { headers: getCorsHeaders() }
+            );
+          }
+          const projects = await getProjectsList();
+          const keyword = domain.toLowerCase();
+          const filtered = projects.filter((p: Project) =>
+            p.description.toLowerCase().includes(keyword) ||
+            p.name.toLowerCase().includes(keyword)
+          );
+          resultText = JSON.stringify(filtered);
+          break;
+        }
+
+        case "find_projects_by_architecture": {
+          const { architecture } = args || {};
+          if (!architecture) {
+            return NextResponse.json(
+              { jsonrpc: "2.0", error: { code: -32602, message: "Missing required argument 'architecture'" }, id: reqId },
+              { headers: getCorsHeaders() }
+            );
+          }
+          const projects = await getProjectsList();
+          const keyword = architecture.toLowerCase();
+          const filtered = projects.filter((p: Project) =>
+            p.description.toLowerCase().includes(keyword) ||
+            p.what_learned.toLowerCase().includes(keyword) ||
+            (p.why_not_live && p.why_not_live.toLowerCase().includes(keyword))
+          );
+          resultText = JSON.stringify(filtered);
+          break;
+        }
 
         case "list_blog_posts":
           resultText = JSON.stringify({
@@ -211,7 +335,7 @@ export async function GET() {
   return NextResponse.json(
     {
       name: "Abhijeet Shinde Portfolio MCP Server",
-      version: "1.0.0",
+      version: "1.1.0",
       status: "online",
     },
     {

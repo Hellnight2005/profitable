@@ -75,23 +75,35 @@ export default async function Image() {
             style={{
               fontSize: "24px",
               color: "#3b82f6",
-              marginBottom: "20px",
+              marginBottom: "15px",
               fontWeight: 500,
             }}
           >
-            Maker. Writer. Builder.
+            Web Developer & Systems Engineer
           </div>
 
           {/* Heading */}
           <div
             style={{
-              fontSize: "54px",
+              fontSize: "48px",
               fontWeight: 800,
               color: "#1e3a8a",
               lineHeight: 1.2,
+              marginBottom: "15px",
             }}
           >
-            Let&apos;s Build Something Scalable.
+            Scalable Backend, DevOps, & Full-Stack Systems
+          </div>
+
+          {/* Location/Context */}
+          <div
+            style={{
+              fontSize: "18px",
+              color: "#4b5563",
+              fontWeight: 500,
+            }}
+          >
+            Portfolio & Technical Blog • Mumbai, India
           </div>
         </div>
 
