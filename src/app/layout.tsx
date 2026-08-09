@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     google: "xzapu7V0XUQkAi0kmCM7xfMSaFxoOL0zRc5GRu3766I",
   },
   icons: {
-    icon: "/brgrounf_less.png",
-    shortcut: "/brgrounf_less.png",
-    apple: "/brgrounf_less.png",
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
   },
   openGraph: {
     title: "Abhijeet Shinde | Web Developer in Mumbai",
