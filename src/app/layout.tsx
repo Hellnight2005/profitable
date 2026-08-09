@@ -29,10 +29,36 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
-  description: "Maker. Writer. Builder.",
+  metadataBase: new URL("https://profitable-azure.vercel.app"),
+  title: {
+    default: "Abhijeet Shinde | Web Developer in Mumbai",
+    template: "%s | Abhijeet Shinde",
+  },
+  description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems. Get a free website audit or hire me for your next project.",
   verification: {
     google: "xzapu7V0XUQkAi0kmCM7xfMSaFxoOL0zRc5GRu3766I",
+  },
+  openGraph: {
+    title: "Abhijeet Shinde | Web Developer in Mumbai",
+    description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
+    url: "https://profitable-azure.vercel.app",
+    siteName: "Abhijeet Shinde",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/Image/cognidesk-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Abhijeet Shinde - Web Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhijeet Shinde | Web Developer in Mumbai",
+    description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
+    images: ["/Image/cognidesk-cover.png"],
   },
 };
 

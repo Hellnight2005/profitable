@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         const repo = repos.find((r) => r.name.toLowerCase() === decodedSlug);
 
         if (repo) {
+            const ogImage = repo.cover_image || "/Image/cognidesk-cover.png";
             return {
                 title: `${repo.name} | Abhijeet Shinde`,
                 description: repo.description,
@@ -22,6 +23,20 @@ export async function generateMetadata({ params }: { params: { slug: string } })
                     title: `${repo.name} | Abhijeet Shinde`,
                     description: repo.description,
                     type: 'website',
+                    images: [
+                        {
+                            url: ogImage,
+                            width: 1200,
+                            height: 630,
+                            alt: `${repo.name} Cover Image`,
+                        }
+                    ],
+                },
+                twitter: {
+                    card: "summary_large_image",
+                    title: `${repo.name} | Abhijeet Shinde`,
+                    description: repo.description,
+                    images: [ogImage],
                 }
             };
         }

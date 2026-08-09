@@ -13,6 +13,20 @@ export const metadata: Metadata = {
     description: "Explore the technical portfolio and open-source contributions of Abhijeet Shinde.",
     url: "https://profitable-azure.vercel.app/projects",
     siteName: "Abhijeet Shinde",
+    images: [
+      {
+        url: "/Image/cognidesk-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Abhijeet Shinde Projects Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Portfolio | Abhijeet Shinde",
+    description: "Explore the technical portfolio and open-source contributions of Abhijeet Shinde.",
+    images: ["/Image/cognidesk-cover.png"],
   }
 };
 

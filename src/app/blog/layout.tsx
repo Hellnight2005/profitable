@@ -9,11 +9,20 @@ export const metadata: Metadata = {
     url: "https://profitable-azure.vercel.app/blog",
     type: "website",
     siteName: "Abhijeet Shinde",
+    images: [
+      {
+        url: "/Image/cognidesk-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Blog | Abhijeet Shinde",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Abhijeet Shinde",
     description: "Read my latest thoughts on web development, backend systems, and building scalable applications.",
+    images: ["/Image/cognidesk-cover.png"],
   }
 };
 

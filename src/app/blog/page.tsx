@@ -13,11 +13,20 @@ export const metadata: Metadata = {
         url: "https://profitable-azure.vercel.app/blog",
         type: "website",
         siteName: "Abhijeet Shinde Portfolio",
+        images: [
+            {
+                url: "/Image/cognidesk-cover.png",
+                width: 1200,
+                height: 630,
+                alt: "Blog & Technical Writing | Abhijeet Shinde",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Blog & Technical Writing | Abhijeet Shinde",
         description: "Read technical articles on DevOps, AWS cloud systems, Docker workflow engineering, and software engineering by Abhijeet Shinde.",
+        images: ["/Image/cognidesk-cover.png"],
     }
 };
 
