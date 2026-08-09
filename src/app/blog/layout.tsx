@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "Abhijeet Shinde",
     images: [
       {
-        url: "/Image/cognidesk-cover.png",
+        url: "/brgrounf_less.png",
         width: 1200,
         height: 630,
         alt: "Blog | Abhijeet Shinde",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog | Abhijeet Shinde",
     description: "Read my latest thoughts on web development, backend systems, and building scalable applications.",
-    images: ["/Image/cognidesk-cover.png"],
+    images: ["/brgrounf_less.png"],
   }
 };
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Abhijeet Shinde",
     images: [
       {
-        url: "/Image/cognidesk-cover.png",
+        url: "/brgrounf_less.png",
         width: 1200,
         height: 630,
         alt: "Abhijeet Shinde Projects Portfolio",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Engineering Portfolio | Abhijeet Shinde",
     description: "Explore the technical portfolio and open-source contributions of Abhijeet Shinde.",
-    images: ["/Image/cognidesk-cover.png"],
+    images: ["/brgrounf_less.png"],
   }
 };
 

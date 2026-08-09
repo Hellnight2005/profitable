@@ -24,6 +24,14 @@ const nextConfig = {
             },
         ],
     },
+    async rewrites() {
+        return [
+            {
+                source: "/.well-known/webmcp.json",
+                destination: "/api/webmcp",
+            },
+        ];
+    },
 };
 
 export default nextConfig;

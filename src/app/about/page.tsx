@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: "/Image/cognidesk-cover.png",
+        url: "/brgrounf_less.png",
         width: 1200,
         height: 630,
         alt: "About Abhijeet Shinde | Web Developer in Mumbai",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Web Developer Abhijeet Shinde",
     description: "Learn more about Abhijeet Shinde, a web developer from Mumbai focusing on scalable systems and backend architecture.",
-    images: ["/Image/cognidesk-cover.png"],
+    images: ["/brgrounf_less.png"],
   }
 };
 
