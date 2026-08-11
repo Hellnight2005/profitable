@@ -1,5 +1,38 @@
 [
   {
+    "title": "The MVP Is Live: Stream Anything Through Telegram, No App Required",
+    "slug": "distributed-media-platform-mvp-live-telegram-bot",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/distributed-media-platform-mvp-live-telegram-bot",
+    "publishedAt": "2026-08-10T07:27:10.000Z",
+    "brief": "Since Part 1, this series has been documenting the build of a distributed media platform from scratch — from a simple frustration (movies and anime scattered across five devices) through metadata extr",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "#learning-in-public",
+      "Build In Public",
+      "System Design",
+      "telegram bot"
+    ]
+  },
+  {
+    "title": "Making My Portfolio Readable by AI Agents: A WebMCP Deep Dive",
+    "slug": "webmcp-on-my-portfolio",
+    "domain": "projectlog.hashnode.dev",
+    "url": "https://projectlog.hashnode.dev/webmcp-on-my-portfolio",
+    "publishedAt": "2026-08-10T07:20:52.000Z",
+    "brief": "How I even landed on this\nI didn't go looking for WebMCP. I saw someone mention it in passing on Instagram — one of those \"wait, what's this\" moments — and it sat in the back of my head for a couple d",
+    "category": "Project Logs",
+    "series": null,
+    "tags": [
+      "WebMCP",
+      "Next.js",
+      "aiagent",
+      "mcp",
+      "learn in public"
+    ]
+  },
+  {
     "title": "The Blueprint As It Stood: Hosting, CDN, and Security Decisions",
     "slug": "distributed-media-platform-architecture-hosting-cdn-security",
     "domain": "projectlog.hashnode.dev",
