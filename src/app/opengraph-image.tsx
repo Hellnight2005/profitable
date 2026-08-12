@@ -19,7 +19,7 @@ export default async function Image() {
   // Read the image file from the public folder
   let base64Image = "";
   try {
-    const filePath = path.join(process.cwd(), "public", "brgrounf_less.png");
+    const filePath = path.join(process.cwd(), "public", "icon.png");
     const fileBuffer = await fs.readFile(filePath);
     base64Image = `data:image/png;base64,${fileBuffer.toString("base64")}`;
   } catch (error) {

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Abhijeet Shinde",
     images: [
       {
-        url: "/brgrounf_less.png",
+        url: "/icon.png",
         width: 1200,
         height: 630,
         alt: "Abhijeet Shinde | Web Developer in Mumbai",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abhijeet Shinde | Web Developer in Mumbai",
     description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
-    images: ["/brgrounf_less.png"],
+    images: ["/icon.png"],
   },
 };
 

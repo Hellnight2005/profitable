@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     google: "xzapu7V0XUQkAi0kmCM7xfMSaFxoOL0zRc5GRu3766I",
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
   },
   openGraph: {
     title: "Abhijeet Shinde | Web Developer in Mumbai",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/icon.png",
+        url: "/icon.jpg",
         width: 1200,
         height: 630,
         alt: "Abhijeet Shinde - Web Developer Portfolio",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abhijeet Shinde | Web Developer in Mumbai",
     description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
-    images: ["/icon.png"],
+    images: ["/icon.jpg"],
   },
 };
 
