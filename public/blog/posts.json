@@ -1,5 +1,23 @@
 [
   {
+    "title": "TCP in Motion: MTU, MSS, PMTUD, Flow Control, and Congestion Control",
+    "slug": "tcp-mtu-flow-congestion-control",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/tcp-mtu-flow-congestion-control",
+    "publishedAt": "2026-08-12T09:55:14.000Z",
+    "brief": "1. Why This Topic Matters\nThe last post covered what's inside a TCP segment and how a connection opens and closes — but it never asked how big a segment is allowed to be, how many can be sent before t",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "networking",
+      "TCP",
+      "flow-control",
+      "Congestion Control",
+      "computer networking",
+      "Learning Journey"
+    ]
+  },
+  {
     "title": "The MVP Is Live: Stream Anything Through Telegram, No App Required",
     "slug": "distributed-media-platform-mvp-live-telegram-bot",
     "domain": "projectlog.hashnode.dev",
