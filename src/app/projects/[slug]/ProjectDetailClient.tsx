@@ -430,6 +430,17 @@ export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
 
                     {/* Action Buttons */}
                     <div className="proj-actions">
+                        {repo.live_url && (
+                            <a
+                                href={repo.live_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="proj-action-btn"
+                                style={{ background: "rgba(232, 213, 176, 0.12)", borderColor: "var(--color-accent)" }}
+                            >
+                                LIVE DEMO →
+                            </a>
+                        )}
                         {repo.html_url && (
                             <a
                                 href={repo.html_url}
