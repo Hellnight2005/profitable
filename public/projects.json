@@ -82,5 +82,44 @@
     "isPinned": true,
     "upcoming": false,
     "pushed_at": "2026-02-07T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "MediaPlatform",
+    "description": "MediaPlatform is an experimental distributed streaming and media management system designed to explore the end-to-end journey of media files—from ingestion and Telegram bot interfaces to metadata extraction, multi-bitrate video transcoding, and scalable streaming delivery.",
+    "html_url": null,
+    "live_url": null,
+    "blog_url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch",
+    "is_live": false,
+    "why_not_live": "The project is actively being engineered and documented as an open multi-part series, covering Telegram bot integration, video transcoding pipelines, and distributed storage.",
+    "tech_used": [
+      "Node.js",
+      "Telegram Bot API",
+      "Docker",
+      "FFmpeg",
+      "Redis",
+      "Kafka",
+      "PostgreSQL",
+      "Next.js",
+      "Distributed Storage"
+    ],
+    "learned_tools": [
+      "Telegram Bot API Architecture",
+      "Media File Ingestion Lifecycle",
+      "FFmpeg Video Transcoding",
+      "Metadata Extraction (Resolution, Codec, Audio)",
+      "Duplicate File Detection",
+      "Adaptive Bitrate Streaming (HLS/DASH)",
+      "Distributed Storage & Scaling"
+    ],
+    "what_learned": "While building this platform, I explored how Telegram bots act as lightweight intermediaries for backend services. I learned how media files transition through ingestion, storage, metadata extraction, duplicate detection, and transcoding, and how distributed components orchestrate to build a reliable media streaming platform from scratch.",
+    "reason_for_making": "My movie and anime collection was scattered across multiple hard drives, phones, and computers. I wanted a single centralized bot or app to access and stream everything seamlessly. Starting with a Telegram bot interface, the project expanded into building a full-scale media platform from scratch to understand the engineering behind modern media systems.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "TypeScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": true,
+    "pushed_at": "2026-08-16T00:00:00Z"
   }
 ]

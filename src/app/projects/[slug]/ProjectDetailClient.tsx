@@ -8,7 +8,7 @@ interface GithubRepo {
     id: number;
     name: string;
     description: string;
-    html_url: string;
+    html_url: string | null;
     live_url: string | null;
     blog_url?: string | null;
     is_live: boolean;
@@ -430,14 +430,16 @@ export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
 
                     {/* Action Buttons */}
                     <div className="proj-actions">
-                        <a
-                            href={repo.html_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="proj-action-btn"
-                        >
-                            GITHUB →
-                        </a>
+                        {repo.html_url && (
+                            <a
+                                href={repo.html_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="proj-action-btn"
+                            >
+                                GITHUB →
+                            </a>
+                        )}
                         {repo.blog_url && (
                             <a
                                 href={repo.blog_url}

@@ -54,7 +54,7 @@ interface GithubRepo {
     id: number;
     name: string;
     description: string;
-    html_url: string;
+    html_url: string | null;
     live_url: string | null;
     is_live: boolean;
     why_not_live: string | null;
