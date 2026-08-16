@@ -1,7 +1,6 @@
-import fs from 'fs/promises';
-import path from 'path';
 import { Metadata } from 'next';
 import BlogClient from './BlogClient';
+import { getBlogPostsFromRSS } from '@/lib/rss';
 
 export const metadata: Metadata = {
     title: "Blog & Technical Writing | Abhijeet Shinde",
@@ -30,18 +29,7 @@ export const metadata: Metadata = {
     }
 };
 
-async function getPosts() {
-    try {
-        const filePath = path.join(process.cwd(), 'public', 'blog', 'posts.json');
-        const fileContent = await fs.readFile(filePath, 'utf8');
-        return JSON.parse(fileContent);
-    } catch (error) {
-        console.error("Failed to read posts.json on server:", error);
-        return [];
-    }
-}
-
 export default async function BlogPage() {
-    const posts = await getPosts();
+    const posts = await getBlogPostsFromRSS();
     return <BlogClient initialPosts={posts} />;
 }

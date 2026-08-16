@@ -10,7 +10,7 @@
 ## Main Sections
 - [Homepage](https://profitable-azure.vercel.app/): Overview of services and portfolio.
 - [About](https://profitable-azure.vercel.app/about): Background and professional experience.
-- [Blog](https://profitable-azure.vercel.app/blog): Articles on web development, Hackathon Diaries, and Project Logs.
+- [Blog](https://profitable-azure.vercel.app/blog): Articles on web development, Hackathon Diaries, Project Logs, and The Architecture Lab.
 - [Projects](https://profitable-azure.vercel.app/projects): Showcase of completed web applications and experiments.
 - [Skills](https://profitable-azure.vercel.app/skills): Detailed list of capabilities, tools, and services.
 - [Contact](https://profitable-azure.vercel.app/contact): Contact form to hire or collaborate.

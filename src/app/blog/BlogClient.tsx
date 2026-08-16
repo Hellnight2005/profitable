@@ -16,7 +16,13 @@ interface BlogPost {
     tags: string[];
 }
 
-const CATEGORIES = ["All", "Weekly Updates", "Hackathon Diaries", "Project Logs"];
+const CATEGORIES = [
+    "All",
+    "Weekly Updates",
+    "Hackathon Diaries",
+    "Project Logs",
+    "The Architecture Lab"
+];
 
 export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] }) {
     const [activeCategory, setActiveCategory] = useState<string>("All");

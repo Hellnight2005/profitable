@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 import fs from "fs/promises";
 import path from "path";
@@ -16,12 +17,25 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  // Read the image file from the public folder
+  // Read the image file from public or app directory
   let base64Image = "";
   try {
-    const filePath = path.join(process.cwd(), "public", "icon.png");
-    const fileBuffer = await fs.readFile(filePath);
-    base64Image = `data:image/png;base64,${fileBuffer.toString("base64")}`;
+    const candidates = [
+      path.join(process.cwd(), "public", "brgrounf_less.png"),
+      path.join(process.cwd(), "src", "app", "icon.jpg"),
+      path.join(process.cwd(), "public", "icon.png"),
+    ];
+
+    for (const filePath of candidates) {
+      try {
+        const fileBuffer = await fs.readFile(filePath);
+        const mime = filePath.endsWith(".jpg") || filePath.endsWith(".jpeg") ? "image/jpeg" : "image/png";
+        base64Image = `data:${mime};base64,${fileBuffer.toString("base64")}`;
+        break;
+      } catch {
+        // try next
+      }
+    }
   } catch (error) {
     console.error("Error reading OG image file:", error);
   }

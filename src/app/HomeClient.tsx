@@ -44,9 +44,13 @@ export default function Home() {
     const [repos, setRepos] = useState<GithubRepo[]>([]);
 
     useEffect(() => {
-        fetch('/blog/posts.json')
+        fetch('/api/blog')
             .then(res => res.json())
-            .then(data => setLatestPosts(data.slice(0, 3)))
+            .then(data => {
+                if (Array.isArray(data)) {
+                    setLatestPosts(data.slice(0, 3));
+                }
+            })
             .catch(err => console.error("Failed to load blog posts:", err));
 
         fetch('/projects.json')
