@@ -1,5 +1,21 @@
 [
   {
+    "title": "Learning Go, Week 3: Maps, Control Flow, and Structs",
+    "slug": "learning-go-week-3-maps-control-flow-structs",
+    "domain": "weeklyupdate.hashnode.dev",
+    "url": "https://weeklyupdate.hashnode.dev/learning-go-week-3-maps-control-flow-structs",
+    "publishedAt": "2026-08-15T16:05:52.000Z",
+    "brief": "Last week was time, memory management, pointers, and slices. This week I split my time between Go's key-value data structure — maps — and the control flow constructs that decide what actually runs: if",
+    "category": "Weekly Updates",
+    "series": null,
+    "tags": [
+      "Go Language",
+      "golang",
+      "backend developments",
+      "Learning Journey"
+    ]
+  },
+  {
     "title": "TCP in Motion: MTU, MSS, PMTUD, Flow Control, and Congestion Control",
     "slug": "tcp-mtu-flow-congestion-control",
     "domain": "weeklyupdate.hashnode.dev",
