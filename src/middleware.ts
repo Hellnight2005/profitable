@@ -14,7 +14,7 @@ const VALID_ROUTES = new Set([
 const VALID_PREFIXES = ["/blog/", "/projects/"];
 
 // Static assets / Next.js internals to always allow through
-const SKIP_PREFIXES = ["/_next/", "/api/", "/favicon.ico", "/Image/", "/blog/posts.json"];
+const SKIP_PREFIXES = ["/_next/", "/api/", "/favicon.ico", "/Image/"];
 
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
