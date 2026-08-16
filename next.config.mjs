@@ -22,6 +22,14 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "imgs.search.brave.com",
             },
+            {
+                protocol: "https",
+                hostname: "cdn.hashnode.com",
+            },
+            {
+                protocol: "https",
+                hostname: "hashnode.imgix.net",
+            },
         ],
     },
     async rewrites() {

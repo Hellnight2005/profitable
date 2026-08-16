@@ -14,6 +14,7 @@ interface BlogPost {
     category: string;
     series: string | null;
     tags: string[];
+    coverImage?: string | null;
 }
 
 export interface GithubRepo {

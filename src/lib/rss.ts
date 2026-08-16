@@ -10,6 +10,7 @@ export interface BlogPost {
   category: string;
   series: string | null;
   tags: string[];
+  coverImage: string | null;
 }
 
 const HASHNODE_FEEDS = [
@@ -31,6 +32,25 @@ interface RawRssItem {
   description?: string;
   'content:encoded'?: string;
   category?: string | string[];
+  enclosure?: {
+    '@_url'?: string;
+    '@_type'?: string;
+  };
+  'media:content'?: {
+    '@_url'?: string;
+  };
+}
+
+function extractCoverImage(post: RawRssItem): string | null {
+  if (post.enclosure && post.enclosure['@_url']) {
+    return post.enclosure['@_url'];
+  }
+  if (post['media:content'] && post['media:content']['@_url']) {
+    return post['media:content']['@_url'];
+  }
+  const content = post['content:encoded'] || post.description || '';
+  const match = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return match ? match[1] : null;
 }
 
 export async function getBlogPostsFromRSS(): Promise<BlogPost[]> {
@@ -61,6 +81,7 @@ export async function getBlogPostsFromRSS(): Promise<BlogPost[]> {
         const slug = url.split('/').pop()?.split('?')[0] || '';
         const briefRaw = post.description || post['content:encoded'] || '';
         const brief = briefRaw.replace(/<[^>]*>?/gm, '').slice(0, 300).trim();
+        const coverImage = extractCoverImage(post);
 
         let tags: string[] = [];
         if (post.category) {
@@ -77,6 +98,7 @@ export async function getBlogPostsFromRSS(): Promise<BlogPost[]> {
           category: item.category,
           series: null,
           tags,
+          coverImage,
         };
       });
 

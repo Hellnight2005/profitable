@@ -14,6 +14,7 @@ interface BlogPost {
     category: string;
     series: string | null;
     tags: string[];
+    coverImage?: string | null;
 }
 
 const CATEGORIES = [
@@ -118,6 +119,63 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                 }
                 .post-card:hover .post-title {
                     color: var(--color-accent);
+                }
+                .post-card:hover .cover-img {
+                    transform: scale(1.04);
+                }
+                .cover-img-box {
+                    overflow: hidden;
+                    border: 1px solid var(--color-border);
+                    background: rgba(255,255,255,0.02);
+                    position: relative;
+                }
+                .cover-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.35s ease, opacity 0.2s ease;
+                }
+                .featured-grid {
+                    display: grid;
+                    grid-template-columns: 1.3fr 1fr;
+                    gap: 36px;
+                    align-items: center;
+                }
+                .post-list-layout {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 24px;
+                    align-items: flex-start;
+                }
+                .post-thumb-box {
+                    width: 200px;
+                    min-width: 200px;
+                    aspect-ratio: 16 / 9;
+                    overflow: hidden;
+                    border: 1px solid var(--color-border);
+                    border-radius: 2px;
+                    background: rgba(255,255,255,0.02);
+                    flex-shrink: 0;
+                }
+                @media (max-width: 860px) {
+                    .featured-grid {
+                        grid-template-columns: 1fr;
+                        gap: 24px;
+                    }
+                    .featured-grid .featured-img-col {
+                        order: -1;
+                    }
+                }
+                @media (max-width: 640px) {
+                    .post-list-layout {
+                        flex-direction: column-reverse;
+                        gap: 16px;
+                    }
+                    .post-thumb-box {
+                        width: 100%;
+                        min-width: 100%;
+                    }
                 }
                 .category-filter-btn {
                     background: transparent;
@@ -303,7 +361,7 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 {initialPosts.length === 0 ? (
                     <div className="reveal" style={{ textAlign: "center", padding: "80px 0", color: "var(--color-text-tertiary)", border: "1px dashed var(--color-border)" }}>
-                        No posts compiled. Please run fetch script.
+                        No posts found in feeds.
                     </div>
                 ) : filteredPosts.length === 0 ? (
                     <div className="reveal" style={{ textAlign: "center", padding: "80px 0", color: "var(--color-text-tertiary)", border: "1px dashed var(--color-border)" }}>
@@ -314,39 +372,58 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                         {/* 1. Featured Post (First Post in list) */}
                         {featuredPost && !activeTag && searchQuery === "" && (
                             <a href={featuredPost.url} target="_blank" rel="noopener noreferrer" onClick={() => trackBlogClick(featuredPost.title)} style={{ textDecoration: "none" }}>
-                                <article className="reveal interactive post-card featured-card" style={{ padding: "40px" }}>
-                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "20px", alignItems: "center" }}>
-                                        <span className="type-micro" style={{ color: "var(--color-accent)", fontWeight: "600", letterSpacing: "0.1em" }}>FEATURED ARTICLE</span>
-                                        <span style={{ color: "var(--color-border)" }}>•</span>
-                                        <span className="type-micro" style={{ color: "var(--color-text-tertiary)" }}>
-                                            {new Date(featuredPost.publishedAt).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" }).toUpperCase()}
-                                        </span>
-                                        <span className="tag" style={{ border: "1px solid var(--color-primary)", color: "var(--color-primary)", padding: "1px 6px", fontSize: "9px" }}>
-                                            {featuredPost.category.toUpperCase()}
-                                        </span>
-                                    </div>
-                                    
-                                    <h2 className="post-title" style={{ fontSize: "2rem", marginBottom: "16px" }}>
-                                        {featuredPost.title}
-                                    </h2>
-                                    
-                                    {featuredPost.brief && (
-                                        <p className="brief-text" style={{ fontSize: "16px", marginBottom: "24px" }}>
-                                            {featuredPost.brief}
-                                        </p>
-                                    )}
+                                <article className="reveal interactive post-card featured-card" style={{ padding: "36px" }}>
+                                    <div className={featuredPost.coverImage ? "featured-grid" : ""}>
+                                        <div>
+                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "18px", alignItems: "center" }}>
+                                                <span className="type-micro" style={{ color: "var(--color-accent)", fontWeight: "600", letterSpacing: "0.1em" }}>FEATURED ARTICLE</span>
+                                                <span style={{ color: "var(--color-border)" }}>•</span>
+                                                <span className="type-micro" style={{ color: "var(--color-text-tertiary)" }}>
+                                                    {new Date(featuredPost.publishedAt).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" }).toUpperCase()}
+                                                </span>
+                                                <span className="tag" style={{ border: "1px solid var(--color-primary)", color: "var(--color-primary)", padding: "1px 6px", fontSize: "9px" }}>
+                                                    {featuredPost.category.toUpperCase()}
+                                                </span>
+                                            </div>
+                                            
+                                            <h2 className="post-title" style={{ fontSize: "1.85rem", marginBottom: "16px" }}>
+                                                {featuredPost.title}
+                                            </h2>
+                                            
+                                            {featuredPost.brief && (
+                                                <p className="brief-text" style={{ fontSize: "15px", marginBottom: "24px" }}>
+                                                    {featuredPost.brief}
+                                                </p>
+                                            )}
 
-                                    {/* Featured Tags */}
-                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }} onClick={(e) => e.stopPropagation()}>
-                                        {featuredPost.tags.map(tag => (
-                                            <span 
-                                                key={tag} 
-                                                onClick={() => setActiveTag(tag === activeTag ? null : tag)} 
-                                                className={`type-mono tag-badge${activeTag === tag ? " active" : ""}`}
-                                            >
-                                                #{tag.toLowerCase()}
-                                            </span>
-                                        ))}
+                                            {/* Featured Tags */}
+                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }} onClick={(e) => e.stopPropagation()}>
+                                                {featuredPost.tags.map(tag => (
+                                                    <span 
+                                                        key={tag} 
+                                                        onClick={() => setActiveTag(tag === activeTag ? null : tag)} 
+                                                        className={`type-mono tag-badge${activeTag === tag ? " active" : ""}`}
+                                                    >
+                                                        #{tag.toLowerCase()}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Featured Cover Image */}
+                                        {featuredPost.coverImage && (
+                                            <div className="featured-img-col">
+                                                <div className="cover-img-box" style={{ aspectRatio: "16 / 9", borderRadius: "3px" }}>
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img
+                                                        src={featuredPost.coverImage}
+                                                        alt={featuredPost.title}
+                                                        className="cover-img"
+                                                        loading="lazy"
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </article>
                             </a>
@@ -359,41 +436,58 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                                 const formattedDate = d.toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" }).toUpperCase();
 
                                 return (
-                                    <article key={post.slug} className="reveal interactive post-card" style={{ padding: "28px 24px" }}>
+                                    <article key={post.slug} className="reveal interactive post-card" style={{ padding: "24px" }}>
                                         <a href={post.url} target="_blank" rel="noopener noreferrer" onClick={() => trackBlogClick(post.title)} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
-                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "12px", alignItems: "center" }}>
-                                                <span className="type-micro" style={{ color: "var(--color-text-tertiary)" }}>{formattedDate}</span>
-                                                <span className="tag" style={{ border: "1px solid var(--color-primary)", color: "var(--color-primary)", padding: "1px 6px", fontSize: "9px" }}>
-                                                    {post.category.toUpperCase()}
-                                                </span>
-                                                {post.series && (
-                                                    <span className="tag" style={{ border: "1px dashed var(--color-accent)", color: "var(--color-accent)", padding: "1px 6px", fontSize: "9px" }}>
-                                                        {post.series}
-                                                    </span>
+                                            <div className="post-list-layout">
+                                                <div style={{ flex: 1 }}>
+                                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "10px", alignItems: "center" }}>
+                                                        <span className="type-micro" style={{ color: "var(--color-text-tertiary)" }}>{formattedDate}</span>
+                                                        <span className="tag" style={{ border: "1px solid var(--color-primary)", color: "var(--color-primary)", padding: "1px 6px", fontSize: "9px" }}>
+                                                            {post.category.toUpperCase()}
+                                                        </span>
+                                                        {post.series && (
+                                                            <span className="tag" style={{ border: "1px dashed var(--color-accent)", color: "var(--color-accent)", padding: "1px 6px", fontSize: "9px" }}>
+                                                                {post.series}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <h3 className="post-title" style={{ fontSize: "1.25rem", marginBottom: "10px" }}>
+                                                        {post.title}
+                                                    </h3>
+                                                    {post.brief && (
+                                                        <p className="brief-text" style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "16px" }}>
+                                                            {post.brief}
+                                                        </p>
+                                                    )}
+
+                                                    {/* Tags */}
+                                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }} onClick={(e) => e.stopPropagation()}>
+                                                        {post.tags.map(tag => (
+                                                            <span 
+                                                                key={tag} 
+                                                                onClick={() => setActiveTag(tag === activeTag ? null : tag)} 
+                                                                className={`type-mono tag-badge${activeTag === tag ? " active" : ""}`}
+                                                            >
+                                                                #{tag.toLowerCase()}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Post Thumbnail Image */}
+                                                {post.coverImage && (
+                                                    <div className="post-thumb-box">
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                        <img
+                                                            src={post.coverImage}
+                                                            alt={post.title}
+                                                            className="cover-img"
+                                                            loading="lazy"
+                                                        />
+                                                    </div>
                                                 )}
                                             </div>
-                                            <h3 className="post-title" style={{ fontSize: "1.3rem", marginBottom: "12px" }}>
-                                                {post.title}
-                                            </h3>
-                                            {post.brief && (
-                                                <p className="brief-text" style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "16px" }}>
-                                                    {post.brief}
-                                                </p>
-                                            )}
                                         </a>
-                                        
-                                        {/* Tags badges clickable */}
-                                        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                                            {post.tags.map(tag => (
-                                                <span 
-                                                    key={tag} 
-                                                    onClick={() => setActiveTag(tag === activeTag ? null : tag)} 
-                                                    className={`type-mono tag-badge${activeTag === tag ? " active" : ""}`}
-                                                >
-                                                    #{tag.toLowerCase()}
-                                                </span>
-                                            ))}
-                                        </div>
                                     </article>
                                 );
                             })}
