@@ -2,12 +2,23 @@ import { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Abhijeet Shinde | Web Developer in Mumbai",
-  description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems. Get a free website audit or hire me for your next project.",
-  keywords: ["Web Developer in Mumbai", "Backend Developer", "Systems Engineer", "Freelance Web Developer Mumbai", "React Developer", "Next.js Specialist", "Hire Developer"],
+  title: "Abhijeet Shinde | Software Engineer & Systems Builder",
+  description: "Software engineer exploring backend systems, developer tools, AI applications, storage, and infrastructure. Building projects and documenting system design publically.",
+  keywords: [
+    "Software Engineer",
+    "Backend Systems",
+    "Go Engineer",
+    "Rust Developer",
+    "Distributed Systems",
+    "Storage Systems",
+    "Developer Tools",
+    "AI Infrastructure",
+    "RAG",
+    "Abhijeet Shinde"
+  ],
   openGraph: {
-    title: "Abhijeet Shinde | Web Developer in Mumbai",
-    description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
+    title: "Abhijeet Shinde | Software Engineer & Systems Builder",
+    description: "Software engineer exploring backend systems, developer tools, AI applications, storage, and infrastructure.",
     type: "website",
     url: "https://profitable-azure.vercel.app",
     siteName: "Abhijeet Shinde",
@@ -16,14 +27,14 @@ export const metadata: Metadata = {
         url: "/icon.png",
         width: 1200,
         height: 630,
-        alt: "Abhijeet Shinde | Web Developer in Mumbai",
+        alt: "Abhijeet Shinde | Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abhijeet Shinde | Web Developer in Mumbai",
-    description: "Experienced Web Developer in Mumbai specializing in backend architecture, DevOps, and scalable systems.",
+    title: "Abhijeet Shinde | Software Engineer & Systems Builder",
+    description: "Software engineer exploring backend systems, developer tools, AI applications, storage, and infrastructure.",
     images: ["/icon.png"],
   },
 };
@@ -35,13 +46,21 @@ const jsonLd = {
     "@type": "Person",
     "name": "Abhijeet Shinde",
     "url": "https://profitable-azure.vercel.app",
-    "jobTitle": "Web Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance"
-    },
+    "jobTitle": "Software Engineer",
+    "knowsAbout": [
+      "Backend Systems",
+      "Storage Architecture",
+      "Distributed Infrastructure",
+      "Developer Tools",
+      "AI Systems",
+      "Go",
+      "Rust",
+      "TypeScript"
+    ],
     "sameAs": [
-      "https://hashnode.com/@abhijeet2005"
+      "https://github.com/Hellnight2005",
+      "https://hashnode.com/@abhijeet2005",
+      "https://www.linkedin.com/in/abhi2005jeet/"
     ]
   }
 };

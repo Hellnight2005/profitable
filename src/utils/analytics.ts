@@ -1,13 +1,7 @@
 /**
  * Google Analytics 4 (GA4) Event Tracking Utility
  * 
- * This utility provides safe, type-safe wrapper functions around the standard
- * global `gtag` tracking function. It prevents errors by checking whether
- * `window.gtag` exists before attempting to dispatch events.
- * 
- * Usage:
- * import { trackEvent, trackContactFormSubmit } from '@/utils/analytics';
- * trackContactFormSubmit();
+ * Safe, type-safe wrapper functions around global `gtag` tracking.
  */
 
 declare global {
@@ -18,15 +12,11 @@ declare global {
 
 /**
  * Base tracking function that safely dispatches events to GA4.
- * 
- * @param eventName The standard or custom GA4 event name (e.g., 'contact_form_submit').
- * @param params Optional key-value parameters to send along with the event.
  */
 export function trackEvent(eventName: string, params?: Record<string, unknown>): void {
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", eventName, params);
     } else {
-        // Log in development mode if GA is not loaded yet
         if (process.env.NODE_ENV === "development") {
             console.log(`[Analytics Dev] Event: "${eventName}"`, params || "");
         }
@@ -34,8 +24,7 @@ export function trackEvent(eventName: string, params?: Record<string, unknown>):
 }
 
 /**
- * Tracks page views. Under Next.js, standard page views are tracked automatically by GA4,
- * but this is useful for virtual page views or tabs.
+ * Tracks page views.
  */
 export function trackPageView(pageName: string): void {
     trackEvent("page_view", {
@@ -45,8 +34,94 @@ export function trackPageView(pageName: string): void {
 }
 
 /**
- * Tracks when a user clicks the button to view the professional resume.
- * Category: Resume
+ * Tracks when a user clicks hero section call-to-actions.
+ */
+export function trackHeroCtaClick(ctaName: string, ctaDestination: string): void {
+    trackEvent("hero_cta_click", {
+        cta_name: ctaName,
+        cta_destination: ctaDestination,
+        page_location: typeof window !== "undefined" ? window.location.pathname : "/"
+    });
+}
+
+/**
+ * Tracks when a user clicks a project card.
+ */
+export function trackProjectCardClick(
+    projectName: string,
+    projectSlug: string,
+    position?: number,
+    sourceSection: string = "featured_projects"
+): void {
+    trackEvent("project_card_click", {
+        project_name: projectName,
+        project_slug: projectSlug,
+        project_position: position,
+        source_section: sourceSection
+    });
+}
+
+/**
+ * Tracks when a user lands on/views a project details page.
+ */
+export function trackProjectDetailView(projectName: string, projectSlug: string): void {
+    trackEvent("project_detail_view", {
+        project_name: projectName,
+        project_slug: projectSlug
+    });
+}
+
+/**
+ * Tracks when a user clicks an article/writing item.
+ */
+export function trackWritingArticleClick(
+    articleTitle: string,
+    articleCategory: string,
+    sourceSection: string = "latest_writing"
+): void {
+    trackEvent("writing_article_click", {
+        article_title: articleTitle,
+        article_category: articleCategory,
+        source_section: sourceSection
+    });
+}
+
+/**
+ * Tracks when a user clicks external GitHub links.
+ * Accepts string section name or MouseEvent for direct onClick binding.
+ */
+export function trackGitHubClick(sourceSectionOrEvent?: unknown): void {
+    const sourceSection = typeof sourceSectionOrEvent === "string" ? sourceSectionOrEvent : "footer";
+    trackEvent("github_click", {
+        source_section: sourceSection,
+        destination: "https://github.com/Hellnight2005"
+    });
+}
+
+/**
+ * Tracks when a user clicks external LinkedIn links.
+ * Accepts string section name or MouseEvent for direct onClick binding.
+ */
+export function trackLinkedInClick(sourceSectionOrEvent?: unknown): void {
+    const sourceSection = typeof sourceSectionOrEvent === "string" ? sourceSectionOrEvent : "footer";
+    trackEvent("linkedin_click", {
+        source_section: sourceSection,
+        destination: "https://linkedin.com/in/abhijeet-shinde"
+    });
+}
+
+/**
+ * Tracks when a user clicks contact CTAs.
+ */
+export function trackContactCtaClick(ctaName: string, sourceSection: string = "homepage_cta"): void {
+    trackEvent("contact_cta_click", {
+        cta_name: ctaName,
+        source_section: sourceSection
+    });
+}
+
+/**
+ * Tracks resume view clicks.
  */
 export function trackResumeView(): void {
     trackEvent("resume_view", {
@@ -55,28 +130,7 @@ export function trackResumeView(): void {
 }
 
 /**
- * Tracks when a user clicks the external GitHub link.
- * Category: Social / Outbound
- */
-export function trackGitHubClick(): void {
-    trackEvent("github_click", {
-        destination: "https://github.com/Hellnight2005"
-    });
-}
-
-/**
- * Tracks when a user clicks the external LinkedIn profile link.
- * Category: Social / Outbound
- */
-export function trackLinkedInClick(): void {
-    trackEvent("linkedin_click", {
-        destination: "https://linkedin.com/in/abhijeet-shinde"
-    });
-}
-
-/**
- * Tracks when a user clicks a direct mailto email link.
- * Category: Contact
+ * Tracks email mailto clicks.
  */
 export function trackEmailClick(): void {
     trackEvent("email_click", {
@@ -85,9 +139,7 @@ export function trackEmailClick(): void {
 }
 
 /**
- * Tracks when a user successfully submits the contact form.
- * Should only be fired after server validation and success response.
- * Category: Contact Conversion
+ * Tracks contact form submissions.
  */
 export function trackContactFormSubmit(): void {
     trackEvent("contact_form_submit", {
@@ -96,10 +148,7 @@ export function trackContactFormSubmit(): void {
 }
 
 /**
- * Tracks when a user clicks to view project details.
- * Category: Projects
- * 
- * @param projectName The name of the project clicked (e.g. 'Cognidesk').
+ * Legacy project click tracker for backwards compatibility.
  */
 export function trackProjectClick(projectName: string): void {
     trackEvent("project_click", {
@@ -108,10 +157,7 @@ export function trackProjectClick(projectName: string): void {
 }
 
 /**
- * Tracks when a user clicks to read a blog post.
- * Category: Blog
- * 
- * @param blogTitle The title of the blog post clicked.
+ * Legacy blog click tracker for backwards compatibility.
  */
 export function trackBlogClick(blogTitle: string): void {
     trackEvent("blog_read", {
