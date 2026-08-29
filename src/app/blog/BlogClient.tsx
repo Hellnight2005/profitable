@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import Image from "next/image";
 import { Button } from "@/components/Button";
 import { trackBlogClick } from "@/utils/analytics";
 
@@ -413,13 +414,15 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
                                         {/* Featured Cover Image */}
                                         {featuredPost.coverImage && (
                                             <div className="featured-img-col">
-                                                <div className="cover-img-box" style={{ aspectRatio: "16 / 9", borderRadius: "3px" }}>
-                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                    <img
+                                                <div className="cover-img-box" style={{ aspectRatio: "16 / 9", borderRadius: "3px", position: "relative" }}>
+                                                    <Image
                                                         src={featuredPost.coverImage}
                                                         alt={featuredPost.title}
+                                                        fill
+                                                        sizes="(max-width: 860px) 100vw, 50vw"
+                                                        quality={85}
                                                         className="cover-img"
-                                                        loading="lazy"
+                                                        priority
                                                     />
                                                 </div>
                                             </div>
@@ -476,11 +479,13 @@ export default function BlogClient({ initialPosts }: { initialPosts: BlogPost[] 
 
                                                 {/* Post Thumbnail Image */}
                                                 {post.coverImage && (
-                                                    <div className="post-thumb-box">
-                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img
+                                                    <div className="post-thumb-box" style={{ position: "relative" }}>
+                                                        <Image
                                                             src={post.coverImage}
                                                             alt={post.title}
+                                                            fill
+                                                            sizes="(max-width: 640px) 100vw, 200px"
+                                                            quality={80}
                                                             className="cover-img"
                                                             loading="lazy"
                                                         />

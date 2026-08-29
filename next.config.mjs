@@ -30,6 +30,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "hashnode.imgix.net",
             },
+            {
+                protocol: "https",
+                hostname: "**",
+            },
         ],
     },
     async rewrites() {
