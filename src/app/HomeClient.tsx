@@ -65,7 +65,7 @@ const SKILL_CATEGORIES = [
     },
     {
         category: "WEB ENGINEERING",
-        items: ["TypeScript", "React", "Next.js", "Tailwind"],
+        items: ["TypeScript", "React", "Next.js", "Tailwind", "Google Analytics", "SEO"],
     },
     {
         category: "CURRENTLY EXPLORING",
