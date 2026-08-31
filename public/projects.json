@@ -1,58 +1,60 @@
 [
   {
-    "id": 4,
-    "name": "Stream",
-    "description": "Experimental media platform built to explore media file ingestion, Telegram bot interfaces, metadata extraction, FFmpeg multi-bitrate transcoding, and scalable streaming pipelines.",
-    "short_problem": "End-to-end media pipeline handling ingestion, automated metadata extraction, transcoding, and streaming.",
-    "engineering_domain": ["Media Infrastructure", "FFmpeg", "Streaming Pipelines", "Telegram Bot"],
-    "html_url": null,
-    "live_url": "https://t.me/Hellnight2005bot",
-    "blog_url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch",
+    "id": 1,
+    "name": "profitable",
+    "description": "Full-stack financial & business analytics web platform built for tracking profitability, technical assets, and engineering metrics in real time.",
+    "short_problem": "Tracking profitability, revenue metrics, and technical assets in a unified real-time dashboard.",
+    "engineering_domain": [
+      "Web Applications",
+      "Next.js",
+      "TypeScript",
+      "Vercel Analytics"
+    ],
+    "html_url": "https://github.com/Hellnight2005/profitable",
+    "live_url": "https://profitable-azure.vercel.app/",
+    "blog_url": null,
     "is_live": true,
     "why_not_live": null,
     "tech_used": [
-      "Telegram Bot API",
-      "Node.js",
-      "Docker",
-      "FFmpeg",
-      "Redis",
-      "Kafka",
-      "PostgreSQL",
-      "Distributed Storage"
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel"
     ],
     "learned_tools": [
-      "Telegram Bot API Architecture",
-      "FFmpeg Transcoding Pipelines",
-      "Adaptive Bitrate Streaming (HLS/DASH)",
-      "Duplicate File Detection"
+      "Next.js App Router",
+      "Server Components",
+      "Vercel Deployment",
+      "SEO Optimization"
     ],
-    "what_learned": "Explored how media files transition through ingestion, storage, metadata extraction, duplicate detection, and transcoding in distributed pipeline architectures.",
-    "reason_for_making": "Centralizing a media collection into a custom streaming pipeline to understand media engineering.",
-    "cover_image": "",
+    "what_learned": "Built an end-to-end modern portfolio and analytics platform with automated RSS, sitemaps, and WebMCP agent tools.",
+    "reason_for_making": "Centralizing personal engineering projects, technical metrics, and business analytics into a high-performance web platform.",
+    "cover_image": "/brgrounf_less.png",
     "project_images": [],
     "language": "TypeScript",
     "year": "2026",
     "isPinned": true,
     "upcoming": false,
-    "pushed_at": "2026-08-16T00:00:00Z",
-    "related_articles": [
-      {
-        "title": "Building a Media Platform from Scratch",
-        "url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch"
-      }
-    ]
+    "pushed_at": "2026-08-29T14:49:30Z",
+    "related_articles": []
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "CodeAtlas",
-    "description": "Static AST-powered code graph platform that parses source code, analyzes relationships between files, classes, and functions, and visualizes complex repository structures.",
+    "description": "Local-first graph-native code intelligence engine for AI agents (Cursor, Antigravity, Claude). Stop making AI read the entire codebase. Make the graph tell the AI where to look.",
     "short_problem": "Parsing static AST graphs to analyze relationships between files, functions, and classes in large repositories.",
-    "engineering_domain": ["Static Code Analysis", "AST Parsing", "Neo4j Graph DB", "Distributed Systems"],
+    "engineering_domain": [
+      "Static Code Analysis",
+      "AST Parsing",
+      "Neo4j Graph DB",
+      "Distributed Systems"
+    ],
     "html_url": "https://github.com/Hellnight2005/CodeAtlas",
-    "live_url": null,
+    "live_url": "https://code-atlas-flax.vercel.app/",
     "blog_url": "https://projectlog.hashnode.dev/series/code-atlas",
-    "is_live": false,
-    "why_not_live": "Requires multi-container Docker orchestration.",
+    "is_live": true,
+    "why_not_live": null,
     "tech_used": [
       "TypeScript",
       "Node.js",
@@ -68,8 +70,8 @@
       "Neo4j Graph Databases",
       "Static & Dynamic Code Analysis"
     ],
-    "what_learned": "Learned how static AST analysis extracts structural relationships from source code to render interactive dependency graphs.",
-    "reason_for_making": "Built to accelerate repository onboarding by visualizing architecture and symbol relationships.",
+    "what_learned": "Learned how static AST analysis extracts structural relationships from source code to render interactive dependency graphs for AI agents.",
+    "reason_for_making": "Built to accelerate repository onboarding and AI code understanding by visualizing architecture and symbol relationships.",
     "cover_image": "/Image/codeatlas-cover.png",
     "project_images": [
       "/Image/codeatlas-1.png",
@@ -81,7 +83,7 @@
     "year": "2025",
     "isPinned": true,
     "upcoming": false,
-    "pushed_at": "2026-02-07T00:00:00Z",
+    "pushed_at": "2026-08-21T17:34:17Z",
     "related_articles": [
       {
         "title": "CodeAtlas Architecture & Logs",
@@ -90,11 +92,242 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
+    "name": "restoree",
+    "description": "From luxury bags to designer shoes, expert restoration services booking and showcase web platform.",
+    "short_problem": "Streamlining luxury goods restoration requests, catalog browsing, and service tracking.",
+    "engineering_domain": [
+      "Full Stack Web",
+      "React",
+      "TypeScript",
+      "E-Commerce"
+    ],
+    "html_url": "https://github.com/Hellnight2005/restoree",
+    "live_url": "https://restoree.in",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "learned_tools": [
+      "React State Management",
+      "Tailwind Layouts",
+      "Responsive UI Design"
+    ],
+    "what_learned": "Designed an interactive booking system for premium luxury item restoration.",
+    "reason_for_making": "Building a full-stack platform for luxury restoration services.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "TypeScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-07-29T15:36:13Z",
+    "related_articles": []
+  },
+  {
+    "id": 4,
+    "name": "SINIKICK",
+    "description": "Dynamic web application featuring responsive interactive UI components and modern frontend workflows.",
+    "short_problem": "Building intuitive interactive digital interfaces with custom animations and smooth UI feedback.",
+    "engineering_domain": [
+      "Frontend Web App",
+      "JavaScript",
+      "Vercel"
+    ],
+    "html_url": "https://github.com/Hellnight2005/SINIKICK",
+    "live_url": "https://sinikick.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Vercel"
+    ],
+    "learned_tools": [
+      "DOM Manipulation",
+      "CSS Animations",
+      "Vercel Hosting"
+    ],
+    "what_learned": "Focused on lightweight, high-performance web animations and user interaction design.",
+    "reason_for_making": "Creating an interactive digital experience web application.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-05-18T07:21:17Z",
+    "related_articles": []
+  },
+  {
+    "id": 5,
+    "name": "Unity",
+    "description": "Collaborative team workspace and web management application for real-time project coordination.",
+    "short_problem": "Synchronizing project state and team tasks across interactive web interfaces.",
+    "engineering_domain": [
+      "Web Applications",
+      "TypeScript",
+      "Next.js"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Unity",
+    "live_url": "https://unity-ten.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Vercel"
+    ],
+    "learned_tools": [
+      "Real-time Web Apps",
+      "Component Architecture",
+      "Next.js Routing"
+    ],
+    "what_learned": "Implemented scalable React component structures for collaborative productivity apps.",
+    "reason_for_making": "Developing a modern web platform for team project management.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "TypeScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-03-13T18:49:53Z",
+    "related_articles": []
+  },
+  {
+    "id": 6,
+    "name": "websthapana",
+    "description": "Full-stack meeting scheduler seamlessly integrated with Google Calendar via OAuth2, featuring automated event creation, rescheduling, and deletion.",
+    "short_problem": "Automating 2-way meeting scheduling and OAuth2 sync with Google Calendar without manual conflict resolution.",
+    "engineering_domain": [
+      "Full Stack",
+      "Node.js",
+      "OAuth2",
+      "Google Calendar API"
+    ],
+    "html_url": "https://github.com/Hellnight2005/websthapana",
+    "live_url": "https://websthapana.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "Google Calendar API",
+      "OAuth2"
+    ],
+    "learned_tools": [
+      "OAuth2 Authentication",
+      "Google Calendar API",
+      "Webhook Event Triggers"
+    ],
+    "what_learned": "Built automated meeting scheduling pipelines with Google Calendar integration and token refresh management.",
+    "reason_for_making": "Eliminating friction in meeting scheduling through automated calendar sync.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2025-05-28T07:58:50Z",
+    "related_articles": []
+  },
+  {
+    "id": 7,
+    "name": "ZenSlot",
+    "description": "Full-stack Meeting Scheduler with two-way Google Calendar integration, featuring automated event creation and lifecycle management.",
+    "short_problem": "Automating slot booking and calendar availability sync for friction-free client scheduling.",
+    "engineering_domain": [
+      "Backend API",
+      "Node.js",
+      "Calendar Integration"
+    ],
+    "html_url": "https://github.com/Hellnight2005/ZenSlot",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Backend service API under active development.",
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "REST API"
+    ],
+    "learned_tools": [
+      "Calendar Event Management",
+      "RESTful API Design"
+    ],
+    "what_learned": "Explored meeting slot allocation algorithms and automated Google Calendar API hooks.",
+    "reason_for_making": "Automating personal calendar booking and time management.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2025-04-16T07:03:26Z",
+    "related_articles": []
+  },
+  {
+    "id": 8,
+    "name": "UniScript",
+    "description": "Universal Video Script Generator & Multi-language Localization Platform. Converts videos into clean scripts with multi-language translations using audio-only processing. Recognized in Lingo.dev Hackathon.",
+    "short_problem": "Optimizing transcription and translation pipelines for large video files using lightweight audio extraction.",
+    "engineering_domain": [
+      "AI Applications",
+      "Audio Processing",
+      "Localization",
+      "Lingo.dev API"
+    ],
+    "html_url": "https://github.com/Hellnight2005/UniScript",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Recognized hackathon project codebase.",
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Lingo.dev API",
+      "Audio Extraction",
+      "Next.js"
+    ],
+    "learned_tools": [
+      "Audio Extraction Pipelines",
+      "Lingo.dev i18n SDK",
+      "Automated Translation"
+    ],
+    "what_learned": "Built an audio-only stream extraction pipeline to process video transcriptions rapidly with multi-language support.",
+    "reason_for_making": "Developed for the Lingo.dev Hackathon to streamline global content localization.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-02-02T17:32:39Z",
+    "related_articles": []
+  },
+  {
+    "id": 9,
     "name": "Cognidesk",
     "description": "Knowledge retrieval and organization platform exploring Retrieval-Augmented Generation (RAG), vector databases (Qdrant), and microservice AI pipelines.",
     "short_problem": "RAG vector retrieval pipeline unifying fragmented research notes into a searchable AI knowledge system.",
-    "engineering_domain": ["RAG", "Vector Databases", "Qdrant", "AI Microservices"],
+    "engineering_domain": [
+      "RAG",
+      "Vector Databases",
+      "Qdrant",
+      "AI Microservices"
+    ],
     "html_url": "https://github.com/Hellnight2005/Cognidesk",
     "live_url": null,
     "blog_url": null,
@@ -126,7 +359,427 @@
     "year": "2025",
     "isPinned": true,
     "upcoming": false,
-    "pushed_at": "2025-09-19T00:00:00Z",
+    "pushed_at": "2026-03-13T19:39:00Z",
     "related_articles": []
+  },
+  {
+    "id": 10,
+    "name": "mcp-learning-lab",
+    "description": "Learning and implementing the fundamentals of the Model Context Protocol (MCP) through hands-on experiments, including MCP clients, servers, tools, and communication.",
+    "short_problem": "Building custom MCP server and tool integrations to connect AI agents with local developer tools and context.",
+    "engineering_domain": [
+      "AI Agent Protocols",
+      "Model Context Protocol",
+      "JSON-RPC"
+    ],
+    "html_url": "https://github.com/Hellnight2005/mcp-learning-lab",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Laboratory repository for MCP experiments.",
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "MCP SDK",
+      "JSON-RPC"
+    ],
+    "learned_tools": [
+      "Model Context Protocol Specification",
+      "JSON-RPC 2.0",
+      "Custom MCP Tools"
+    ],
+    "what_learned": "Understood how AI agents exchange tools and context dynamically with server runtimes over standardized protocols.",
+    "reason_for_making": "Hands-on lab for mastering AI agent protocol standards.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-08-12T18:12:17Z",
+    "related_articles": []
+  },
+  {
+    "id": 11,
+    "name": "architecture-lab",
+    "description": "The Architecture Lab — A public learning journey exploring software architecture, distributed systems, AI systems, scalability, system design, cloud technologies, and engineering experiments.",
+    "short_problem": "Documenting hands-on implementations of core distributed systems patterns, system design trade-offs, and microservices.",
+    "engineering_domain": [
+      "Software Architecture",
+      "Distributed Systems",
+      "System Design",
+      "Scalability"
+    ],
+    "html_url": "https://github.com/Hellnight2005/architecture-lab",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Public architectural learning log repository.",
+    "tech_used": [
+      "Distributed Systems",
+      "System Design",
+      "Microservices",
+      "Docker"
+    ],
+    "learned_tools": [
+      "Distributed Systems Fundamentals",
+      "CAP Theorem Trade-offs",
+      "Scalable System Patterns"
+    ],
+    "what_learned": "Explored distributed messaging, caching strategies, load balancing, and fault-tolerant architecture designs.",
+    "reason_for_making": "A continuous public lab for mastering software architecture.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Code/Markdown",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-08-27T16:44:01Z",
+    "related_articles": []
+  },
+  {
+    "id": 12,
+    "name": "modular-information-retrieval",
+    "description": "A modular search engine built from scratch using Wikipedia text to explore core Information Retrieval concepts such as inverted indexing, TF-IDF, BM25, and relevance evaluation.",
+    "short_problem": "Building a swappable information retrieval pipeline from scratch to benchmark TF-IDF vs BM25 ranking performance.",
+    "engineering_domain": [
+      "Information Retrieval",
+      "Inverted Indexing",
+      "Search Algorithms",
+      "BM25"
+    ],
+    "html_url": "https://github.com/Hellnight2005/modular-information-retrieval",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "CLI search engine pipeline repository.",
+    "tech_used": [
+      "Python",
+      "Inverted Indexing",
+      "TF-IDF",
+      "BM25",
+      "Search Evaluation"
+    ],
+    "learned_tools": [
+      "Inverted Index Data Structures",
+      "BM25 Ranking Algorithm",
+      "Text Tokenization"
+    ],
+    "what_learned": "Built an end-to-end information retrieval engine parsing raw text into searchable inverted indexes with mathematical ranking.",
+    "reason_for_making": "Deep dive into search engine mechanics and Information Retrieval theory.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Python",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-01-17T14:14:12Z",
+    "related_articles": []
+  },
+  {
+    "id": 13,
+    "name": "web-search-engine-from-scratch",
+    "description": "Building a mini web search engine from scratch while studying Information Retrieval. Covers crawling, indexing, retrieval models, ranking, evaluation, and web IR concepts.",
+    "short_problem": "Building web crawling, inverted indexing, PageRank score calculation, and query retrieval pipelines.",
+    "engineering_domain": [
+      "Search Engines",
+      "Web Crawling",
+      "Indexing",
+      "Ranking Models"
+    ],
+    "html_url": "https://github.com/Hellnight2005/web-search-engine-from-scratch",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Experimental web IR repository.",
+    "tech_used": [
+      "Python",
+      "Web Crawler",
+      "Inverted Index",
+      "PageRank",
+      "Algorithms"
+    ],
+    "learned_tools": [
+      "Web Crawling Graphs",
+      "PageRank Calculation",
+      "Vector Space Retrieval"
+    ],
+    "what_learned": "Implemented link graph processing, web document parsing, and PageRank scoring algorithms.",
+    "reason_for_making": "Understanding search engine crawling and ranking from first principles.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Python",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-03-09T10:11:20Z",
+    "related_articles": []
+  },
+  {
+    "id": 14,
+    "name": "cloud-native-rebuild",
+    "description": "A structured learning and revision journey covering Docker, Kubernetes, and Cloud Native fundamentals while preparing for LFX open source contributions.",
+    "short_problem": "Hands-on containerization, Kubernetes orchestration manifests, and cloud-native architecture experiments.",
+    "engineering_domain": [
+      "Cloud Native",
+      "Docker",
+      "Kubernetes",
+      "DevOps"
+    ],
+    "html_url": "https://github.com/Hellnight2005/cloud-native-rebuild",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "DevOps and Cloud Native revision repo.",
+    "tech_used": [
+      "Docker",
+      "Kubernetes",
+      "YAML",
+      "Linux",
+      "Cloud Native"
+    ],
+    "learned_tools": [
+      "Kubernetes Deployment Manifests",
+      "Container Security",
+      "LFX Prep"
+    ],
+    "what_learned": "Mastered Docker multi-stage builds, K8s Pod networking, and Cloud Native landscape principles.",
+    "reason_for_making": "Preparing for Linux Foundation LFX Mentorship contributions.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Shell/YAML",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-02-13T14:10:29Z",
+    "related_articles": []
+  },
+  {
+    "id": 15,
+    "name": "UIDAI-Data-Hackathon",
+    "description": "Data-driven analysis of Aadhaar enrolment and update datasets to uncover operational stress, service gaps, and lifecycle insights for governance decision-making.",
+    "short_problem": "Analyzing massive government open datasets to extract operational stress indicators and demographic lifecycle patterns.",
+    "engineering_domain": [
+      "Data Analytics",
+      "Jupyter Notebook",
+      "Pandas",
+      "Governance Insights"
+    ],
+    "html_url": "https://github.com/Hellnight2005/UIDAI-Data-Hackathon",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Hackathon data analysis notebook repo.",
+    "tech_used": [
+      "Jupyter Notebook",
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "learned_tools": [
+      "Exploratory Data Analysis (EDA)",
+      "Pandas Aggregations",
+      "Data Visualization"
+    ],
+    "what_learned": "Extracted statistical insights and stress patterns from large-scale Indian Aadhaar public datasets.",
+    "reason_for_making": "UIDAI Data Hackathon submission for data-driven governance insights.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Jupyter Notebook",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-01-19T12:26:33Z",
+    "related_articles": []
+  },
+  {
+    "id": 16,
+    "name": "Blogs",
+    "description": "Central index for all my technical blogs and learning notes related to Full Stack Development and Data Analytics.",
+    "short_problem": "Indexing technical write-ups, architecture breakdowns, and data analytics study notes.",
+    "engineering_domain": [
+      "Technical Writing",
+      "Full Stack Development",
+      "Data Analytics"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Blogs",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Public index repository.",
+    "tech_used": [
+      "Markdown",
+      "Technical Writing",
+      "Documentation"
+    ],
+    "learned_tools": [
+      "Technical Article Composition",
+      "Learning Indexing"
+    ],
+    "what_learned": "Synthesized core engineering concepts into clear technical articles and reference notes.",
+    "reason_for_making": "A single reference point for recruiters, interviewers, and collaborators.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Markdown",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2025-12-14T19:29:01Z",
+    "related_articles": []
+  },
+  {
+    "id": 17,
+    "name": "Rest-Api",
+    "description": "User Management API built with Node.js, Express.js, and MongoDB featuring CRUD operations and authentication routines.",
+    "short_problem": "Designing clean backend user management REST routes, middleware validation, and database operations.",
+    "engineering_domain": [
+      "Backend Engineering",
+      "REST API",
+      "Express.js",
+      "MongoDB"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Rest-Api",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Backend API service repository.",
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose"
+    ],
+    "learned_tools": [
+      "Express Middleware",
+      "MongoDB Schema Design",
+      "RESTful Endpoints"
+    ],
+    "what_learned": "Built scalable REST API handlers and database query controllers.",
+    "reason_for_making": "Demonstrating core backend engineering and database integration.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-01-28T15:33:09Z",
+    "related_articles": []
+  },
+  {
+    "id": 18,
+    "name": "neetcode-submissions",
+    "description": "Data Structures and Algorithms problem solutions and submissions from NeetCode.io.",
+    "short_problem": "Solving core algorithmic problem patterns (Arrays, Graphs, Dynamic Programming, Trees) in Python.",
+    "engineering_domain": [
+      "Algorithms",
+      "Data Structures",
+      "Problem Solving"
+    ],
+    "html_url": "https://github.com/Hellnight2005/neetcode-submissions",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Solutions archive repository.",
+    "tech_used": [
+      "Python",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "learned_tools": [
+      "Big-O Time & Space Optimization",
+      "LeetCode/NeetCode Patterns"
+    ],
+    "what_learned": "Mastered foundational algorithmic patterns including sliding window, binary search, graph traversal, and dynamic programming.",
+    "reason_for_making": "Documenting daily Data Structures & Algorithms practice.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Python",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-06-02T16:35:52Z",
+    "related_articles": []
+  },
+  {
+    "id": 19,
+    "name": "Resume-",
+    "description": "Interactive personal web resume built with HTML5 and CSS3.",
+    "short_problem": "Structuring a lightweight web-accessible resume and portfolio overview.",
+    "engineering_domain": [
+      "Frontend",
+      "HTML5",
+      "CSS3"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Resume-",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Static web page resume repository.",
+    "tech_used": [
+      "HTML5",
+      "CSS3"
+    ],
+    "learned_tools": [
+      "Semantic HTML",
+      "CSS Flexbox/Grid"
+    ],
+    "what_learned": "Built responsive web layouts using vanilla HTML and CSS.",
+    "reason_for_making": "Web version of personal resume.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "HTML",
+    "year": "2024",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2024-12-11T12:21:59Z",
+    "related_articles": []
+  },
+  {
+    "id": 20,
+    "name": "Stream",
+    "description": "Experimental media platform built to explore media file ingestion, Telegram bot interfaces, metadata extraction, FFmpeg multi-bitrate transcoding, and scalable streaming pipelines.",
+    "short_problem": "End-to-end media pipeline handling ingestion, automated metadata extraction, transcoding, and streaming.",
+    "engineering_domain": [
+      "Media Infrastructure",
+      "FFmpeg",
+      "Streaming Pipelines",
+      "Telegram Bot"
+    ],
+    "html_url": null,
+    "live_url": "https://t.me/Hellnight2005bot",
+    "blog_url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch",
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "Telegram Bot API",
+      "Node.js",
+      "Docker",
+      "FFmpeg",
+      "Redis",
+      "Kafka",
+      "PostgreSQL"
+    ],
+    "learned_tools": [
+      "Telegram Bot API Architecture",
+      "FFmpeg Transcoding Pipelines",
+      "Adaptive Bitrate Streaming"
+    ],
+    "what_learned": "Explored how media files transition through ingestion, storage, metadata extraction, duplicate detection, and transcoding in distributed pipeline architectures.",
+    "reason_for_making": "Centralizing a media collection into a custom streaming pipeline to understand media engineering.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "TypeScript",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-08-16T00:00:00Z",
+    "related_articles": [
+      {
+        "title": "Building a Media Platform from Scratch",
+        "url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch"
+      }
+    ]
   }
 ]
