@@ -131,155 +131,6 @@
   },
   {
     "id": 4,
-    "name": "SINIKICK",
-    "description": "Dynamic web application featuring responsive interactive UI components and modern frontend workflows.",
-    "short_problem": "Building intuitive interactive digital interfaces with custom animations and smooth UI feedback.",
-    "engineering_domain": [
-      "Frontend Web App",
-      "JavaScript",
-      "Vercel"
-    ],
-    "html_url": "https://github.com/Hellnight2005/SINIKICK",
-    "live_url": "https://sinikick.vercel.app",
-    "blog_url": null,
-    "is_live": true,
-    "why_not_live": null,
-    "tech_used": [
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Vercel"
-    ],
-    "learned_tools": [
-      "DOM Manipulation",
-      "CSS Animations",
-      "Vercel Hosting"
-    ],
-    "what_learned": "Focused on lightweight, high-performance web animations and user interaction design.",
-    "reason_for_making": "Creating an interactive digital experience web application.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "JavaScript",
-    "year": "2026",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2026-05-18T07:21:17Z",
-    "related_articles": []
-  },
-  {
-    "id": 5,
-    "name": "Unity",
-    "description": "Collaborative team workspace and web management application for real-time project coordination.",
-    "short_problem": "Synchronizing project state and team tasks across interactive web interfaces.",
-    "engineering_domain": [
-      "Web Applications",
-      "TypeScript",
-      "Next.js"
-    ],
-    "html_url": "https://github.com/Hellnight2005/Unity",
-    "live_url": "https://unity-ten.vercel.app",
-    "blog_url": null,
-    "is_live": true,
-    "why_not_live": null,
-    "tech_used": [
-      "TypeScript",
-      "Next.js",
-      "React",
-      "Vercel"
-    ],
-    "learned_tools": [
-      "Real-time Web Apps",
-      "Component Architecture",
-      "Next.js Routing"
-    ],
-    "what_learned": "Implemented scalable React component structures for collaborative productivity apps.",
-    "reason_for_making": "Developing a modern web platform for team project management.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "TypeScript",
-    "year": "2026",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2026-03-13T18:49:53Z",
-    "related_articles": []
-  },
-  {
-    "id": 6,
-    "name": "websthapana",
-    "description": "Full-stack meeting scheduler seamlessly integrated with Google Calendar via OAuth2, featuring automated event creation, rescheduling, and deletion.",
-    "short_problem": "Automating 2-way meeting scheduling and OAuth2 sync with Google Calendar without manual conflict resolution.",
-    "engineering_domain": [
-      "Full Stack",
-      "Node.js",
-      "OAuth2",
-      "Google Calendar API"
-    ],
-    "html_url": "https://github.com/Hellnight2005/websthapana",
-    "live_url": "https://websthapana.vercel.app",
-    "blog_url": null,
-    "is_live": true,
-    "why_not_live": null,
-    "tech_used": [
-      "JavaScript",
-      "Node.js",
-      "Express.js",
-      "Google Calendar API",
-      "OAuth2"
-    ],
-    "learned_tools": [
-      "OAuth2 Authentication",
-      "Google Calendar API",
-      "Webhook Event Triggers"
-    ],
-    "what_learned": "Built automated meeting scheduling pipelines with Google Calendar integration and token refresh management.",
-    "reason_for_making": "Eliminating friction in meeting scheduling through automated calendar sync.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "JavaScript",
-    "year": "2025",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2025-05-28T07:58:50Z",
-    "related_articles": []
-  },
-  {
-    "id": 7,
-    "name": "ZenSlot",
-    "description": "Full-stack Meeting Scheduler with two-way Google Calendar integration, featuring automated event creation and lifecycle management.",
-    "short_problem": "Automating slot booking and calendar availability sync for friction-free client scheduling.",
-    "engineering_domain": [
-      "Backend API",
-      "Node.js",
-      "Calendar Integration"
-    ],
-    "html_url": "https://github.com/Hellnight2005/ZenSlot",
-    "live_url": null,
-    "blog_url": null,
-    "is_live": false,
-    "why_not_live": "Backend service API under active development.",
-    "tech_used": [
-      "JavaScript",
-      "Node.js",
-      "Express.js",
-      "REST API"
-    ],
-    "learned_tools": [
-      "Calendar Event Management",
-      "RESTful API Design"
-    ],
-    "what_learned": "Explored meeting slot allocation algorithms and automated Google Calendar API hooks.",
-    "reason_for_making": "Automating personal calendar booking and time management.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "JavaScript",
-    "year": "2025",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2025-04-16T07:03:26Z",
-    "related_articles": []
-  },
-  {
-    "id": 8,
     "name": "UniScript",
     "description": "Universal Video Script Generator & Multi-language Localization Platform. Converts videos into clean scripts with multi-language translations using audio-only processing. Recognized in Lingo.dev Hackathon.",
     "short_problem": "Optimizing transcription and translation pipelines for large video files using lightweight audio extraction.",
@@ -318,7 +169,7 @@
     "related_articles": []
   },
   {
-    "id": 9,
+    "id": 5,
     "name": "Cognidesk",
     "description": "Knowledge retrieval and organization platform exploring Retrieval-Augmented Generation (RAG), vector databases (Qdrant), and microservice AI pipelines.",
     "short_problem": "RAG vector retrieval pipeline unifying fragmented research notes into a searchable AI knowledge system.",
@@ -363,6 +214,155 @@
     "related_articles": []
   },
   {
+    "id": 6,
+    "name": "websthapana",
+    "description": "Full-stack meeting scheduler seamlessly integrated with Google Calendar via OAuth2, featuring automated event creation, rescheduling, and deletion.",
+    "short_problem": "Automating 2-way meeting scheduling and OAuth2 sync with Google Calendar without manual conflict resolution.",
+    "engineering_domain": [
+      "Full Stack",
+      "Node.js",
+      "OAuth2",
+      "Google Calendar API"
+    ],
+    "html_url": "https://github.com/Hellnight2005/websthapana",
+    "live_url": "https://websthapana.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "Google Calendar API",
+      "OAuth2"
+    ],
+    "learned_tools": [
+      "OAuth2 Authentication",
+      "Google Calendar API",
+      "Webhook Event Triggers"
+    ],
+    "what_learned": "Built automated meeting scheduling pipelines with Google Calendar integration and token refresh management.",
+    "reason_for_making": "Eliminating friction in meeting scheduling through automated calendar sync.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2025",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2025-05-28T07:58:50Z",
+    "related_articles": []
+  },
+  {
+    "id": 7,
+    "name": "SINIKICK",
+    "description": "Dynamic web application featuring responsive interactive UI components and modern frontend workflows.",
+    "short_problem": "Building intuitive interactive digital interfaces with custom animations and smooth UI feedback.",
+    "engineering_domain": [
+      "Frontend Web App",
+      "JavaScript",
+      "Vercel"
+    ],
+    "html_url": "https://github.com/Hellnight2005/SINIKICK",
+    "live_url": "https://sinikick.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Vercel"
+    ],
+    "learned_tools": [
+      "DOM Manipulation",
+      "CSS Animations",
+      "Vercel Hosting"
+    ],
+    "what_learned": "Focused on lightweight, high-performance web animations and user interaction design.",
+    "reason_for_making": "Creating an interactive digital experience web application.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2026",
+    "isPinned": false,
+    "upcoming": false,
+    "pushed_at": "2026-05-18T07:21:17Z",
+    "related_articles": []
+  },
+  {
+    "id": 8,
+    "name": "Unity",
+    "description": "Collaborative team workspace and web management application for real-time project coordination.",
+    "short_problem": "Synchronizing project state and team tasks across interactive web interfaces.",
+    "engineering_domain": [
+      "Web Applications",
+      "TypeScript",
+      "Next.js"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Unity",
+    "live_url": "https://unity-ten.vercel.app",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Vercel"
+    ],
+    "learned_tools": [
+      "Real-time Web Apps",
+      "Component Architecture",
+      "Next.js Routing"
+    ],
+    "what_learned": "Implemented scalable React component structures for collaborative productivity apps.",
+    "reason_for_making": "Developing a modern web platform for team project management.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "TypeScript",
+    "year": "2026",
+    "isPinned": false,
+    "upcoming": false,
+    "pushed_at": "2026-03-13T18:49:53Z",
+    "related_articles": []
+  },
+  {
+    "id": 9,
+    "name": "ZenSlot",
+    "description": "Full-stack Meeting Scheduler with two-way Google Calendar integration, featuring automated event creation and lifecycle management.",
+    "short_problem": "Automating slot booking and calendar availability sync for friction-free client scheduling.",
+    "engineering_domain": [
+      "Backend API",
+      "Node.js",
+      "Calendar Integration"
+    ],
+    "html_url": "https://github.com/Hellnight2005/ZenSlot",
+    "live_url": null,
+    "blog_url": null,
+    "is_live": false,
+    "why_not_live": "Backend service API under active development.",
+    "tech_used": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "REST API"
+    ],
+    "learned_tools": [
+      "Calendar Event Management",
+      "RESTful API Design"
+    ],
+    "what_learned": "Explored meeting slot allocation algorithms and automated Google Calendar API hooks.",
+    "reason_for_making": "Automating personal calendar booking and time management.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "JavaScript",
+    "year": "2025",
+    "isPinned": false,
+    "upcoming": false,
+    "pushed_at": "2025-04-16T07:03:26Z",
+    "related_articles": []
+  },
+  {
     "id": 10,
     "name": "mcp-learning-lab",
     "description": "Learning and implementing the fundamentals of the Model Context Protocol (MCP) through hands-on experiments, including MCP clients, servers, tools, and communication.",
@@ -394,7 +394,7 @@
     "project_images": [],
     "language": "JavaScript",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-08-12T18:12:17Z",
     "related_articles": []
@@ -430,9 +430,9 @@
     "reason_for_making": "A continuous public lab for mastering software architecture.",
     "cover_image": "",
     "project_images": [],
-    "language": "Code/Markdown",
+    "language": "Markdown",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-08-27T16:44:01Z",
     "related_articles": []
@@ -471,7 +471,7 @@
     "project_images": [],
     "language": "Python",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-01-17T14:14:12Z",
     "related_articles": []
@@ -510,7 +510,7 @@
     "project_images": [],
     "language": "Python",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-03-09T10:11:20Z",
     "related_articles": []
@@ -549,7 +549,7 @@
     "project_images": [],
     "language": "Shell/YAML",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-02-13T14:10:29Z",
     "related_articles": []
@@ -588,48 +588,13 @@
     "project_images": [],
     "language": "Jupyter Notebook",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-01-19T12:26:33Z",
     "related_articles": []
   },
   {
     "id": 16,
-    "name": "Blogs",
-    "description": "Central index for all my technical blogs and learning notes related to Full Stack Development and Data Analytics.",
-    "short_problem": "Indexing technical write-ups, architecture breakdowns, and data analytics study notes.",
-    "engineering_domain": [
-      "Technical Writing",
-      "Full Stack Development",
-      "Data Analytics"
-    ],
-    "html_url": "https://github.com/Hellnight2005/Blogs",
-    "live_url": null,
-    "blog_url": null,
-    "is_live": false,
-    "why_not_live": "Public index repository.",
-    "tech_used": [
-      "Markdown",
-      "Technical Writing",
-      "Documentation"
-    ],
-    "learned_tools": [
-      "Technical Article Composition",
-      "Learning Indexing"
-    ],
-    "what_learned": "Synthesized core engineering concepts into clear technical articles and reference notes.",
-    "reason_for_making": "A single reference point for recruiters, interviewers, and collaborators.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "Markdown",
-    "year": "2025",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2025-12-14T19:29:01Z",
-    "related_articles": []
-  },
-  {
-    "id": 17,
     "name": "Rest-Api",
     "description": "User Management API built with Node.js, Express.js, and MongoDB featuring CRUD operations and authentication routines.",
     "short_problem": "Designing clean backend user management REST routes, middleware validation, and database operations.",
@@ -662,124 +627,44 @@
     "project_images": [],
     "language": "JavaScript",
     "year": "2026",
-    "isPinned": true,
+    "isPinned": false,
     "upcoming": false,
     "pushed_at": "2026-01-28T15:33:09Z",
     "related_articles": []
   },
   {
-    "id": 18,
-    "name": "neetcode-submissions",
-    "description": "Data Structures and Algorithms problem solutions and submissions from NeetCode.io.",
-    "short_problem": "Solving core algorithmic problem patterns (Arrays, Graphs, Dynamic Programming, Trees) in Python.",
+    "id": 17,
+    "name": "Blogs",
+    "description": "Central index for all my technical blogs and learning notes related to Full Stack Development and Data Analytics.",
+    "short_problem": "Indexing technical write-ups, architecture breakdowns, and data analytics study notes.",
     "engineering_domain": [
-      "Algorithms",
-      "Data Structures",
-      "Problem Solving"
+      "Technical Writing",
+      "Full Stack Development",
+      "Data Analytics"
     ],
-    "html_url": "https://github.com/Hellnight2005/neetcode-submissions",
+    "html_url": "https://github.com/Hellnight2005/Blogs",
     "live_url": null,
     "blog_url": null,
     "is_live": false,
-    "why_not_live": "Solutions archive repository.",
+    "why_not_live": "Public index repository.",
     "tech_used": [
-      "Python",
-      "Algorithms",
-      "Data Structures"
+      "Markdown",
+      "Technical Writing",
+      "Documentation"
     ],
     "learned_tools": [
-      "Big-O Time & Space Optimization",
-      "LeetCode/NeetCode Patterns"
+      "Technical Article Composition",
+      "Learning Indexing"
     ],
-    "what_learned": "Mastered foundational algorithmic patterns including sliding window, binary search, graph traversal, and dynamic programming.",
-    "reason_for_making": "Documenting daily Data Structures & Algorithms practice.",
+    "what_learned": "Synthesized core engineering concepts into clear technical articles and reference notes.",
+    "reason_for_making": "A single reference point for recruiters, interviewers, and collaborators.",
     "cover_image": "",
     "project_images": [],
-    "language": "Python",
-    "year": "2026",
-    "isPinned": true,
+    "language": "Markdown",
+    "year": "2025",
+    "isPinned": false,
     "upcoming": false,
-    "pushed_at": "2026-06-02T16:35:52Z",
+    "pushed_at": "2025-12-14T19:29:01Z",
     "related_articles": []
-  },
-  {
-    "id": 19,
-    "name": "Resume-",
-    "description": "Interactive personal web resume built with HTML5 and CSS3.",
-    "short_problem": "Structuring a lightweight web-accessible resume and portfolio overview.",
-    "engineering_domain": [
-      "Frontend",
-      "HTML5",
-      "CSS3"
-    ],
-    "html_url": "https://github.com/Hellnight2005/Resume-",
-    "live_url": null,
-    "blog_url": null,
-    "is_live": false,
-    "why_not_live": "Static web page resume repository.",
-    "tech_used": [
-      "HTML5",
-      "CSS3"
-    ],
-    "learned_tools": [
-      "Semantic HTML",
-      "CSS Flexbox/Grid"
-    ],
-    "what_learned": "Built responsive web layouts using vanilla HTML and CSS.",
-    "reason_for_making": "Web version of personal resume.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "HTML",
-    "year": "2024",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2024-12-11T12:21:59Z",
-    "related_articles": []
-  },
-  {
-    "id": 20,
-    "name": "Stream",
-    "description": "Experimental media platform built to explore media file ingestion, Telegram bot interfaces, metadata extraction, FFmpeg multi-bitrate transcoding, and scalable streaming pipelines.",
-    "short_problem": "End-to-end media pipeline handling ingestion, automated metadata extraction, transcoding, and streaming.",
-    "engineering_domain": [
-      "Media Infrastructure",
-      "FFmpeg",
-      "Streaming Pipelines",
-      "Telegram Bot"
-    ],
-    "html_url": null,
-    "live_url": "https://t.me/Hellnight2005bot",
-    "blog_url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch",
-    "is_live": true,
-    "why_not_live": null,
-    "tech_used": [
-      "Telegram Bot API",
-      "Node.js",
-      "Docker",
-      "FFmpeg",
-      "Redis",
-      "Kafka",
-      "PostgreSQL"
-    ],
-    "learned_tools": [
-      "Telegram Bot API Architecture",
-      "FFmpeg Transcoding Pipelines",
-      "Adaptive Bitrate Streaming"
-    ],
-    "what_learned": "Explored how media files transition through ingestion, storage, metadata extraction, duplicate detection, and transcoding in distributed pipeline architectures.",
-    "reason_for_making": "Centralizing a media collection into a custom streaming pipeline to understand media engineering.",
-    "cover_image": "",
-    "project_images": [],
-    "language": "TypeScript",
-    "year": "2026",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2026-08-16T00:00:00Z",
-    "related_articles": [
-      {
-        "title": "Building a Media Platform from Scratch",
-        "url": "https://projectlog.hashnode.dev/series/building-a-media-platform-from-scratch"
-      }
-    ]
   }
 ]

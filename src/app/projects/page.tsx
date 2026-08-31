@@ -58,7 +58,7 @@ async function getRepositories(): Promise<GithubRepo[]> {
         const filePath = path.join(process.cwd(), 'public', 'projects.json');
         const fileContents = await fs.promises.readFile(filePath, 'utf8');
         const repos: GithubRepo[] = JSON.parse(fileContents);
-        return repos.filter((repo) => repo.isPinned);
+        return repos;
     } catch (error) {
         console.error("Error reading projects.json:", error);
         return [];

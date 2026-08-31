@@ -546,10 +546,10 @@ export default function Home() {
                     </div>
                 )}
 
-                {/* Secondary Grid View of All Projects */}
+                {/* Secondary Grid View of Featured Projects */}
                 <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "20px" }}>
-                        {repos.map((item, idx) => (
+                        {repos.slice(0, 6).map((item, idx) => (
                             <div
                                 key={item.id}
                                 onClick={() => {
@@ -581,6 +581,12 @@ export default function Home() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+
+                    <div style={{ textAlign: "center", marginTop: "40px" }}>
+                        <Link href="/projects" className="hero-secondary-btn" style={{ textDecoration: "none", display: "inline-flex" }}>
+                            VIEW ALL PROJECTS ({repos.length}) →
+                        </Link>
                     </div>
                 </div>
             </section>
