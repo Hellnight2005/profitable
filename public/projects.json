@@ -142,7 +142,7 @@
     ],
     "html_url": "https://github.com/Hellnight2005/UniScript",
     "live_url": null,
-    "blog_url": null,
+    "blog_url": "https://hackathon-diaries.hashnode.dev/universal-video-script-platform-1",
     "is_live": false,
     "why_not_live": "Recognized hackathon project codebase.",
     "tech_used": [
@@ -166,7 +166,12 @@
     "isPinned": true,
     "upcoming": false,
     "pushed_at": "2026-02-02T17:32:39Z",
-    "related_articles": []
+    "related_articles": [
+      {
+        "title": "Universal Video Script Platform — Hackathon Diary",
+        "url": "https://hackathon-diaries.hashnode.dev/universal-video-script-platform-1"
+      }
+    ]
   },
   {
     "id": 5,
