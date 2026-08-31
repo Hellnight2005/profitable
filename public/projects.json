@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "profitable",
-    "description": "Full-stack financial & business analytics web platform built for tracking profitability, technical assets, and engineering metrics in real time.",
+    "description": "Full-stack financial & business analytics web platform built for tracking profitability, technical assets, and engineering metrics in real time. Features Google Analytics integration and advanced technical SEO optimization.",
     "short_problem": "Tracking profitability, revenue metrics, and technical assets in a unified real-time dashboard.",
     "engineering_domain": [
       "Web Applications",
@@ -18,17 +18,21 @@
     "tech_used": [
       "Next.js",
       "React",
+      "Google Analytics",
       "TypeScript",
       "Tailwind CSS",
-      "Vercel"
-    ],
-    "learned_tools": [
-      "Next.js App Router",
-      "Server Components",
-      "Vercel Deployment",
+      "Vercel",
       "SEO Optimization"
     ],
-    "what_learned": "Built an end-to-end modern portfolio and analytics platform with automated RSS, sitemaps, and WebMCP agent tools.",
+    "learned_tools": [
+      "Google Analytics Integration",
+      "Technical SEO & OpenGraph",
+      "JSON-LD Schema Markup",
+      "IndexNow & Sitemap Automation",
+      "Next.js App Router",
+      "Vercel Deployment"
+    ],
+    "what_learned": "Learned how to integrate and configure Google Analytics for event & traffic tracking, implement technical SEO best practices (JSON-LD schemas, OpenGraph tags, IndexNow indexing), and construct an optimized analytics web platform.",
     "reason_for_making": "Centralizing personal engineering projects, technical metrics, and business analytics into a high-performance web platform.",
     "cover_image": "/brgrounf_less.png",
     "project_images": [],
