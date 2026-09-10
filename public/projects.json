@@ -54,7 +54,7 @@
       "REST API & CDN",
       "Backend Architecture"
     ],
-    "html_url": "https://github.com/Hellnight2005/VaultCloud",
+    "html_url": null,
     "live_url": "https://vaultcloud-mu.vercel.app/",
     "blog_url": null,
     "is_live": true,
@@ -87,20 +87,7 @@
     "isPinned": true,
     "upcoming": false,
     "pushed_at": "2026-09-10T14:30:00Z",
-    "related_articles": [
-      {
-        "title": "Getting Started Guide",
-        "url": "https://github.com/Hellnight2005/VaultCloud/blob/main/docs/GETTING_STARTED.md"
-      },
-      {
-        "title": "API Reference Documentation",
-        "url": "https://github.com/Hellnight2005/VaultCloud/blob/main/docs/API_REFERENCE.md"
-      },
-      {
-        "title": "AI Agent Skill Reference",
-        "url": "https://github.com/Hellnight2005/VaultCloud/blob/main/.agents/skills/vaultcloud/SKILL.md"
-      }
-    ]
+    "related_articles": []
   },
   {
     "id": 3,
