@@ -1,50 +1,6 @@
 [
   {
     "id": 1,
-    "name": "profitable",
-    "description": "Full-stack financial & business analytics web platform built for tracking profitability, technical assets, and engineering metrics in real time. Features Google Analytics integration and advanced technical SEO optimization.",
-    "short_problem": "Tracking profitability, revenue metrics, and technical assets in a unified real-time dashboard.",
-    "engineering_domain": [
-      "Web Applications",
-      "Next.js",
-      "TypeScript",
-      "Vercel Analytics"
-    ],
-    "html_url": "https://github.com/Hellnight2005/profitable",
-    "live_url": "https://profitable-azure.vercel.app/",
-    "blog_url": null,
-    "is_live": true,
-    "why_not_live": null,
-    "tech_used": [
-      "Next.js",
-      "React",
-      "Google Analytics",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vercel",
-      "SEO Optimization"
-    ],
-    "learned_tools": [
-      "Google Analytics Integration",
-      "Technical SEO & OpenGraph",
-      "JSON-LD Schema Markup",
-      "IndexNow & Sitemap Automation",
-      "Next.js App Router",
-      "Vercel Deployment"
-    ],
-    "what_learned": "Learned how to integrate and configure Google Analytics for event & traffic tracking, implement technical SEO best practices (JSON-LD schemas, OpenGraph tags, IndexNow indexing), and construct an optimized analytics web platform.",
-    "reason_for_making": "Centralizing personal engineering projects, technical metrics, and business analytics into a high-performance web platform.",
-    "cover_image": "/brgrounf_less.png",
-    "project_images": [],
-    "language": "TypeScript",
-    "year": "2026",
-    "isPinned": true,
-    "upcoming": false,
-    "pushed_at": "2026-08-29T14:49:30Z",
-    "related_articles": []
-  },
-  {
-    "id": 2,
     "name": "VaultCloud",
     "description": "High-Performance Encrypted Cloud Storage API Platform. VaultCloud provides developers with a simple REST API for file storage, CDN delivery, and quota management — all protected with AES-256 zero-knowledge encryption.",
     "short_problem": "Zero-knowledge AES-256 encrypted cloud storage API platform with CDN delivery, API key authentication, and automated quota management.",
@@ -90,7 +46,7 @@
     "related_articles": []
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "CodeAtlas",
     "description": "Local-first graph-native code intelligence engine for AI agents (Cursor, Antigravity, Claude). Stop making AI read the entire codebase. Make the graph tell the AI where to look.",
     "short_problem": "Parsing static AST graphs to analyze relationships between files, functions, and classes in large repositories.",
@@ -142,7 +98,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "restoree",
     "description": "From luxury bags to designer shoes, expert restoration services booking and showcase web platform.",
     "short_problem": "Streamlining luxury goods restoration requests, catalog browsing, and service tracking.",
@@ -180,7 +136,7 @@
     "related_articles": []
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "UniScript",
     "description": "Universal Video Script Generator & Multi-language Localization Platform. Converts videos into clean scripts with multi-language translations using audio-only processing. Recognized in Lingo.dev Hackathon.",
     "short_problem": "Optimizing transcription and translation pipelines for large video files using lightweight audio extraction.",
@@ -224,7 +180,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Cognidesk",
     "description": "Knowledge retrieval and organization platform exploring Retrieval-Augmented Generation (RAG), vector databases (Qdrant), and microservice AI pipelines.",
     "short_problem": "RAG vector retrieval pipeline unifying fragmented research notes into a searchable AI knowledge system.",
@@ -269,7 +225,7 @@
     "related_articles": []
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "websthapana",
     "description": "Full-stack meeting scheduler seamlessly integrated with Google Calendar via OAuth2, featuring automated event creation, rescheduling, and deletion.",
     "short_problem": "Automating 2-way meeting scheduling and OAuth2 sync with Google Calendar without manual conflict resolution.",
@@ -308,7 +264,7 @@
     "related_articles": []
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "SINIKICK",
     "description": "Dynamic web application featuring responsive interactive UI components and modern frontend workflows.",
     "short_problem": "Building intuitive interactive digital interfaces with custom animations and smooth UI feedback.",
@@ -345,7 +301,7 @@
     "related_articles": []
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "Unity",
     "description": "Collaborative team workspace and web management application for real-time project coordination.",
     "short_problem": "Synchronizing project state and team tasks across interactive web interfaces.",
@@ -382,7 +338,7 @@
     "related_articles": []
   },
   {
-    "id": 10,
+    "id": 9,
     "name": "ZenSlot",
     "description": "Full-stack Meeting Scheduler with two-way Google Calendar integration, featuring automated event creation and lifecycle management.",
     "short_problem": "Automating slot booking and calendar availability sync for friction-free client scheduling.",
@@ -418,7 +374,7 @@
     "related_articles": []
   },
   {
-    "id": 11,
+    "id": 10,
     "name": "mcp-learning-lab",
     "description": "Learning and implementing the fundamentals of the Model Context Protocol (MCP) through hands-on experiments, including MCP clients, servers, tools, and communication.",
     "short_problem": "Building custom MCP server and tool integrations to connect AI agents with local developer tools and context.",
@@ -455,7 +411,7 @@
     "related_articles": []
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "architecture-lab",
     "description": "The Architecture Lab — A public learning journey exploring software architecture, distributed systems, AI systems, scalability, system design, cloud technologies, and engineering experiments.",
     "short_problem": "Documenting hands-on implementations of core distributed systems patterns, system design trade-offs, and microservices.",
@@ -493,7 +449,7 @@
     "related_articles": []
   },
   {
-    "id": 13,
+    "id": 12,
     "name": "modular-information-retrieval",
     "description": "A modular search engine built from scratch using Wikipedia text to explore core Information Retrieval concepts such as inverted indexing, TF-IDF, BM25, and relevance evaluation.",
     "short_problem": "Building a swappable information retrieval pipeline from scratch to benchmark TF-IDF vs BM25 ranking performance.",
@@ -532,7 +488,7 @@
     "related_articles": []
   },
   {
-    "id": 14,
+    "id": 13,
     "name": "web-search-engine-from-scratch",
     "description": "Building a mini web search engine from scratch while studying Information Retrieval. Covers crawling, indexing, retrieval models, ranking, evaluation, and web IR concepts.",
     "short_problem": "Building web crawling, inverted indexing, PageRank score calculation, and query retrieval pipelines.",
@@ -571,7 +527,7 @@
     "related_articles": []
   },
   {
-    "id": 15,
+    "id": 14,
     "name": "cloud-native-rebuild",
     "description": "A structured learning and revision journey covering Docker, Kubernetes, and Cloud Native fundamentals while preparing for LFX open source contributions.",
     "short_problem": "Hands-on containerization, Kubernetes orchestration manifests, and cloud-native architecture experiments.",
@@ -610,7 +566,7 @@
     "related_articles": []
   },
   {
-    "id": 16,
+    "id": 15,
     "name": "UIDAI-Data-Hackathon",
     "description": "Data-driven analysis of Aadhaar enrolment and update datasets to uncover operational stress, service gaps, and lifecycle insights for governance decision-making.",
     "short_problem": "Analyzing massive government open datasets to extract operational stress indicators and demographic lifecycle patterns.",
@@ -649,7 +605,7 @@
     "related_articles": []
   },
   {
-    "id": 17,
+    "id": 16,
     "name": "Rest-Api",
     "description": "User Management API built with Node.js, Express.js, and MongoDB featuring CRUD operations and authentication routines.",
     "short_problem": "Designing clean backend user management REST routes, middleware validation, and database operations.",
@@ -688,7 +644,7 @@
     "related_articles": []
   },
   {
-    "id": 18,
+    "id": 17,
     "name": "Blogs",
     "description": "Central index for all my technical blogs and learning notes related to Full Stack Development and Data Analytics.",
     "short_problem": "Indexing technical write-ups, architecture breakdowns, and data analytics study notes.",
