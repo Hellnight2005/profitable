@@ -21,8 +21,9 @@ interface GithubRepo {
     project_images: string[];
     language: string | null;
     pushed_at: string;
-    fork: boolean;
+    fork?: boolean;
     year: string;
+    related_articles?: { title: string; url: string }[];
 }
 
 export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
@@ -576,6 +577,50 @@ export default function ProjectDetailClient({ repo }: { repo: GithubRepo }) {
                         )}
                     </div>
                 </section>
+
+                {/* ── Documentation & Resources ── */}
+                {repo.related_articles && repo.related_articles.length > 0 && (
+                    <section className="reveal proj-section">
+                        <div className="proj-section-title-container">
+                            <span className="proj-section-title-line" />
+                            <h2 className="proj-section-title">Documentation & Resources</h2>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                            {repo.related_articles.map((art) => (
+                                <a
+                                    key={art.url}
+                                    href={art.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="proj-deployment-card"
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "center",
+                                        textDecoration: "none",
+                                        padding: "18px 24px",
+                                        transition: "all 0.2s ease",
+                                    }}
+                                    onMouseOver={(e) => {
+                                        e.currentTarget.style.borderColor = "var(--color-accent)";
+                                        e.currentTarget.style.background = "rgba(232, 213, 176, 0.05)";
+                                    }}
+                                    onMouseOut={(e) => {
+                                        e.currentTarget.style.borderColor = "var(--color-border)";
+                                        e.currentTarget.style.background = "rgba(17,17,17,0.6)";
+                                    }}
+                                >
+                                    <span style={{ color: "var(--color-text-primary)", fontSize: "14px", fontFamily: "var(--font-dm-mono)" }}>
+                                        {art.title}
+                                    </span>
+                                    <span style={{ color: "var(--color-accent)", fontSize: "12px", fontFamily: "var(--font-dm-mono)", letterSpacing: "0.1em" }}>
+                                        VIEW ↗
+                                    </span>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* ── Gallery (Infinite Marquee) ── */}
                 {repo.project_images && repo.project_images.length > 0 && (
