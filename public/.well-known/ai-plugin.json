@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Abhijeet Shinde Portfolio, Skills & Blogs",
+  "name_for_model": "abhijeet_portfolio",
+  "description_for_human": "Search software projects, technical blog posts, skills, experience, and contact Abhijeet Shinde.",
+  "description_for_model": "Retrieve real-time bio, technical skills, services, work experience, software projects, and blog posts for Abhijeet Shinde, and dispatch contact inquiries.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://profitable-azure.vercel.app/openapi.json"
+  },
+  "logo_url": "https://profitable-azure.vercel.app/icon.jpg",
+  "contact_email": "abhijeet2005shinde@gmail.com",
+  "legal_info_url": "https://profitable-azure.vercel.app/about"
+}

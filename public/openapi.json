@@ -1,0 +1,148 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Abhijeet Shinde Portfolio & Engineering Knowledge API",
+    "description": "Live API providing real-time data for Abhijeet Shinde's portfolio: bio, technical skills, services, work experience, software projects, engineering blogs, and contact messages.",
+    "version": "1.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://profitable-azure.vercel.app",
+      "description": "Production Server (Auto-syncs live updates)"
+    }
+  ],
+  "paths": {
+    "/api/profile": {
+      "get": {
+        "operationId": "getProfileAndSkills",
+        "summary": "Get live bio, technical skills, services, experience, and contact links",
+        "description": "Returns Abhijeet Shinde's up-to-date professional profile, skillset categories (frontend, backend, databases, devops, AI/automation), offered services, experience history, resume URL, and social media profile links.",
+        "responses": {
+          "200": {
+            "description": "Current profile, skills, and experience details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "operationId": "getProjects",
+        "summary": "Get or search software engineering projects in real-time",
+        "description": "Returns the list of software projects built by Abhijeet. Supports search keywords and filtering by technology stack.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Keyword to search across project names, descriptions, or learnings.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tech",
+            "in": "query",
+            "description": "Filter by technology (e.g. Next.js, Docker, Kafka, Supabase, PostgreSQL, React).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Live list of matching projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/blog": {
+      "get": {
+        "operationId": "getBlogPosts",
+        "summary": "Fetch live blog posts and technical articles",
+        "description": "Retrieves the latest technical articles directly from Abhijeet's Hashnode publications.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search keyword for articles.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Category filter (e.g. 'The Architecture Lab', 'Project Logs', 'Weekly Updates').",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Real-time list of blog posts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contact": {
+      "post": {
+        "operationId": "sendContactInquiry",
+        "summary": "Send a message or proposal to Abhijeet",
+        "description": "Sends an email message directly to Abhijeet's inbox.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string", "description": "Name of the sender" },
+                  "email": { "type": "string", "description": "Email address of the sender" },
+                  "subject": { "type": "string", "description": "Inquiry subject or project goal" },
+                  "message": { "type": "string", "description": "Message content" }
+                },
+                "required": ["name", "email", "subject", "message"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Message successfully dispatched"
+          }
+        }
+      }
+    }
+  }
+}

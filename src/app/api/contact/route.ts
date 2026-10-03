@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+export async function OPTIONS() {
+    return NextResponse.json({}, { headers: corsHeaders });
+}
+
 export async function POST(req: NextRequest) {
     try {
         const { name, email, subject, message } = await req.json();
 
         if (!name || !email || !subject || !message) {
-            return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
+            return NextResponse.json({ error: 'All fields are required.' }, { status: 400, headers: corsHeaders });
         }
 
         const transporter = nodemailer.createTransport({
@@ -70,9 +80,9 @@ export async function POST(req: NextRequest) {
   `,
         });
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ success: true }, { headers: corsHeaders });
     } catch (err) {
         console.error('[contact API]', err);
-        return NextResponse.json({ error: 'Failed to send message. Please try again.' }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to send message. Please try again.' }, { status: 500, headers: corsHeaders });
     }
 }
