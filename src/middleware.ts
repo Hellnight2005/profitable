@@ -14,12 +14,24 @@ const VALID_ROUTES = new Set([
 const VALID_PREFIXES = ["/blog/", "/projects/"];
 
 // Static assets / Next.js internals to always allow through
-const SKIP_PREFIXES = ["/_next/", "/api/", "/favicon.ico", "/Image/"];
+const SKIP_PREFIXES = [
+    "/_next/",
+    "/api/",
+    "/favicon.ico",
+    "/Image/",
+    "/opengraph-image",
+    "/twitter-image",
+    "/icon",
+    "/apple-icon",
+    "/.well-known/",
+    "/sitemap",
+    "/robots",
+];
 
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Always allow Next.js internals, static files and API routes
+    // Always allow Next.js internals, static files, metadata routes, and API routes
     if (SKIP_PREFIXES.some((prefix) => pathname.startsWith(prefix))) {
         return NextResponse.next();
     }
