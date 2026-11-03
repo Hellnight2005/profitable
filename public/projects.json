@@ -12,7 +12,7 @@
     ],
     "html_url": "https://github.com/Hellnight2005/Veltrix",
     "live_url": "https://hellnight2005.github.io/Veltrix/",
-    "blog_url": null,
+    "blog_url": "https://hackathon-diaries.hashnode.dev/veltrix-lan-file-transfer-rust",
     "is_live": true,
     "why_not_live": null,
     "tech_used": [
@@ -48,7 +48,12 @@
     "isPinned": true,
     "upcoming": false,
     "pushed_at": "2026-10-20T00:00:00Z",
-    "related_articles": []
+    "related_articles": [
+      {
+        "title": "Veltrix: Zero-Cloud LAN File Transfer in Rust",
+        "url": "https://hackathon-diaries.hashnode.dev/veltrix-lan-file-transfer-rust"
+      }
+    ]
   },
   {
     "id": 1,
