@@ -1,5 +1,56 @@
 [
   {
+    "id": 18,
+    "name": "Veltrix",
+    "description": "Privacy-first, cross-platform P2P local file transfer and cinema streaming system. AirDrop-style LAN transfers at 78 MB/s + zero-wait chunked video streaming with sub-200ms frame-accurate device handoff.",
+    "short_problem": "Zero-cloud P2P LAN file transfer and cinema streaming — no USB cables, no cloud, no latency. Stream a 3 GB anime from your phone to the TV in under 200ms.",
+    "engineering_domain": [
+      "Systems Programming",
+      "Rust & Tokio",
+      "P2P Networking",
+      "WebRTC & SSE"
+    ],
+    "html_url": "https://github.com/Hellnight2005/Veltrix",
+    "live_url": "https://hellnight2005.github.io/Veltrix/",
+    "blog_url": null,
+    "is_live": true,
+    "why_not_live": null,
+    "tech_used": [
+      "Rust",
+      "Tokio",
+      "TypeScript",
+      "React",
+      "Vite",
+      "Node.js",
+      "WebRTC",
+      "HTTP 206 Range Streaming",
+      "Server-Sent Events",
+      "SHA-256",
+      "mDNS",
+      "Capacitor (Android)"
+    ],
+    "learned_tools": [
+      "Rust Async (Tokio)",
+      "TCP Binary Framing Protocol",
+      "Streaming SHA-256 Integrity",
+      "HTTP 206 Partial Content Streaming",
+      "WebRTC P2P Fallback",
+      "Frame-Accurate Video Handoff",
+      "mDNS Peer Discovery",
+      "SSE Real-time LAN Broadcast"
+    ],
+    "what_learned": "Built a dual-engine zero-cloud P2P system: a high-throughput Rust TCP core achieving 73–78 MB/s with bounded memory and streaming SHA-256 integrity, plus an HTTP 206 chunked video streaming layer with frame-accurate pause/resume handoff across phones, laptops, and Smart TVs on LAN.",
+    "reason_for_making": "Frustrated by USB cables and cloud uploads just to watch anime on the big TV. Built LocalDrop so any file or video streams peer-to-peer in under 200ms with zero cloud dependency, zero battery drain when idle, and frame-perfect cinema handoff.",
+    "cover_image": "",
+    "project_images": [],
+    "language": "Rust",
+    "year": "2026",
+    "isPinned": true,
+    "upcoming": false,
+    "pushed_at": "2026-10-20T00:00:00Z",
+    "related_articles": []
+  },
+  {
     "id": 1,
     "name": "VaultCloud",
     "description": "High-Performance Encrypted Cloud Storage API Platform. VaultCloud provides developers with a simple REST API for file storage, CDN delivery, and quota management — all protected with AES-256 zero-knowledge encryption.",
