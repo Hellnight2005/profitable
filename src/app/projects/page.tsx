@@ -3,7 +3,6 @@ import path from 'path';
 import { Metadata } from 'next';
 import { Button } from '@/components/Button';
 import { ProjectsClient } from "./ProjectsClient";
-import AutonomousBuilderOverlay from "@/components/AutonomousBuilderOverlay";
 
 export const metadata: Metadata = {
   title: "Engineering Portfolio | Abhijeet Shinde",
@@ -77,11 +76,7 @@ export default async function Projects() {
                 <span className="type-ui" style={{ color: "var(--color-text-secondary)" }}>— 0{repos.length} REPOSITORIES</span>
             </header>
 
-            {/* Projects list — wrapped with overlay */}
-            <div style={{ position: "relative", minHeight: "400px" }}>
-                <AutonomousBuilderOverlay />
-                <ProjectsClient initialRepos={repos} />
-            </div>
+            <ProjectsClient initialRepos={repos} />
 
             {/* Bottom CTA */}
             <section className="reveal" style={{ background: "var(--color-surface)", padding: "128px 24px", textAlign: "center", marginTop: "128px", borderTop: "1px solid var(--color-border)" }}>
